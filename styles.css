@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: Arial, sans-serif;
+}
+
+:root {
+    --main-bg-color: #080808;
+    --second--bg-color: #131313;
+    --main-color: #0473db;
+    --text-color: #fff;
+}
+
+body {
+    background-color: var(--main-bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    backdrop-filter: blur(10px);
+    padding: 1rem 10%;
+    font-weight: 700;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin-right: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+    position: relative;
+    padding: 0.2rem 0;  
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -5px;
+    height: 3px;
+    background-color: var(--main-color);
+    border-radius: 10px;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+a:hover {
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    border-radius: 1rem;
+}
+
+a:hover::after {
+    transform: scaleX(1);
+    color: var(--text-color);
+}
+
+.no-bold {
+    font-weight: normal;
+    color: var(--main-color)
+}
+
+.homesection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.homesection h1 {
+    font-size: 5rem;
+    margin: 5rem 0 1rem;
+}
+
+.text-animation {
+    font-size: 3rem;
+    color: var(--main-color);
+    display: inline-block;
+    width: 22ch;
+    min-height: 4.2rem;
+    overflow: hidden;
+}
+
+.text-animation span {
+    display: inline-block;
+    border-right: 2px solid transparent;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+}
+
+.text-animation span::before {
+    content: "";
+    color: var(--main-color);
+    animation: words 20s infinite;
+}
+
+.text-animation span::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background-color: var(--text-color);
+    right: 0;
+    margin-left: 5px;
+    animation: blink 0.6s step-end infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes erase {
+    from { width: 100%; }
+    to { width: 0; }
+}
+
+.btn {
+    display: flex;
+    margin: auto;
+    margin-top: 2rem;
+    padding: 0.6rem 1.3rem;
+    background: var(--main-color);
+    box-shadow: 0 0 25px var(--main-color);
+    border-radius: 2rem;
+    font-size: 1.3rem;
+    border: 2px solid transparent;
+    font-weight: 700;
+    transition: 0.3s ease-in-out;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 50px var(--main-color);
+}
