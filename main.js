@@ -1,3 +1,54 @@
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('.nav-link');
+
+const homeScrollThreshold = 50;
+
+function updateActiveLink() {
+    let currentSection = '';
+
+    sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 120;  
+        const sectionHeight = section.clientHeight;
+
+        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+            currentSection = section.getAttribute('id');  
+        }
+    });
+
+    if (scrollY === 0 || scrollY < homeScrollThreshold) {
+        currentSection = 'home';
+    }
+
+    navLinks.forEach((link) => {
+        link.classList.remove('active');
+        
+        if (link.getAttribute('href') === `#${currentSection}`) {
+            link.classList.add('active');
+        }
+    });
+}
+
+window.addEventListener('scroll', updateActiveLink);
+
+updateActiveLink();
+
+
+document.querySelector('a[href="#home"]').addEventListener('click', function (e) {
+    e.preventDefault();
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const button = document.getElementById("contactButton");
+
+    button.onclick = function() {
+        window.location.href = "#contact";
+    };
+});
+
 document.addEventListener("DOMContentLoaded", () => {
     const textElement = document.querySelector('.text-animation span');
     const textToAnimate = "< Frontend Developer /> ;";
