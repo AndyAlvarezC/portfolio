@@ -7,7 +7,7 @@ function updateActiveLink() {
     let currentSection = '';
 
     sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 120;  
+        const sectionTop = section.offsetTop - 150;  
         const sectionHeight = section.clientHeight;
 
         if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
@@ -30,11 +30,42 @@ function updateActiveLink() {
 
 window.addEventListener('scroll', updateActiveLink);
 
-updateActiveLink();
+function scrollToSection(sectionId) {
+    const section = document.querySelector(sectionId);
+    if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+        history.pushState(null, 'home', sectionId);
+        setTimeout(updateActiveLink, 100);
+    }
+}
 
+function scrollToSection(sectionId) {
+    const section = document.querySelector(sectionId);
+    const headerOffset = document.querySelector('header').offsetHeight;
+    const sectionPosition = section.offsetTop;
+
+    const offsetPosition = sectionPosition - headerOffset;
+
+    window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+    });
+
+    history.pushState(null, 'about', sectionId);
+    setTimeout(updateActiveLink, 100);
+}
+
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const sectionId = this.getAttribute('href');
+        scrollToSection(sectionId);
+    });
+});
 
 document.querySelector('a[href="#home"]').addEventListener('click', function (e) {
     e.preventDefault();
+    scrollToSection('#home');
     window.scrollTo({
         top: 0,
         behavior: 'smooth'
