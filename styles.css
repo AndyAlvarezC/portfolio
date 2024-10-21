@@ -17,6 +17,22 @@ body {
     color: var(--text-color);
     margin: 0;
     padding: 0;
+    max-height: 100vw;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--main-color);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--main-bg-color);
+    width: 50px;
 }
 
 header {
@@ -312,23 +328,56 @@ a.active::after {
     color: #181717;
 }
 
-
-section#projects {
-    padding: 5rem 0;
-    text-align: center;
+.project-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    margin-top: 1rem;
 }
 
-.project {
+.projects-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.project-container {
+    flex: 1 1 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     background-color: var(--second-bg-color);
-    padding: 2rem;
+    border: 3px solid var(--second-bg-color);
+    padding: 8rem 4rem;
     margin: 1rem;
+    max-width: 25%;
     border-radius: 0.7rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out;
 }
 
-.project:hover {
-    transform: translateY(-4px);
+.project-container:hover {
+    transform: scale(1.02);
+}
+
+.project-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.project-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.project-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 footer {
