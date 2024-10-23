@@ -50,6 +50,20 @@ header {
     box-sizing: border-box;
 }
 
+header h2 {
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+header h2:hover {
+    transform: scale(1.2);
+}
+
+header h2 a {
+    color: var(--main-color);
+    text-decoration: none;
+}
+
 ul {
     display: flex;
     list-style: none;
@@ -87,7 +101,7 @@ a:hover {
     border-radius: 1rem;
 }
 
-a:hover::after {
+li a:hover::after {
     transform: scaleX(1);
     color: var(--text-color);
 }
@@ -111,8 +125,7 @@ a.active::after {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 34.9rem;
-    margin-top: 12rem;
+    margin: 13.9rem 0;
 }
 
 .homesection h1 {
@@ -195,8 +208,7 @@ a.active::after {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 10rem;
-    padding-top: 6.5rem;
+    padding: 5.2rem 0;
     background-color: var(--second--bg-color);
 }
 
@@ -253,9 +265,7 @@ a.active::after {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 5rem 0;
-    background-color: var(--second--bg-color);
-    margin-top: -1rem;
+    padding: 4.79rem 0;
 }
 
 .skills-container {
@@ -325,10 +335,9 @@ a.active::after {
 .project-section {
     display: flex;
     flex-direction: column;
+    background-color: var(--second--bg-color);
     align-items: center;
-    padding: 1rem;
-    margin-top: 4rem;
-    margin-bottom: 6rem;
+    padding: 4.78rem 0;
 }
 
 .projects-wrapper {
@@ -345,9 +354,9 @@ a.active::after {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: var(--second-bg-color);
+    background-color: var(--main-bg-color);
     border: 3px solid var(--second-bg-color);
-    padding: 8rem 4rem;
+    padding: 6rem 4rem;
     margin: 1rem;
     max-width: 25%;
     border-radius: 0.7rem;
@@ -381,14 +390,14 @@ a.active::after {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 6.5rem 0;
-    background-color: var(--second--bg-color);
+    padding: 6.56rem 0;
 }
 
 .contact-section h2 {
     font-size: 4rem;
     margin-bottom: 3rem;
     margin-top: 1rem;
+
 }   
 
 .form-container {
@@ -459,7 +468,8 @@ hr {
 }
 
 footer {
+    background-color: var(--second--bg-color);
     text-align: center;
-    padding: 2.2rem 0;
+    padding: 2rem 0;
 
 }

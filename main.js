@@ -1,7 +1,6 @@
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('.nav-link');
-
-const homeScrollThreshold = 50;
+const headerOffset = document.querySelector('header').offsetHeight;
 
 function updateActiveLink() {
     let currentSection = '';
@@ -15,7 +14,7 @@ function updateActiveLink() {
         }
     });
 
-    if (scrollY === 0 || scrollY < homeScrollThreshold) {
+    if (scrollY === 0 || scrollY < 50) {
         currentSection = 'home';
     }
 
@@ -28,31 +27,27 @@ function updateActiveLink() {
     });
 }
 
-window.addEventListener('scroll', updateActiveLink);
-
 function scrollToSection(sectionId) {
     const section = document.querySelector(sectionId);
     if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
-        history.pushState(null, 'home', sectionId);
+        let offsetPosition;
+
+        // Si es la sección de inicio, desplazamos al principio
+        if (sectionId === '#home') {
+            offsetPosition = 0; // Llevar a la parte superior de la página
+        } else {
+            const sectionPosition = section.offsetTop;
+            offsetPosition = sectionPosition - headerOffset;
+        }
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+
+        history.pushState(null, '', sectionId);
         setTimeout(updateActiveLink, 100);
     }
-}
-
-function scrollToSection(sectionId) {
-    const section = document.querySelector(sectionId);
-    const headerOffset = document.querySelector('header').offsetHeight;
-    const sectionPosition = section.offsetTop;
-
-    const offsetPosition = sectionPosition - headerOffset;
-
-    window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-    });
-
-    history.pushState(null, 'about', sectionId);
-    setTimeout(updateActiveLink, 100);
 }
 
 document.querySelectorAll('.nav-link').forEach(link => {
@@ -63,24 +58,20 @@ document.querySelectorAll('.nav-link').forEach(link => {
     });
 });
 
-document.querySelector('a[href="#home"]').addEventListener('click', function (e) {
+// Ajustar el scroll al hacer clic en el nombre
+document.querySelector('a[href="#home"]').addEventListener('click', function(e) {
     e.preventDefault();
     scrollToSection('#home');
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
 });
 
+// Mover el evento de carga de DOM aquí
 document.addEventListener("DOMContentLoaded", function() {
     const button = document.getElementById("contactButton");
 
     button.onclick = function() {
-        window.location.href = "#contact";
+        scrollToSection('#contact');
     };
-});
 
-document.addEventListener("DOMContentLoaded", () => {
     const textElement = document.querySelector('.text-animation span');
     const textToAnimate = "< Frontend Developer /> ;";
     let index = 0;
@@ -109,8 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     setTimeout(type, 200);
+    updateActiveLink(); // Llamar a esta función al cargar la página
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    updateActiveLink();
-})
+window.addEventListener('scroll', updateActiveLink);
