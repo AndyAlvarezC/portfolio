@@ -119,6 +119,30 @@ a.active::after {
     transition: transform 0.3s ease;
 }
 
+
+.btn-cv {
+    position: absolute;
+    top: -0.65rem;
+    width: 9rem;       
+    margin-left: 2.5rem;
+    padding: 0.5rem;
+    background-color: transparent;
+    color: var(--main-color);
+    box-shadow: 0 0 5px var(--main-color);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    border: 2px solid var(--main-color);
+    font-weight: 700;
+    transition: 0.3s ease-in-out;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.btn-cv:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 8px var(--main-color);
+}
+
 .homesection {
     display: flex;
     flex-direction: column;
@@ -471,5 +495,4 @@ footer {
     background-color: var(--second--bg-color);
     text-align: center;
     padding: 2rem 0;
-
 }
