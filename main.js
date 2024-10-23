@@ -110,3 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setTimeout(type, 200);
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    updateActiveLink();
+})

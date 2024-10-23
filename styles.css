@@ -7,7 +7,7 @@
 
 :root {
     --main-bg-color: #080808;
-    --second--bg-color: #131313;
+    --second--bg-color: #0c0c0c;
     --main-color: #0473db;
     --text-color: #fff;
 }
@@ -27,7 +27,6 @@ body {
 
 ::-webkit-scrollbar-thumb {
     background-color: var(--main-color);
-    border-radius: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -104,11 +103,6 @@ a.active::after {
     border-radius: 10px;
     transform: scaleX(1);
     transition: transform 0.3s ease;
-}
-
-.no-bold {
-    font-weight: normal;
-    color: var(--main-color)
 }
 
 .homesection {
@@ -230,7 +224,7 @@ a.active::after {
 }
 
 .about-section h3, .skills-section h3 {
-    font-size: 2.5rem;
+    font-size: 4rem;
     margin-bottom: 1rem;
     text-align: center;
 }
@@ -259,7 +253,7 @@ a.active::after {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 6rem 0;
+    padding: 5rem 0;
     background-color: var(--second--bg-color);
     margin-top: -1rem;
 }
@@ -333,7 +327,8 @@ a.active::after {
     flex-direction: column;
     align-items: center;
     padding: 1rem;
-    margin-top: 1rem;
+    margin-top: 4rem;
+    margin-bottom: 6rem;
 }
 
 .projects-wrapper {
@@ -357,6 +352,7 @@ a.active::after {
     max-width: 25%;
     border-radius: 0.7rem;
     box-shadow: 0 4px 25px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
     transition: transform 0.3s ease-in-out;
 }
 
@@ -366,7 +362,7 @@ a.active::after {
 
 .project-section h2 {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 4rem;
     margin-bottom: 2rem;
 }
 
@@ -380,7 +376,90 @@ a.active::after {
     margin-bottom: 1rem;
 }
 
+.contact-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 6.5rem 0;
+    background-color: var(--second--bg-color);
+}
+
+.contact-section h2 {
+    font-size: 4rem;
+    margin-bottom: 3rem;
+    margin-top: 1rem;
+}   
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form-container input, .form-container textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 1rem 0;
+    border: 2px solid var(--main-color);
+    border-radius: 0.5rem;
+    background-color: var(--main-bg-color);
+    box-shadow: 0 0 5px var(--main-color);
+    color: var(--text-color);
+    outline: none;
+}
+
+.form-container input {
+    width: 50rem;
+    height: 2rem;
+}
+
+.form-container textarea {
+    resize: none;
+    height: 8rem;  
+    width: 50rem;
+}
+
+.submit-btn {
+    display: flex;
+    margin: auto;
+    margin-top: 1.3rem;
+    padding: 0.6rem 1.3rem;
+    background-color: var(--main-color);
+    box-shadow: 0 0 25px var(--main-color);
+    border-radius: 1rem;
+    font-size: 1.3rem;
+    border: 2px solid transparent;
+    font-weight: 700;
+    transition: 0.3s ease-in-out;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px var(--main-color);
+    color: var(--text-color);
+}
+
+.blue-span {
+    color: var(--main-color);
+}
+
+.blue-fas-fa::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f121";
+    font-weight: 900;
+    color: var(--main-color);
+}
+
+hr {
+    border: 1px solid var(--main-color);
+}
+
 footer {
     text-align: center;
-    padding: 2rem 0;
+    padding: 2.2rem 0;
+
 }

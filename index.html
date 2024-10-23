@@ -6,6 +6,7 @@
     <title>Andy Álvarez | Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="assets/img/favicon.ico" rel="icon">
 </head>
 <body>
     <header>
@@ -22,7 +23,7 @@
     </header>
 
     <section id="home" class="homesection">
-            <h1><span class="no-bold">&lt;/&gt;</span> Hello, I am Andy Álvarez <span class="no-bold">&lt;/&gt;</span></h1>
+            <h1><span class="blue-fas-fa"></span> Hello, I am Andy Álvarez <span class="blue-fas-fa"></span></h1>
             <h3 class="text-animation"><span></span></h3>
             <button id="contactButton" class="btn"><a href="#contact">CONTACT</a></button>
     </section>
@@ -99,12 +100,25 @@
                 </div>
             </section>
 
-    <section id="contact">
+    <section id="contact" class="contact-section">
         <h2>Contact</h2>
+
+        <form class="form-container">
+            <label for="name"></label>
+            <input type="text" id="name" name="name" placeholder="Name:" required>
+
+            <label for="email"></label>
+            <input type="email" id="email" name="email" placeholder="Email:" required>
+
+            <label for="message"></label>
+            <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+
+            <button class="submit-btn" type="submit">SUBMIT</button>
+            </form>
     </section>
 
     <footer>
-        <p>2024 My Name. All rights reserved.</p>
+        <p><span class="blue-fas-fa"></span> Andy Álvarez <span class="blue-span">#</span> Created and designed by me <span class="blue-span">|</span> 2024 <span class="blue-fas-fa"></span></p>
     </footer>
 
     <script src="main.js"></script>
