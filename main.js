@@ -2,7 +2,21 @@ const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('.nav-link');
 const headerOffset = document.querySelector('header').offsetHeight;
 
-// Function to update the active link in the navigation based on the scroll position
+const revealOptions = {
+    threshold: 0.15,
+    rootMargin: "0px"
+};
+
+const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+            return;
+        }
+        entry.target.classList.add('active');
+        observer.unobserve(entry.target); 
+    });
+}, revealOptions);
+
 function updateActiveLink() {
     let currentSection = '';
 
@@ -28,7 +42,6 @@ function updateActiveLink() {
     });
 }
 
-// Function to smoothly scroll to a specific section
 function scrollToSection(sectionId) {
     const section = document.querySelector(sectionId);
     if (section) {
@@ -51,80 +64,89 @@ function scrollToSection(sectionId) {
     }
 }
 
-// Adds a click event to each navigation link
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const sectionId = this.getAttribute('href');
-        scrollToSection(sectionId);
-    });
-});
-
-// Adjusts the scroll when clicking on the name
-document.querySelector('a[href="#home"]').addEventListener('click', function(e) {
-    e.preventDefault();
-    scrollToSection('#home');
-});
-
-// Function to check the visibility of the sections
-function checkVisibility() {
-    const sections = document.querySelectorAll('.section');
-    const triggerBottom = window.innerHeight / 5 * 4;
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
 
     sections.forEach(section => {
-        const sectionTop = section.getBoundingClientRect().top;
+        section.classList.add('reveal');
+        revealOnScroll.observe(section);
+    });
 
-        if (sectionTop < triggerBottom) {
-            section.classList.add('visible');
-        } else {
-            section.classList.remove('visible');
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
         }
     });
-}
 
-window.addEventListener('scroll', checkVisibility);
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const sectionId = this.getAttribute('href');
+            scrollToSection(sectionId);
+        });
+    });
 
-checkVisibility();
-
-// Move the DOM content loaded event here
-document.addEventListener("DOMContentLoaded", function() {
-    const button = document.getElementById("contactButton");
-
-    button.onclick = function() {
-        scrollToSection('#contact');
-    };
-
-    const textElement = document.querySelector('.text-animation span');
-    const textToAnimate = "< Frontend Developer /> ;";
-    let index = 0;
-    let typing = true;
-
-// Function to animate the text
-    function type() {
-        if (typing) {
-            if (index < textToAnimate.length) {
-                textElement.textContent += textToAnimate.charAt(index);
-                index++;
-                setTimeout(type, 100);
-            } else {
-                typing = false;
-                setTimeout(type, 5000);
-            }
-        } else {
-            if (index >= 0) {
-                textElement.textContent = textToAnimate.slice(0, index);
-                index--;
-                setTimeout(type, 50);
-            } else {
-                typing = true;
-                setTimeout(type, 500);
-            }
-        }
+    const contactButton = document.getElementById("contactButton");
+    if (contactButton) {
+        contactButton.onclick = function() {
+            scrollToSection('#contact');
+        };
     }
 
-    setTimeout(type, 200);
+    const homeLink = document.querySelector('a[href="#home"]');
+    if (homeLink) {
+        homeLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            scrollToSection('#home');
+        });
+    }
+
+    const textElement = document.querySelector('.text-animation span');
+    if (textElement) {
+        const textToAnimate = "< Frontend Developer /> ;";
+        let index = 0;
+        let typing = true;
+
+        function type() {
+            if (typing) {
+                if (index < textToAnimate.length) {
+                    textElement.textContent += textToAnimate.charAt(index);
+                    index++;
+                    setTimeout(type, 100);
+                } else {
+                    typing = false;
+                    setTimeout(type, 5000);
+                }
+            } else {
+                if (index >= 0) {
+                    textElement.textContent = textToAnimate.slice(0, index);
+                    index--;
+                    setTimeout(type, 50);
+                } else {
+                    typing = true;
+                    setTimeout(type, 500);
+                }
+            }
+        }
+
+        setTimeout(type, 200);
+    }
+
     updateActiveLink();
 });
 
-// Listens for the scroll event to update the active link
 window.addEventListener('scroll', updateActiveLink);

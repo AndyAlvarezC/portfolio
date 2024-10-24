@@ -12,19 +12,6 @@
     --text-color: #fff;
 }
 
-
-.section {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
-}
-
-
-.section.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 body {
     background-color: var(--main-bg-color);
     color: var(--text-color);
@@ -32,6 +19,30 @@ body {
     padding: 0;
     max-height: 100vw;
     overflow-x: hidden;
+}
+
+.reveal {
+    position: relative;
+    opacity: 0;
+    transform: translateY(150px);
+    transition: all 1s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+#about.reveal {
+    transition-delay: 0.2s;
+}
+
+#portfolio.reveal {
+    transition-delay: 0.2s;
+}
+
+#contact.reveal {
+    transition-delay: 0.2s;
 }
 
 ::-webkit-scrollbar{
@@ -553,4 +564,175 @@ footer {
 
 footer p {
     font-weight: 700;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--main-color);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 1024px) {
+    header {
+        padding: 1rem 5%;
+    }
+
+    .container {
+        width: 80%;
+    }
+
+    .form-container input,
+    .form-container textarea {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: block;
+        margin-right: 3%;
+        z-index: 101;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 85%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 80px 40px;
+        transition: 0.3s ease;
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-menu li {
+        margin: 20px 0;
+    }
+
+    .btn-cv {
+        position: static;
+        margin: 20px 0;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    .homesection {
+        padding: 3rem 0;
+    }
+
+    .homesection h1 {
+        width: 110%;
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .homesection h1 span {
+        display: none;
+    }
+
+    .text-animation {
+        font-size: 50%;
+        width: 90%;
+        text-align: center;
+    }
+
+    .container {
+        width: 90%;
+        padding: 4rem 0;
+    }
+
+    .about-section h3,
+    .skills-section h3,
+    .project-section h2,
+    .contact-section h2 {
+        font-size: 2.5rem;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .about-section p {
+        justify-content: center;
+        text-align: center;
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+
+    .skills-container {
+        gap: 1rem;
+    }
+
+    .skill-card {
+        width: calc(50% - 2rem);
+        margin: 0 4rem;
+    }
+
+    .project-container {
+        flex: 1 1 100%;
+        max-width: 85%;
+        margin: 1rem 2.5rem;
+        padding: 3rem 2rem;
+    }
+
+    .social-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: 1.3rem 0;
+    }
+
+    .form-container input,
+    .form-container textarea {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 150%;
+    }
+
+    footer {
+        font-size: 80%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .homesection h1 {
+        font-size: 2rem;
+    }
+
+    .text-animation {
+        font-size: 1.5rem;
+    }
+
+    .skill-card {
+        width: calc(100% - 2rem);
+    }
 }
