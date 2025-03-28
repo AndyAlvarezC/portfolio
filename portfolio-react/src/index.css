@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@layer base {
+    :root {
+        --main-bg-color: #080808;
+        --second--bg-color: #0c0c0c;
+        --main-color: #0473db;
+        --text-color: #fff;
+    }
+}
+
+body {
+    @apply bg-[var(--main-bg-color)] text-white;
+}
+
+home {
+    @apply bg-[var(--secong-bg-color)] text-white;
+}
+
+li {
+    @apply cursor-pointer;
+}
+
