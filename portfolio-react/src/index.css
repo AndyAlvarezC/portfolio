@@ -3,7 +3,7 @@
 @layer base {
     :root {
         --main-bg-color: #080808;
-        --second--bg-color: #0c0c0c;
+        --second-bg-color: #0c0c0c;
         --main-color: #0473db;
         --text-color: #fff;
     }

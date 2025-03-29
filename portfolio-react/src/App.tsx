@@ -1,5 +1,4 @@
 import { BrowserRouter as Router } from 'react-router-dom';
-import '@fortawesome/fontawesome-free/css/all.min.css';
 import Header from "./components/Header"
 import Home from './sections/Home';
 import Skills from './sections/Skills';
