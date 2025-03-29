@@ -16,19 +16,19 @@ export default function TextAnimation() {
         } else if (isTyping && text.length === textToAnimate.length) {
             timeoutId = setTimeout(() => {
                 setIsTyping(false)
-            }, 2000)
+            }, 3000)
         } else if (!isTyping && text.length > 0) {
             timeoutId = setTimeout(() => {
                 setText(text.slice(0, -1))
-            }, 50)
+            }, 100)
         } else if (!isTyping && text.length === 0) {
-            setIsTyping(true)
+            setTimeout(() => setIsTyping(true), 500)
         }
 
         return () => clearTimeout(timeoutId)
     }, [text, isTyping, textToAnimate])
 
     return (
-        <span className="text-[var(--main-color)] text-6xl font-bold">{text}<span className="animate-pulse text-white font-light">|</span></span>
+        <span className="text-[var(--main-color)] text-5xl font-bold">{text}<span className="animate-pulse text-white font-light">|</span></span>
     )
 }
