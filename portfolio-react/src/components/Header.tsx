@@ -13,7 +13,7 @@ export default function Header() {
 
     return (
         <div className="fixed bg-black/50 flex items-center justify-between p-4 px-50 w-full z-10 backdrop-blur-sm">
-                <a href="#home">
+                <a onClick={() => handleScroll("home")} className="cursor-pointer">
                 <h2 className="font-bold text-2xl transform hover:scale-110 transition-transform duration-300 ease-in-out">
                     Andy Álvarez
                 </h2>

@@ -5,7 +5,7 @@ import TextAnimation from '../components/TextAnimation';
 
 export default function Home() {
     return (
-        <section id="home" className="h-screen flex flex-col items-center justify-center text-center gap-y-6 px-6">
+        <section id="home" className="w-full min-h-screen flex flex-col items-center justify-center text-center gap-y-6 px-6 scroll-mt-20">
             <h1 className="flex items-center justify-center text-6xl sm:text-7xl font-bold">
                 <FontAwesomeIcon icon={faCode} className="text-[var(--main-color)] mr-4 sm:mr-6" />
                 Hello, I am Andy Álvarez
@@ -25,5 +25,6 @@ export default function Home() {
                 </button>
             </div>
         </section>
-    )
+    );
 }
+
