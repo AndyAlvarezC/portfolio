@@ -2,7 +2,7 @@ import { ElementType } from "react";
 import { SiHtml5, SiCss3, SiJavascript, SiReact, SiTypescript, SiTailwindcss, SiPython, SiGithub, SiGit } from "react-icons/si";
 
 type SkillCard = {
-    icon: ElementType | string
+    icon: ElementType
     color: string
     title: string
 
