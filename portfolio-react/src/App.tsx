@@ -5,6 +5,7 @@ import Skills from './sections/Skills';
 import Projects from './sections/Projects';
 import About from './sections/About';
 import Contact from './sections/Contact';
+import Footer from './components/Footer';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
         <Projects />
         <About />
         <Contact />
+        <Footer />
       </div>
     </Router>
   )

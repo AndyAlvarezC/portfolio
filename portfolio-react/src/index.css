@@ -20,3 +20,17 @@ home {
 li {
     @apply cursor-pointer;
 }
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--main-color);
+    border-radius: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--main-bg-color);
+    width: 50px;
+}
