@@ -1,4 +1,3 @@
-import { BrowserRouter as Router } from 'react-router-dom';
 import Header from "./components/Header"
 import Home from './sections/Home';
 import Skills from './sections/Skills';
@@ -8,20 +7,17 @@ import Contact from './sections/Contact';
 import Footer from './components/Footer';
 
 function App() {
-
   return (
-    <Router>
-      <div>
-        <Header />
-        <Home />
-        <Skills />
-        <Projects />
-        <About />
-        <Contact />
-        <Footer />
-      </div>
-    </Router>
-  )
+    <div>
+      <Header />
+      <Home />
+      <Skills />
+      <Projects />
+      <About />
+      <Contact />
+      <Footer />
+    </div>
+  );
 }
 
-export default App
+export default App;
