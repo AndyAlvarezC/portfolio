@@ -1,15 +1,17 @@
-import { FC } from "react"
+import { ElementType, FC } from "react"
 import { skillsData } from "../data/skillDB"
 
 type SkillsCardsProps = {
     title: string
-    icon: string
+    icon: ElementType | string
+    color: string
 }
 
-const SkillCard: FC<SkillsCardsProps> = ({ title, icon }) => {
+const SkillCard: FC<SkillsCardsProps> = ({ title, icon: Icon, color }) => {
     return (
-        <div className="bg-[var(--second-bg-color)] text-white p-6 rounded-2xl shadow-lg hover:shadow-blue-500 transition-all duration-300 max-w-xs flex flex-col items-center">
-            <img src={icon} alt={title} className="w-16 h-16 mb-4"></img>
+        <div className="flex-1/4  bg-[var(--second-bg-color)] text-white p-6 rounded-2xl shadow-lg transition-all ease-in-out duration-300 flex flex-col items-center w-40 h-32 justify-center
+        hover:shadow-blue-500 hover:scale-105">
+            <Icon className={`w-8 h-8 mb-4 ${color}`} />
             <h3 className="text-xl font-bold">{title}</h3>
         </div>
     )
@@ -20,7 +22,7 @@ export default function Cards() {
         <div className="text-white py-20">
             <div className="flex flex-wrap justify-center gap-8">
                 {skillsData.map((skill) => (
-                <SkillCard key={skill.title} title={skill.title} icon={skill.icon} />
+                <SkillCard key={skill.title} title={skill.title} icon={skill.icon} color={skill.color} />
             ))}
             </div>
         </div>

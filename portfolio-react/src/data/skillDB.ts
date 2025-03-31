@@ -1,11 +1,21 @@
-export const skillsData = [
-    { icon: "/assets/icons/html5.svg", title: "HTML" },
-    { icon: "/assets/icons/css.svg", title: "CSS" },
-    { icon: "/assets/icons/javascript.svg", title: "JavaScript" },
-    { icon: "/assets/icons/react.svg", title: "React" },
-    { icon: "/assets/icons/typescript.svg", title: "TypeScript" },
-    { icon: "/assets/icons/tailwindcss.svg", title: "Tailwind CSS" },
-    { icon: "/assets/icons/python.svg", title: "Python" },
-    { icon: "/assets/icons/github.svg", title: "GitHub" },
-    { icon: "/assets/icons/git.svg", title: "Git" },
+import { ElementType } from "react";
+import { SiHtml5, SiCss3, SiJavascript, SiReact, SiTypescript, SiTailwindcss, SiPython, SiGithub, SiGit } from "react-icons/si";
+
+type SkillCard = {
+    icon: ElementType | string
+    color: string
+    title: string
+
+}
+
+export const skillsData: SkillCard[] = [
+    { icon: SiHtml5, color: "text-orange-500", title: "HTML" },
+    { icon: SiCss3, color: "text-blue-500", title: "CSS" },
+    { icon: SiJavascript, color: "text-yellow-500", title: "JavaScript" },
+    { icon: SiReact, color: "text-blue-400", title: "React" },
+    { icon: SiTypescript, color: "text-blue-600", title: "TypeScript" },
+    { icon: SiTailwindcss, color: "text-cyan-400", title: "Tailwind CSS" },
+    { icon: SiPython, color: "text-yellow-400", title: "Python" },
+    { icon: SiGithub, color: "text-gray-300", title: "GitHub" },
+    { icon: SiGit, color: "text-red-500", title: "Git" },
 ]
