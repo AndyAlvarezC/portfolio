@@ -14,19 +14,19 @@ export const socialLinks: SocialLinks[] = [
         name: "GitHub",
         icon: SiGithub,
         link: "https://github.com/AndyAlvarezC",
-        color: "text-gray-900 hover:text-gray-600"
+        color: "text-[#181717]"
 
     },
     {
         name: "LinkedIn",
         icon: SiLinkedin,
         link: "https://www.linkedin.com/in/andy-alvarez-6961b4300/",
-        color: "text-blue-700 hover:text-blue-500"
+        color: "text-[#0A66C2]"
     },
     {
         name: "Email",
         icon: MdEmail,
         link: "mailto:andykanka@gmail.com",
-        color: "text-red-600 hover:text-red-400"
+        color: "text-[#D44638]"
     }
 ]

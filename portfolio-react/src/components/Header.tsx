@@ -24,7 +24,7 @@ export default function Header() {
                     <li><a onClick={() => handleScroll("skills")} className="cursor-pointer">Skills</a></li>
                     <li><a onClick={() => handleScroll("projects")} className="cursor-pointer">Projects</a></li>
                     <li><a onClick={() => handleScroll("about")} className="cursor-pointer">About</a></li>
-                    <li><a onClick={() => handleScroll("contact")} className="cursor-pointer">Contact</a></li>
+                    <li><a onClick={() => handleScroll("contact")} className="cursor-pointer">Contact Me</a></li>
                         <li>
                             <button onClick={handleDownload} className="bg-[var(--main-color)] text-white py-2 px-4 rounded-lg 
                                             hover:bg-blue-600 cursor-pointer transition-all ease-in-out duration-300">
