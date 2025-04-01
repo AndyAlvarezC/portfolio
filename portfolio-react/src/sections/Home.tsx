@@ -19,7 +19,7 @@ export default function Home() {
                     onClick={() => handleScroll("contact")} 
                     className="bg-[var(--main-color)] text-white text-xl sm:text-2xl font-bold uppercase tracking-wide 
                     py-4 px-10 rounded-lg shadow-lg transition-all duration-300 ease-in-out 
-                    hover:bg-blue-600 hover:shadow-[0px_0px_40px_rgba(37,99,235,1)] cursor-pointer"
+                    hover:bg-blue-600 hover:shadow-[0px_0px_40px_rgba(37,99,235,1)] cursor-pointer hover:scale-105"
                 >
                     Hire Me!
                 </button>
