@@ -1,4 +1,4 @@
-import Cards from "../components/Cards";
+import Cards from "../components/SkillCard";
 
 export default function Skills() {
     return (

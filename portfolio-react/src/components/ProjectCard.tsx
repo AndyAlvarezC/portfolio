@@ -10,10 +10,10 @@ type ProjectCardProps = {
 
 const ProjectCard: FC<ProjectCardProps> = ({ title, description, image, link, skills }) => {
     return (
-        <div className="project-card border rounded-lg overflow-hidden shadow-lg bg-white">
-            <img src={image} alt={title} className="w-full h-48 object-cover" />
+        <div className="project-card  rounded-lg overflow-hidden shadow-lg bg-white transition-all ease-in-out duration-300 hover:scale-102 cursor-pointer">
+            <img src={image} alt={title} className="w-full h-48 object-cover shadow-sm" />
             <div className="p-4">
-                <h3 className="text-xl font-bold">{title}</h3>
+                <h3 className="text-xl font-bold text-gray-900">{title}</h3>
                 <p className="text-gray-700">{description}</p>
                 <div className="flex gap-2 mt-2">
                     {skills.map((Skill, index) => (
@@ -22,7 +22,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ title, description, image, link, sk
                         </div>
                     ))}
                 </div>
-                <a href={link} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline block mt-4">
+                <a href={link} target="_blank" rel="noopener noreferrer" className="text-blue-500 block mt-4 font-bold hover:underline">
                     View Project
                 </a>
             </div>

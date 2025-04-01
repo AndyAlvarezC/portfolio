@@ -21,7 +21,7 @@ const getSkillIcon = (skillName: string): ReactElement | undefined => {
 export const projects: ProjectCard[] = [
     {
         title: "GuitarLA",
-        description: "E-commerce website for guitars and accessories. Built with React, Tailwind CSS, and Firebase.",
+        description: "E-commerce website for guitars and accessories",
         image: guitarlaprev,
         link: "https://shopguitarla.netlify.app/",
         skills: ["React", "TypeScript"]
@@ -30,7 +30,7 @@ export const projects: ProjectCard[] = [
     },
     {
         title: "Calculadora de Consumo",
-        description: "A simple calculator to calculate the consumption of a device in kWh.",
+        description: "A simple calculator to calculate the consumption of a device in kWh",
         image: calculadoraprev,
         link: "https://calculadorapropinasyconsumo.netlify.app/",
         skills: ["React", "TypeScript", "Tailwind CSS"]
@@ -39,7 +39,7 @@ export const projects: ProjectCard[] = [
     },
     {
         title: "Calories Tracker",
-        description: "A simple app to track your daily calorie intake.",
+        description: "A simple app to track your daily calorie intake",
         image: caloriasprev,
         link: "https://trackyoucalorie.netlify.app/",
         skills: ["React", "TypeScript", "Tailwind CSS"]
