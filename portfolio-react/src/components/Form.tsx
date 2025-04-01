@@ -9,20 +9,24 @@ export default function Form() {
         message: '',
     });
 
-    const [buttonText, setButtonText] = useState('Send'); // Estado para cambiar el texto del botón
+    const [buttonText, setButtonText] = useState('Send');
+    const [isFormValid, setIsFormValid] = useState(false);
 
     const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
+        const updatedFormData = { ...formData, [name]: value };
+        setFormData(updatedFormData);
+
+        setIsFormValid(updatedFormData.name !== '' && updatedFormData.email !== '' && updatedFormData.message !== '');
     };
 
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
 
         setFormData({ name: '', email: '', message: '' });
+        setIsFormValid(false);
 
         setButtonText('Sending...');
-
 
         setTimeout(() => {
             setButtonText('Message Sent!');
@@ -37,7 +41,9 @@ export default function Form() {
         ? 'bg-green-600 shadow-green-600 scale-105'
         : buttonText === 'Sending...'
         ? 'bg-blue-600 shadow-[0px_0px_20px_rgba(37,99,235,1)] scale-105'
-        : 'bg-[var(--main-bg-color)] hover:bg-blue-600';
+        : isFormValid
+        ? 'bg-blue-600'
+        : 'cursor-not-allowed';
 
     return (
         <div className="flex flex-col items-center justify-center w-full max-w-5xl p-16">
@@ -72,18 +78,20 @@ export default function Form() {
                     placeholder="Write your message here..."
                     value={formData.message}
                     onChange={handleChange}
+                    required
                     className="bg-[var(--main-bg-color)] text-white p-4 rounded-lg shadow-[0px_0px_20px_rgba(37,99,235,0.5)] 
                         focus:outline-none focus:shadow-[0px_0px_20px_rgba(37,99,235,1)] transition-all ease-in-out duration-300 resize-none h-32"
                 ></textarea>
 
                 <button
                     type="submit"
-                    className={`flex items-center justify-center w-full mx-auto bg-[var(--main-bg-color)] font-bold text-white p-4 rounded-lg shadow-[0px_0px_20px_rgba(37,99,235,0.5)] max-w-sm cursor-pointer
-                        hover:shadow-[0px_0px_20px_rgba(37,99,235,1)] transition-all ease-in-out duration-300 hover:scale-105 hover:bg-blue-600 ${buttonBgClass}`}
+                    className={`flex items-center justify-center w-full mx-auto font-bold text-white p-4 rounded-lg shadow-[0px_0px_20px_rgba(37,99,235,0.5)] max-w-sm cursor-pointer
+                        hover:shadow-[0px_0px_20px_rgba(37,99,235,1)] transition-all ease-in-out duration-300 hover:scale-105 ${buttonBgClass}`}
+                    disabled={!isFormValid}
                 >
                     {buttonText} <FaPaperPlane className="ml-2 rotate-45" />
                 </button>
             </form>
         </div>
-    )
+    );
 }
