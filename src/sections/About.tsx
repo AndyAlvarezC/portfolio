@@ -2,7 +2,7 @@
 export default function About() {
     return (
         <section id="about" className="flex flex-col items-center py-16 w-full scroll-mt-20 mb-16">
-                        <div className="bg-[var(--main--bg-color)] max-w-5xl w-full p-10 shadow-lg rounded-2xl text-center">
+                        <div className="max-w-5xl w-full p-10 rounded-2xl text-center">
                             <h1 className="text-5xl font-bold mb-8">About me</h1>
                             <div className="text-xl text-left gap-8 flex flex-col items-center justify-center mt-16 mb-8">
                             <p>

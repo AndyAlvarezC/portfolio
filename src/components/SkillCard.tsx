@@ -20,7 +20,7 @@ const SkillCard: FC<SkillsCardsProps> = ({ title, icon: Icon, color }) => {
 export default function Cards() {
     return (
         <div className="text-white p-12">
-            <div className="flex flex-wrap justify-center gap-8">
+            <div className="flex flex-wrap justify-center gap-12">
                 {skillsData.map((skill) => (
                 <SkillCard key={skill.title} title={skill.title} icon={skill.icon} color={skill.color} />
             ))}
