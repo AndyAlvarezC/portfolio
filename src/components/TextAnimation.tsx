@@ -29,12 +29,6 @@ export default function TextAnimation() {
     }, [text, isTyping, textToAnimate])
 
     return (
-        <div className="relative whitespace-nowrap">
-            <span className="invisible text-5xl font-bold">{textToAnimate}</span>
-            
-            <span className="absolute left-0 top-0 text-[var(--main-color)] text-5xl font-bold">
-                {text}<span className="animate-pulse text-white font-light">|</span>
-            </span>
-        </div>
+        <span className="text-[var(--main-color)] text-5xl font-bold">{text}<span className="animate-pulse text-white font-light">|</span></span>
     )
 }
