@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { handleScroll } from "../utils/utils";
+import { MdDownload } from 'react-icons/md';
 
 export default function Header() {
     const [activeSection, setActiveSection] = useState<string>("home");
@@ -58,6 +59,7 @@ export default function Header() {
                     className="bg-[var(--main-color)] text-white py-2 px-4 rounded-lg hover:bg-blue-600 cursor-pointer transition-all ease-in-out duration-300"
                 >
                     Download CV
+                    <MdDownload className="inline ml-1 text-xl" />
                 </button>
             </li>
         </ul>

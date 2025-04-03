@@ -10,7 +10,7 @@ type ProjectCardProps = {
 
 const ProjectCard: FC<ProjectCardProps> = ({ title, description, image, link, skills }) => {
     return (
-        <div className="project-card  rounded-lg overflow-hidden shadow-lg bg-white transition-all ease-in-out duration-300 hover:scale-102 cursor-pointer">
+        <div className="project-card  rounded-lg overflow-hidden shadow-lg bg-gray-100 transition-all ease-in-out duration-300 hover:scale-102 cursor-pointer">
             <img src={image} alt={title} className="w-full h-48 object-cover shadow-sm" />
             <div className="p-4">
                 <h3 className="text-xl font-bold text-gray-900">{title}</h3>
