@@ -17,7 +17,10 @@ useEffect(() => {
         }
         });
     },
-    { threshold: 0.6 }
+        {
+            threshold: window.innerWidth < 768 ? 0.3 : 0.6, 
+            rootMargin: '-80px 0px 0px 0px'
+    }
     );
 
     sections.forEach((section) => observer.observe(section));

@@ -10,7 +10,7 @@ export default function SocialCard() {
                     href={link} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className={`flex items-center space-x-2 py-4 px-12 md:px-10 w-50 justify-center md:w-auto bg-[var(--main-bg-color)] rounded-lg shadow-[0px_0px_20px_rgba(37,99,235,0.5)] 
+                    className={`flex items-center space-x-2 py-4 md:px-10 w-45 justify-center md:w-auto bg-[var(--main-bg-color)] rounded-lg shadow-[0px_0px_20px_rgba(37,99,235,0.5)] 
                         hover:shadow-[0px_0px_20px_rgba(37,99,235,1)] transition-all ease-in-out duration-300 ${color} hover:scale-105`}
                 >
                     <Icon className="text-2xl" />
