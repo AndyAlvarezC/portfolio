@@ -1,6 +1,6 @@
 import { ReactElement, createElement } from "react"
 import { skillsData } from "../data/skillDB"
-import guitarlaprev from "../assets/guitarlaprev.png"
+import patienttrackerprev from "../assets/patienttrackerprev.png"
 import calculadoraprev from "../assets/calculadoraprev.png"
 import caloriasprev from "../assets/caloriasprev.png"
 import starbucksprev from "../assets/starbucksprev.png"
@@ -30,19 +30,10 @@ export const projects: ProjectCard[] = [
             .filter((icon): icon is ReactElement => icon !== undefined)
     },
     {
-        title: "GuitarLA",
-        description: "E-commerce website for guitars and accessories",
-        image: guitarlaprev,
-        link: "https://shopguitarla.netlify.app/",
-        skills: ["React", "Typescript", "Git", "Github"]
-            .map(getSkillIcon)
-            .filter((icon): icon is ReactElement => icon !== undefined)
-    },
-    {
-        title: "Calculadora de Consumo",
-        description: "A simple calculator to calculate the consumption of a device in kWh",
-        image: calculadoraprev,
-        link: "https://calculadorapropinasyconsumo.netlify.app/",
+        title: "Patient Tracker",
+        description: "An app to register patients and track veterinary medical records",
+        image: patienttrackerprev,
+        link: "https://patient-tracker-medical.vercel.app/",
         skills: ["React", "Typescript", "Tailwind CSS", "Git", "Github"]
             .map(getSkillIcon)
             .filter((icon): icon is ReactElement => icon !== undefined)
@@ -51,7 +42,16 @@ export const projects: ProjectCard[] = [
         title: "Calories Tracker",
         description: "A simple app to track your daily calorie intake",
         image: caloriasprev,
-        link: "https://trackyoucalorie.netlify.app/",
+        link: "https://calories-tracker-1.vercel.app/",
+        skills: ["React", "Typescript", "Tailwind CSS", "Git", "Github"]
+            .map(getSkillIcon)
+            .filter((icon): icon is ReactElement => icon !== undefined)
+    },
+    {
+        title: "Tip and Bill Calculator",
+        description: "An easy calculator to compute tips and total bills for a table",
+        image: calculadoraprev,
+        link: "https://tip-and-bill-calculator-1.vercel.app/",
         skills: ["React", "Typescript", "Tailwind CSS", "Git", "Github"]
             .map(getSkillIcon)
             .filter((icon): icon is ReactElement => icon !== undefined)
