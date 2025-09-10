@@ -3,7 +3,7 @@ import { ElementType } from "react";
 
 export default function SocialCard() {
     return (
-        <div className="flex gap-14 justify-center w-full">
+        <div className="flex flex-col md:flex-row gap-12 md:gap-14 justify-center w-1xl md:w-full">
             {socialLinks.map(({ name, icon: Icon, link, color }: { name: string, icon: ElementType, link: string, color: string }) => (
                         <a 
                             key={name} 

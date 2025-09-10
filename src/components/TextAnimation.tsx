@@ -30,9 +30,9 @@ export default function TextAnimation() {
 
     return (
         <div className="relative whitespace-nowrap">
-            <span className="invisible text-5xl font-bold">{textToAnimate}</span>
+            <span className="invisible text-2xl sm:text-4xl lg:text-5xl font-bold">{textToAnimate}</span>
             
-            <span className="absolute left-0 top-0 text-[var(--main-color)] text-5xl font-bold">
+            <span className="absolute left-0 top-0 text-[var(--main-color)] text-2xl sm:text-4xl lg:text-5xl font-bold">
                 {text}<span className="animate-pulse text-white font-light">|</span>
             </span>
         </div>
