@@ -10,7 +10,7 @@ const app = express();
 app.use(
   cors({
     origin:
-      process.env.FRONTEND_URL || "https://portfolio-andy-alvarez.vercel.app/",
+      process.env.FRONTEND_URL || "https://portfolio-andy-alvarez.vercel.app",
     credentials: true,
   })
 );
