@@ -64,34 +64,49 @@ import { Dispatch, FormEvent, SetStateAction, ChangeEvent } from "react"
         setIsFormValid(allFieldsHaveValue);
     };
 
-    export const handleSubmit = (
-        e: FormEvent,
-        formData: { name: string; email: string; message: string },
-        setFormData: Dispatch<SetStateAction<{ name: string; email: string; message: string }>>,
-        setButtonText: Dispatch<SetStateAction<string>>,
-        setIsFormValid: Dispatch<SetStateAction<boolean>>,
-        setFormSubmitted: Dispatch<SetStateAction<boolean>>,
-        setErrors: Function
-    ) => {
-        e.preventDefault();
-        setFormSubmitted(true);
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:5000";
 
-        const isValid = validateForm(formData, setErrors);
+export const handleSubmit = async (
+  e: FormEvent,
+  formData: { name: string; email: string; message: string },
+  setFormData: Dispatch<
+    SetStateAction<{ name: string; email: string; message: string }>
+  >,
+  setButtonText: Dispatch<SetStateAction<string>>,
+  setIsFormValid: Dispatch<SetStateAction<boolean>>,
+  setFormSubmitted: Dispatch<SetStateAction<boolean>>,
+  setErrors: Function
+) => {
+  e.preventDefault();
+  setFormSubmitted(true);
 
-        if (isValid) {
-            setButtonText('Sending...');
+  const isValid = validateForm(formData, setErrors);
+  if (!isValid) return;
 
-            setTimeout(() => {
-                setButtonText('Message Sent!');
+  setButtonText("Sending...");
 
-                // Resetea el formulario después de enviar
-                setFormData({ name: '', email: '', message: '' });
-                setIsFormValid(false);
-                setFormSubmitted(false);
+  try {
+    const response = await fetch(`${BACKEND_URL}/api/contact`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
 
-                setTimeout(() => {
-                    setButtonText('Send');
-                }, 2000);
-            }, 3000);
-        }
-    };
+    const result = await response.json();
+
+    if (response.ok) {
+      setButtonText("Message Sent!");
+      setFormData({ name: "", email: "", message: "" });
+      setIsFormValid(false);
+      setFormSubmitted(false);
+      setTimeout(() => setButtonText("Send"), 2000);
+    } else {
+      setButtonText("Send");
+      alert(result.message || "Error al enviar el formulario");
+    }
+  } catch (error) {
+    console.error(error);
+    setButtonText("Send");
+    alert("Error al enviar el formulario");
+  }
+};
