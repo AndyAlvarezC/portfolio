@@ -69,9 +69,7 @@ const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:5000";
 export const handleSubmit = async (
   e: FormEvent,
   formData: { name: string; email: string; message: string },
-  setFormData: Dispatch<
-    SetStateAction<{ name: string; email: string; message: string }>
-  >,
+  setFormData: Dispatch<SetStateAction<{ name: string; email: string; message: string }>>,
   setButtonText: Dispatch<SetStateAction<string>>,
   setIsFormValid: Dispatch<SetStateAction<boolean>>,
   setFormSubmitted: Dispatch<SetStateAction<boolean>>,
