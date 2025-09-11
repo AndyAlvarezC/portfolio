@@ -1,12 +1,12 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
   "main": "index.ts",
   "type": "module",
   "scripts": {
     "dev": "ts-node --esm index.ts",
-    "start": "node --loader ts-node/esm index.ts"
+    "start": "node --loader ts-node/esm index.ts",
+    "build": "echo 'No build needed for backend'"
   },
   "dependencies": {
     "cors": "^2.8.5",
