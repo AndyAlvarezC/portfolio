@@ -7,17 +7,16 @@ dotenv.config();
 
 const app = express();
 
-// Configuración más específica de CORS
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || "http://localhost:5173", // URL de tu frontend
+    origin:
+      process.env.FRONTEND_URL || "https://portfolio-andy-alvarez.vercel.app/",
     credentials: true,
   })
 );
 
 app.use(express.json());
 
-// Ruta de prueba
 app.get("/", (req, res) => {
   res.json({ message: "API funcionando correctamente" });
 });
@@ -25,21 +24,18 @@ app.get("/", (req, res) => {
 app.post("/api/contact", async (req, res) => {
   const { name, email, message } = req.body;
 
-  // Validación más robusta
   if (!name?.trim() || !email?.trim() || !message?.trim()) {
     return res
       .status(400)
       .json({ success: false, message: "Todos los campos son obligatorios" });
   }
 
-  // Validación básica de email
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {
     return res.status(400).json({ success: false, message: "Email no válido" });
   }
 
   try {
-    // Verificar que las variables de entorno existan
     if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
       console.error(
         "Variables de entorno EMAIL_USER o EMAIL_PASS no configuradas"
@@ -60,7 +56,6 @@ app.post("/api/contact", async (req, res) => {
       },
     });
 
-    // Verificar la configuración del transporter
     await transporter.verify();
 
     const mailOptions = {
@@ -93,7 +88,6 @@ app.post("/api/contact", async (req, res) => {
     console.error("Error al enviar email:", error);
 
     if (error instanceof Error) {
-      // Errores específicos de nodemailer
       if (error.message.includes("Invalid login")) {
         console.error(
           "Error de autenticación: Verifica EMAIL_USER y EMAIL_PASS"

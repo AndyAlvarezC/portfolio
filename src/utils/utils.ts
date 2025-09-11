@@ -64,7 +64,7 @@ import { Dispatch, FormEvent, SetStateAction, ChangeEvent } from "react"
         setIsFormValid(allFieldsHaveValue);
     };
 
-const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "https://portfolio-z7el.vercel.app/";
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "https://portfolio-andy-alvarez-backend.vercel.app/";
 
     export const handleSubmit = async (
     e: FormEvent,
