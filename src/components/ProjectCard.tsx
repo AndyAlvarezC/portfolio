@@ -5,10 +5,11 @@ type ProjectCardProps = {
     description: string
     image: string
     link: string
+    code: string
     skills: ReactElement[]
 };
 
-const ProjectCard: FC<ProjectCardProps> = ({ title, description, image, link, skills }) => {
+const ProjectCard: FC<ProjectCardProps> = ({ title, description, image, link, code, skills }) => {
     return (
         <div className="project-card  rounded-lg overflow-hidden shadow-lg bg-gray-100 transition-all ease-in-out duration-300 hover:scale-102 cursor-pointer">
             <img src={image} alt={title} className="w-full h-48 object-cover shadow-sm" />
@@ -22,9 +23,14 @@ const ProjectCard: FC<ProjectCardProps> = ({ title, description, image, link, sk
                         </div>
                     ))}
                 </div>
+                <div className="flex flex-row gap-6">
                 <a href={link} target="_blank" rel="noopener noreferrer" className="text-blue-500 block mt-4 font-bold hover:underline">
                     View Project
                 </a>
+                <a href={code} target="_blank" rel="noopener noreferrer" className="text-blue-500 block mt-4 font-bold hover:underline">
+                    View Code
+                </a>
+                </div>
             </div>
         </div>
     )

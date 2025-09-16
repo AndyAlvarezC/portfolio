@@ -2,7 +2,7 @@ import { ReactElement, createElement } from "react"
 import { skillsData } from "../data/skillDB"
 import patienttrackerprev from "../assets/patienttrackerprev.png"
 import calculadoraprev from "../assets/calculadoraprev.png"
-import caloriasprev from "../assets/caloriasprev.png"
+import payflowprev from "../assets/payflowprev.png"
 import starbucksprev from "../assets/starbucksprev.png"
 
 type ProjectCard = {
@@ -10,6 +10,7 @@ type ProjectCard = {
     description: string
     image: string
     link: string
+    code: string
     skills: ReactElement[]
 }
 
@@ -21,10 +22,21 @@ const getSkillIcon = (skillName: string): ReactElement | undefined => {
 
 export const projects: ProjectCard[] = [
     {
+        title: "PayFlow - Fintech",
+        description: "Landing page for a fintech app",
+        image: payflowprev,
+        link: "https://payflow-fintech.vercel.app/",
+        code: "https://github.com/AndyAlvarezC/payflow",
+        skills: ["React", "Typescript", "Tailwind CSS", "Git", "Github"]
+            .map(getSkillIcon)
+            .filter((icon): icon is ReactElement => icon !== undefined)
+    },
+    {
         title: "Starbucks",
         description: "Starbucks-Inspired Landing Page",
         image: starbucksprev,
         link: "https://starbucks-idea.vercel.app/",
+        code: "https://github.com/AndyAlvarezC/starbucks",
         skills: ["Html", "Css", "Javascript", "Git", "Github"]
             .map(getSkillIcon)
             .filter((icon): icon is ReactElement => icon !== undefined)
@@ -34,15 +46,7 @@ export const projects: ProjectCard[] = [
         description: "An app to register patients and track veterinary medical records",
         image: patienttrackerprev,
         link: "https://patient-tracker-medical.vercel.app/",
-        skills: ["React", "Typescript", "Tailwind CSS", "Git", "Github"]
-            .map(getSkillIcon)
-            .filter((icon): icon is ReactElement => icon !== undefined)
-    },
-    {
-        title: "Calories Tracker",
-        description: "A simple app to track your daily calorie intake",
-        image: caloriasprev,
-        link: "https://calories-tracker-1.vercel.app/",
+        code: "https://github.com/AndyAlvarezC/patient-tracker",
         skills: ["React", "Typescript", "Tailwind CSS", "Git", "Github"]
             .map(getSkillIcon)
             .filter((icon): icon is ReactElement => icon !== undefined)
@@ -51,9 +55,10 @@ export const projects: ProjectCard[] = [
         title: "Tip and Bill Calculator",
         description: "An easy calculator to compute tips and total bills for a table",
         image: calculadoraprev,
-        link: "https://tip-and-bill-calculator-1.vercel.app/",
+        link: "https://calories-tracker-1.vercel.app/",
+        code: "https://github.com/AndyAlvarezC/tip-and-bill-calculator",
         skills: ["React", "Typescript", "Tailwind CSS", "Git", "Github"]
             .map(getSkillIcon)
             .filter((icon): icon is ReactElement => icon !== undefined)
-    }
+    },
 ]
