@@ -1,5 +1,5 @@
 import ProjectCard from "../components/ProjectCard";
-import { projects } from "../data/projects";
+import { projectsDB } from "../data/projectsDB";
 
 export default function Projects() {
     return (
@@ -7,7 +7,7 @@ export default function Projects() {
         style={{ scrollMarginTop: '80px' }}>
             <h1 className="text-5xl font-bold text-center mb-12">Projects</h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 w-full max-w-6xl px-4">
-                {projects.map((project, index) => (
+                {projectsDB.map((project, index) => (
                     <ProjectCard 
                         key={index}
                         title={project.title}

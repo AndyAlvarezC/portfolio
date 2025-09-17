@@ -1,5 +1,5 @@
 import { ElementType, FC } from "react"
-import { skillsData } from "../data/skillDB"
+import { skillsDB } from "../data/skillDB"
 
 type SkillsCardsProps = {
     title: string
@@ -21,7 +21,7 @@ export default function Cards() {
     return (
         <div className="text-white py-12 md:p-12">
             <div className="flex flex-wrap justify-center gap-6 md:gap-12">
-                {skillsData.map((skill) => (
+                {skillsDB.map((skill) => (
                 <SkillCard key={skill.title} title={skill.title} icon={skill.icon} color={skill.color} />
             ))}
             </div>

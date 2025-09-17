@@ -8,7 +8,7 @@ type SkillCard = {
 
 }
 
-export const skillsData: SkillCard[] = [
+export const skillsDB: SkillCard[] = [
     { icon: SiHtml5, color: "text-orange-500", title: "Html" },
     { icon: SiCss3, color: "text-blue-500", title: "Css" },
     { icon: SiJavascript, color: "text-yellow-500", title: "Javascript" },

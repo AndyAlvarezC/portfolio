@@ -1,5 +1,5 @@
 import { ReactElement, createElement } from "react"
-import { skillsData } from "../data/skillDB"
+import { skillsDB } from "../data/skillDB"
 import patienttrackerprev from "../assets/patienttrackerprev.png"
 import calculadoraprev from "../assets/calculadoraprev.png"
 import payflowprev from "../assets/payflowprev.png"
@@ -15,12 +15,12 @@ type ProjectCard = {
 }
 
 const getSkillIcon = (skillName: string): ReactElement | undefined => {
-    const skill = skillsData.find((s) => s.title === skillName)
+    const skill = skillsDB.find((s) => s.title === skillName)
     if (!skill) return undefined
     return createElement(skill.icon, { className: `text-2xl ${skill.color}` })
 }
 
-export const projects: ProjectCard[] = [
+export const projectsDB: ProjectCard[] = [
     {
         title: "PayFlow - Fintech",
         description: "Landing page for a fintech app",

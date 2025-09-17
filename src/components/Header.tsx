@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { handleScroll } from "../utils/utils";
+import { handleScroll } from "../utils/scroll";
 import { MdDownload } from "react-icons/md";
 import { HiMenu, HiX } from "react-icons/hi";
 

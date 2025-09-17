@@ -1,10 +1,10 @@
-import { socialLinks } from "../data/contact";
+import { socialLinksDB } from "../data/contactDB";
 import { ElementType } from "react";
 
 export default function SocialCard() {
     return (
         <div className="flex flex-col md:flex-row gap-12 md:gap-14 justify-center items-center w-full">
-            {socialLinks.map(({ name, icon: Icon, link, color }: { name: string, icon: ElementType, link: string, color: string }) => (
+            {socialLinksDB.map(({ name, icon: Icon, link, color }: { name: string, icon: ElementType, link: string, color: string }) => (
                 <a 
                     key={name} 
                     href={link} 

@@ -9,7 +9,7 @@ type SocialLinks = {
     color: string
 }
 
-export const socialLinks: SocialLinks[] = [
+export const socialLinksDB: SocialLinks[] = [
     {
         name: "GitHub",
         icon: SiGithub,

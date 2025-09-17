@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCode } from '@fortawesome/free-solid-svg-icons';
-import { handleScroll } from '../utils/utils';
+import { handleScroll } from '../utils/scroll';
 import TextAnimation from '../components/TextAnimation';
 
 export default function Home() {
