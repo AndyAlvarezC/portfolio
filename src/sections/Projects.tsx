@@ -3,6 +3,7 @@ import { projectsDB } from "../data/projectsDB";
 
 export default function Projects() {
     return (
+        <>
         <section id="projects" className="flex flex-col min-h-screen items-center justify-center py-16 w-full scroll-mt-20 mb-16"
         style={{ scrollMarginTop: '80px' }}>
             <h1 className="text-5xl font-bold text-center mb-12">Projects</h1>
@@ -29,6 +30,7 @@ export default function Projects() {
                 </a>
             </div>
         </section>  
+        </>
     );
 }
 

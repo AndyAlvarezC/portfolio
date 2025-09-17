@@ -5,6 +5,7 @@ import TextAnimation from '../components/TextAnimation';
 
 export default function Home() {
     return (
+        <>
         <section id="home" className="w-full min-h-screen flex flex-col items-center justify-center text-center gap-y-6 px-6 scroll-mt-20">
             <div className="flex flex-col items-center justify-center gap-y-1 md:gap-y-4">
                 <h1 className="flex items-center justify-center text-xl sm:text-5xl lg:text-6xl font-bold">
@@ -27,5 +28,6 @@ export default function Home() {
                 </button>
             </div>
         </section>
+        </>
     );
 }
