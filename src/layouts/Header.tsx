@@ -1,41 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { useActiveSection } from "../hooks/useActiveSection";
 import { handleScroll } from "../utils/scroll";
+import handleDownload from "../utils/handleDownload";
 import { MdDownload } from "react-icons/md";
 import { HiMenu, HiX } from "react-icons/hi";
 
 export default function Header() {
-const [activeSection, setActiveSection] = useState<string>("home");
 const [isOpen, setIsOpen] = useState(false);
-
-useEffect(() => {
-    const sections = document.querySelectorAll("section");
-    const observer = new IntersectionObserver(
-    (entries) => {
-        entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-        }
-        });
-    },
-        {
-            threshold: window.innerWidth < 768 ? 0.3 : 0.6, 
-            rootMargin: '-80px 0px 0px 0px'
-    }
-    );
-
-    sections.forEach((section) => observer.observe(section));
-
-    return () => observer.disconnect();
-}, []);
-
-const handleDownload = (): void => {
-    const link = document.createElement("a");
-    link.href = "/CV-Andy-Álvarez-Criado.pdf";
-    link.download = "CV-Andy-Álvarez-Criado.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-};
 
 return (
     <>
@@ -55,7 +26,7 @@ return (
                     <a
                     onClick={() => handleScroll(section)}
                     className={`cursor-pointer pb-1 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300 after:ease-in-out 
-                    ${activeSection === section ? "after:w-full" : "after:w-0"}
+                    ${useActiveSection() === section ? "after:w-full" : "after:w-0"}
                     hover:after:w-full`}
                     >
                     {section.charAt(0).toUpperCase() + section.slice(1)}
@@ -101,7 +72,7 @@ return (
             setIsOpen(false);
             }}
             className={`cursor-pointer ${
-            activeSection === section ? "text-blue-400" : ""
+            useActiveSection() === section ? "text-blue-400" : ""
             }`}
         >
             {section.charAt(0).toUpperCase() + section.slice(1)}
