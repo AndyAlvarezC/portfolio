@@ -3,7 +3,7 @@ import { faCode } from '@fortawesome/free-solid-svg-icons';
 
 export default function Footer() {
     return (
-        <div className="footer flex items-center text-center justify-center h-20 bg-[var(--second-bg-color)] text-white font-bold shadow text-xs md:text-lg">
+        <div className="footer mt-8 flex items-center text-center justify-center h-20 bg-[var(--second-bg-color)] text-white font-bold shadow text-xs md:text-lg">
             <p>
                 <FontAwesomeIcon icon={faCode} className="text-[var(--main-color)] pr-2" />
                 Andy Álvarez 
