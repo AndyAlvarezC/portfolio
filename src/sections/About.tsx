@@ -1,36 +1,66 @@
+import { Reveal } from "../hooks/useScrollReveal";
 
 export default function About() {
     return (
         <>
-        <section id="about" className="flex flex-col min-h-screen justify-center items-center py-26 w-full scroll-mt-20 mb-16">
-                        <div className="max-w-5xl w-full p-10 rounded-2xl text-center">
-                            <h1 className="text-5xl font-bold mb-8">About me</h1>
-                            <div className="text-xl text-left gap-8 flex flex-col items-center justify-center mt-16 mb-8">
-                            <p>
-                                👋 Hi! I'm <span className="font-bold">Andy Álvarez</span>, a <span className="font-bold">front-end developer</span> passionate about technology, 
-                                modern web design, and performance optimization. 
-                                I specialize in <span className="font-bold">React, TypeScript, and Tailwind CSS</span>, creating attractive and efficient interfaces.
-                            </p>
+        <section
+            id="about"
+            className="flex flex-col min-h-screen justify-center items-center py-26 w-full scroll-mt-20 mb-16"
+        >
+            <Reveal animation="fade-up">
+            <div className="max-w-5xl w-full p-10 rounded-2xl text-center">
+                <h1 className="text-5xl font-bold mb-8">About Me</h1>
+                <div className="text-xl text-left gap-8 flex flex-col items-center justify-center mt-16 mb-8">
+                <p>
+                    👋 Hi! I'm <span className="font-bold">Andy Álvarez</span>, a{" "}
+                    <span className="font-bold">Front-End Developer</span>{" "}
+                    specialized in{" "}
+                    <span className="font-bold">
+                    React, TypeScript, and Tailwind CSS
+                    </span>
+                    . I focus on creating modern, responsive, and optimized
+                    interfaces that enhance the digital user experience.
+                </p>
 
-                            <p>
-                                📚 I'm <span className="font-bold">self-taught</span> and always looking to improve my skills. 
-                                I've trained in <span className="font-bold">HTML, CSS, JavaScript, and Git</span>, constantly exploring new tools and methodologies 
-                                to write cleaner and more scalable code.
-                            </p>
+                <p>
+                    💻 I have strong foundations in{" "}
+                    <span className="font-bold">
+                    HTML, CSS, JavaScript, and Git
+                    </span>
+                    , and I’m passionate about turning ideas into functional and
+                    visually appealing web experiences. I enjoy building projects
+                    from scratch, exploring new tools, and following best practices
+                    in UI/UX and web performance.
+                </p>
 
-                            <p>
-                                💡 I'm driven by <span className="font-bold">continuous improvement</span> and <span className="font-bold">lifelong learning</span>. 
-                                I enjoy tackling challenges that help me refine my skills and stay up to date with the latest trends in web development.
-                            </p>
+                <p>
+                    ☁️ Currently, I’m pursuing the{" "}
+                    <span className="font-bold">
+                    AWS Cloud Practitioner Certification
+                    </span>{" "}
+                    to expand my knowledge into cloud deployment and scalable
+                    architectures—combining my frontend skills with cloud
+                    technologies.
+                </p>
 
-                            <p>
-                                🤝 I'm always open to connecting with other technology enthusiasts. 
-                                If you'd like to talk about development, share ideas, or collaborate, I'd love to hear from you!
-                            </p>
+                <p>
+                    🚀 I'm a <span className="font-bold">fast learner</span> with a
+                    self-taught background, always driven by{" "}
+                    <span className="font-bold">continuous improvement</span> and a
+                    passion for clean, maintainable code. My goal is to keep growing
+                    as a developer and contribute to projects that make a real
+                    impact.
+                </p>
 
-                            </div>
-                        </div>
+                <p>
+                    🤝 I’m always open to connecting with other tech professionals.
+                    If you'd like to share ideas, collaborate, or discuss web
+                    development and cloud technologies, feel free to reach out!
+                </p>
+                </div>
+            </div>
+            </Reveal>
         </section>
         </>
-    )
+    );
 }

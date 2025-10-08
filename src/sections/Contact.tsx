@@ -1,5 +1,6 @@
 import SocialCard from "../components/SocialCard";
 import Form from "../components/Form";
+import { Reveal } from "../hooks/useScrollReveal";
 
 export default function Contact() {
     return (
@@ -7,9 +8,14 @@ export default function Contact() {
             id="contact"
             className="flex flex-col min-h-screen items-center justify-center w-full"
         >
-            <h1 className="text-5xl font-bold mb-16">Contact</h1>
-            <SocialCard />
-            <Form />
+            
+            <div className="w-[80%] md:w-full">
+                <Reveal animation="fade-up">
+                    <h1 className="text-5xl font-bold mb-16 text-center">Contact</h1>
+                    <SocialCard />
+                    <Form />
+                </Reveal>
+            </div>
         </section>
     );
 }

@@ -37,7 +37,7 @@ export default function Form() {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center w-full max-w-5xl p-16">
+        <div className="flex flex-col items-center justify-center w-full pt-16">
         <form
             onSubmit={onSubmit}
             className="flex flex-col gap-14 w-full max-w-4xl"
