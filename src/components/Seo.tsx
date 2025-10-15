@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet";
+import { Helmet } from 'react-helmet';
 
 interface SeoProps {
   title: string;
@@ -25,15 +25,15 @@ export const Seo = ({ title, description, image, url }: SeoProps) => (
 
     <script type="application/ld+json" id="json-ld">
       {JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Person",
-        name: "Andy Álvarez",
-        url: url || "https://portfolio-andy-alvarez.vercel.app",
+        '@context': 'https://schema.org',
+        '@type': 'Person',
+        name: 'Andy Álvarez',
+        url: url || 'https://portfolio-andy-alvarez.vercel.app',
         sameAs: [
-          "https://github.com/AndyAlvarezC",
-          "https://www.linkedin.com/in/andy-alvarez-6961b4300/",
+          'https://github.com/AndyAlvarezC',
+          'https://www.linkedin.com/in/andy-alvarez-6961b4300/',
         ],
-        jobTitle: "Frontend Developer",
+        jobTitle: 'Frontend Developer',
       })}
     </script>
   </Helmet>
