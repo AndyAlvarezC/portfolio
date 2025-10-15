@@ -3,7 +3,7 @@ import { skillsData } from './skillsData';
 
 import calculatorPrev from '../assets/imagePreview/calculatorPrev.png';
 import patientTrackerPrev from '../assets/imagePreview/patientTrackerPrev.png';
-import payFlowPrev from '../assets/imagePreview/payflowPrev.png';
+import payFlowPrev from '../assets/imagePreview/payFlowPrev.png';
 import agencyFlexInnovationsPrev from '../assets/imagePreview/agencyFlexInnovationsPrev.png'
 
 type ProjectCard = {
