@@ -28,7 +28,7 @@ export default function Header() {
 
           {/* Desktop navigation links */}
           <nav className="hidden md:block">
-            <ul className="flex gap-6 font-bold items-center">
+            <ul className="flex gap-4 font-bold items-center">
               <NavLinks />
             </ul>
           </nav>
