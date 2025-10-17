@@ -2,8 +2,8 @@
 import { useState } from 'react';
 import { HiMenu, HiX } from 'react-icons/hi';
 
-import NavLinks from '../components/NavLinks';
-import Button from '../components/Button';
+import NavLinks from '../components/navigation/NavLinks';
+import Button from '../components/ui/Button';
 
 import handleScroll from '../utils/handleScroll';
 

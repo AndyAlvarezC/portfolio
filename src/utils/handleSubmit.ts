@@ -1,47 +1,52 @@
-import { Dispatch, SetStateAction, FormEvent } from "react";
-import { validateForm } from "./validation";
+import { Dispatch, SetStateAction, FormEvent } from 'react';
 
-const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "https://portfolio-andy-alvarez-backend.vercel.app";
+import { validateInputs } from '../components/ui/form/validators';
 
-    export const handleSubmit = async (
-    e: FormEvent,
-    formData: { name: string; email: string; message: string },
-    setFormData: Dispatch<SetStateAction<{ name: string; email: string; message: string }>>,
-    setButtonText: Dispatch<SetStateAction<string>>,
-    setIsFormValid: Dispatch<SetStateAction<boolean>>,
-    setFormSubmitted: Dispatch<SetStateAction<boolean>>,
-    setErrors: Function
-    ) => {
-    e.preventDefault();
-    setFormSubmitted(true);
+const BACKEND_URL =
+  import.meta.env.VITE_BACKEND_URL ||
+  'https://portfolio-andy-alvarez-backend.vercel.app';
 
-    const isValid = validateForm(formData, setErrors);
-    if (!isValid) return;
+export const handleSubmit = async (
+  e: FormEvent,
+  formData: { name: string; email: string; message: string },
+  setFormData: Dispatch<
+    SetStateAction<{ name: string; email: string; message: string }>
+  >,
+  setButtonText: Dispatch<SetStateAction<string>>,
+  setIsFormValid: Dispatch<SetStateAction<boolean>>,
+  setFormSubmitted: Dispatch<SetStateAction<boolean>>,
+  setErrors: Function
+) => {
+  e.preventDefault();
+  setFormSubmitted(true);
 
-    setButtonText("Sending...");
+  const isValid = validateInputs(formData, setErrors);
+  if (!isValid) return;
 
-    try {
-        const response = await fetch(`${BACKEND_URL}/api/contact`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-        });
+  setButtonText('Sending...');
 
-        const result = await response.json();
+  try {
+    const response = await fetch(`${BACKEND_URL}/api/contact`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
+    });
 
-        if (response.ok) {
-        setButtonText("Message Sent!");
-        setFormData({ name: "", email: "", message: "" });
-        setIsFormValid(false);
-        setFormSubmitted(false);
-        setTimeout(() => setButtonText("Send"), 2000);
-        } else {
-        setButtonText("Send");
-        alert(result.message || "Error al enviar el formulario");
-        }
-    } catch (error) {
-        console.error(error);
-        setButtonText("Send");
-        alert("Error al enviar el formulario");
+    const result = await response.json();
+
+    if (response.ok) {
+      setButtonText('Message Sent!');
+      setFormData({ name: '', email: '', message: '' });
+      setIsFormValid(false);
+      setFormSubmitted(false);
+      setTimeout(() => setButtonText('Send'), 2000);
+    } else {
+      setButtonText('Send');
+      alert(result.message || 'Error al enviar el formulario');
     }
-    };
+  } catch (error) {
+    console.error(error);
+    setButtonText('Send');
+    alert('Error al enviar el formulario');
+  }
+};

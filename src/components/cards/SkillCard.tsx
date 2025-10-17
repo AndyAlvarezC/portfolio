@@ -1,7 +1,11 @@
-import { SkillCardProps, skillsData } from '../data/skillsData';
+import { SkillCardProps, skillsCard } from '../../data/skills';
 
-
-const SkillCard: React.FC<SkillCardProps> = ({ title, size, icon: Icon, color }) => {
+const SkillCard: React.FC<SkillCardProps> = ({
+  title,
+  size,
+  icon: Icon,
+  color,
+}) => {
   return (
     <div
       className="w-full bg-[var(--second-bg-color)] text-white p-6 rounded-2xl shadow-[0px_0px_10px_rgba(0,0,0,0.5)]
@@ -17,9 +21,9 @@ export default function Cards() {
   return (
     <div className="text-white py-12 md:p-12">
       <div className="grid grid-cols-2 gap-6 md:flex md:flex-wrap md:justify-center md:gap-20">
-        {skillsData.map((skill, i) => {
+        {skillsCard.map((skill, i) => {
           const isLastOdd =
-            i === skillsData.length - 1 && skillsData.length % 2 !== 0;
+            i === skillsCard.length - 1 && skillsCard.length % 2 !== 0;
           return (
             <div
               key={skill.title}

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect } from 'react';
 
 export interface Section {
   id: string;
@@ -23,7 +23,7 @@ export const useDynamicSeo = (sections: Section[]) => {
           document.title = sec.title;
 
           const metaDesc = document.querySelector('meta[name="description"]');
-          if (metaDesc) metaDesc.setAttribute("content", sec.description);
+          if (metaDesc) metaDesc.setAttribute('content', sec.description);
 
           const ogTitle = document.querySelector('meta[property="og:title"]');
           const ogDesc = document.querySelector(
@@ -32,10 +32,10 @@ export const useDynamicSeo = (sections: Section[]) => {
           const ogUrl = document.querySelector('meta[property="og:url"]');
           const ogImage = document.querySelector('meta[property="og:image"]');
 
-          if (ogTitle) ogTitle.setAttribute("content", sec.title);
-          if (ogDesc) ogDesc.setAttribute("content", sec.description);
-          if (ogUrl && sec.url) ogUrl.setAttribute("content", sec.url);
-          if (ogImage && sec.image) ogImage.setAttribute("content", sec.image);
+          if (ogTitle) ogTitle.setAttribute('content', sec.title);
+          if (ogDesc) ogDesc.setAttribute('content', sec.description);
+          if (ogUrl && sec.url) ogUrl.setAttribute('content', sec.url);
+          if (ogImage && sec.image) ogImage.setAttribute('content', sec.image);
 
           const twTitle = document.querySelector('meta[name="twitter:title"]');
           const twDesc = document.querySelector(
@@ -43,22 +43,22 @@ export const useDynamicSeo = (sections: Section[]) => {
           );
           const twImage = document.querySelector('meta[name="twitter:image"]');
 
-          if (twTitle) twTitle.setAttribute("content", sec.title);
-          if (twDesc) twDesc.setAttribute("content", sec.description);
-          if (twImage && sec.image) twImage.setAttribute("content", sec.image);
+          if (twTitle) twTitle.setAttribute('content', sec.title);
+          if (twDesc) twDesc.setAttribute('content', sec.description);
+          if (twImage && sec.image) twImage.setAttribute('content', sec.image);
 
-          const jsonLd = document.getElementById("json-ld");
+          const jsonLd = document.getElementById('json-ld');
           if (jsonLd && sec.url) {
             jsonLd.innerHTML = JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              name: "Andy Álvarez",
+              '@context': 'https://schema.org',
+              '@type': 'Person',
+              name: 'Andy Álvarez',
               url: sec.url,
               sameAs: [
-                "https://github.com/AndyAlvarezC",
-                "https://www.linkedin.com/in/andy-alvarez-6961b4300/",
+                'https://github.com/AndyAlvarezC',
+                'https://www.linkedin.com/in/andy-alvarez-6961b4300/',
               ],
-              jobTitle: "Frontend Developer",
+              jobTitle: 'Frontend Developer',
             });
           }
 
@@ -68,7 +68,7 @@ export const useDynamicSeo = (sections: Section[]) => {
     };
 
     updateSeo();
-    window.addEventListener("scroll", updateSeo);
-    return () => window.removeEventListener("scroll", updateSeo);
+    window.addEventListener('scroll', updateSeo);
+    return () => window.removeEventListener('scroll', updateSeo);
   }, [sections]);
 };

@@ -1,15 +1,15 @@
 import { ElementType } from 'react';
-import { MdEmail } from 'react-icons/md';
 import { SiGithub, SiLinkedin } from 'react-icons/si';
+import { MdEmail } from 'react-icons/md';
 
-type SocialLinks = {
+interface SocialLinks {
   name: string;
   icon: ElementType;
   link: string;
   color: string;
-};
+}
 
-export const socialLinksData: SocialLinks[] = [
+export const socialLinks: SocialLinks[] = [
   {
     name: 'GitHub',
     icon: SiGithub,

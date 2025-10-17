@@ -1,5 +1,6 @@
-import { useEffect } from "react";
-import { initGA, logPageView } from "../analytics";
+import { useEffect } from 'react';
+
+import { initGA, logPageView } from '../services/analytics';
 
 export const useAnalytics = () => {
   useEffect(() => {

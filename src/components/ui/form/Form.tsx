@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { FaPaperPlane } from 'react-icons/fa';
+
 import FormField from './FormField';
-import { handleChange } from '../utils/handleChange';
-import { handleSubmit } from '../utils/handleSubmit';
+
+import { handleChange } from '../../../utils/handleChange';
+import { handleSubmit } from '../../../utils/handleSubmit';
 
 export default function Form() {
   const [formData, setFormData] = useState({

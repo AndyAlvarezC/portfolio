@@ -1,15 +1,13 @@
-import { ReactElement, FC } from 'react';
-
-type ProjectCardProps = {
+interface ProjectCardProps {
   title: string;
   description: string;
   image: string;
   link: string;
   code: string;
-  skills: ReactElement[];
-};
+  skills: React.ReactElement[];
+}
 
-const ProjectCard: FC<ProjectCardProps> = ({
+export const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
   description,
   image,
@@ -56,5 +54,3 @@ const ProjectCard: FC<ProjectCardProps> = ({
     </div>
   );
 };
-
-export default ProjectCard;

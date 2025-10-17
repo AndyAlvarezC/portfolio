@@ -1,5 +1,6 @@
-import SocialCard from '../components/SocialCard';
-import Form from '../components/Form';
+import SocialCard from '../components/cards/SocialCard';
+import Form from '../components/ui/form/Form';
+
 import { Reveal } from '../hooks/useScrollReveal';
 
 export default function Contact() {

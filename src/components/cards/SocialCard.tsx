@@ -1,10 +1,11 @@
-import { socialLinksData } from '../data/contactData';
 import { ElementType } from 'react';
+
+import { socialLinks } from '../../data/contact';
 
 export default function SocialCard() {
   return (
     <div className="flex flex-col md:flex-row gap-12 md:gap-14 justify-center items-center w-full">
-      {socialLinksData.map(
+      {socialLinks.map(
         ({
           name,
           icon: Icon,

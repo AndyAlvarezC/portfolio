@@ -1,20 +1,20 @@
-import Header from "./layouts/Header";
-import Home from "./sections/Home";
-import Skills from "./sections/Skills";
-import Projects from "./sections/Projects";
-import About from "./sections/About";
-import Contact from "./sections/Contact";
-import Footer from "./layouts/Footer";
+import Header from './layouts/Header';
+import Home from './sections/Home';
+import Skills from './sections/Skills';
+import Projects from './sections/Projects';
+import About from './sections/About';
+import Contact from './sections/Contact';
+import Footer from './layouts/Footer';
 
-import { useAnalytics } from "./hooks/useAnalytics";
-import { useDynamicSeo } from "./hooks/useDynamicSeo";
-import { useHashScroll } from "./hooks/useHashScroll";
-import { sectionsDB } from "./data/sectionsData";
-import { Seo } from "./components/Seo";
+import { useAnalytics } from './hooks/useAnalytics';
+import { useDynamicSeo } from './hooks/useDynamicSeo';
+import { useHashScroll } from './hooks/useHashScroll';
+import { sections } from './data/sections';
+import { Seo } from './seo/Seo';
 
 function App() {
   useAnalytics();
-  useDynamicSeo(sectionsDB);
+  useDynamicSeo(sections);
   useHashScroll();
 
   return (

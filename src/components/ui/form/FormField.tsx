@@ -1,15 +1,15 @@
-import { FC, ChangeEvent } from 'react';
-
-type FormFieldProps = {
+interface FormFieldProps {
   name: string;
   type: string;
   placeholder: string;
   value: string;
   error: string;
-  onChange: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+  onChange: (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void;
 };
 
-const FormField: FC<FormFieldProps> = ({
+const FormField: React.FC<FormFieldProps> = ({
   name,
   type,
   placeholder,

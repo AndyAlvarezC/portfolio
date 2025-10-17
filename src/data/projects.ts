@@ -1,10 +1,11 @@
 import { ReactElement, createElement } from 'react';
-import { skillsData } from './skillsData';
+
+import { skillsCard } from './skills';
 
 import calculatorPrev from '../assets/imagePreview/calculatorPrev.png';
 import patientTrackerPrev from '../assets/imagePreview/patientTrackerPrev.png';
 import payFlowPrev from '../assets/imagePreview/payFlowPrev.png';
-import agencyFlexInnovationsPrev from '../assets/imagePreview/agencyFlexInnovationsPrev.png'
+import agencyFlexInnovationsPrev from '../assets/imagePreview/agencyFlexInnovationsPrev.png';
 
 type ProjectCard = {
   title: string;
@@ -21,7 +22,7 @@ const generateSkillIcons = (
 ): ReactElement[] => {
   return skillNames
     .map((name) => {
-      const skill = skillsData.find((s) => s.title === name);
+      const skill = skillsCard.find((s) => s.title === name);
       if (!skill) return undefined;
 
       const color = overrideColorMap?.[name] ?? skill.color;

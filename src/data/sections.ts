@@ -6,7 +6,7 @@ export interface Section {
   url?: string;
 }
 
-export const sectionsDB: Section[] = [
+export const sections: Section[] = [
   {
     id: 'home',
     title: 'Home | Andy Álvarez',

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, FC, ReactNode } from "react";
+import { useEffect, useRef, useState } from 'react';
 
 interface UseScrollRevealOptions {
   threshold?: number;
@@ -7,7 +7,7 @@ interface UseScrollRevealOptions {
 }
 
 export const useScrollReveal = (options: UseScrollRevealOptions = {}) => {
-  const { threshold = 0.1, rootMargin = "0px", triggerOnce = true } = options;
+  const { threshold = 0.1, rootMargin = '0px', triggerOnce = true } = options;
 
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -39,32 +39,29 @@ export const useScrollReveal = (options: UseScrollRevealOptions = {}) => {
 };
 
 interface RevealProps {
-  children: ReactNode;
+  children: React.ReactNode;
   className?: string;
-  animation?: "fade-up" | "fade-down" | "fade-left" | "fade-right" | "zoom";
+  animation?: 'fade-up' | 'fade-down' | 'fade-left' | 'fade-right' | 'zoom';
   delay?: number;
 }
 
-export const Reveal: FC<RevealProps> = ({
+export const Reveal: React.FC<RevealProps> = ({
   children,
-  className = "",
-  animation = "fade-up",
+  className = '',
+  animation = 'fade-up',
   delay = 0,
 }) => {
   const { ref, isVisible } = useScrollReveal();
 
-  const animations: Record<
-    NonNullable<RevealProps["animation"]>,
-    string
-  > = {
-    "fade-up": "translate-y-6 opacity-0",
-    "fade-down": "-translate-y-6 opacity-0",
-    "fade-left": "translate-x-6 opacity-0",
-    "fade-right": "-translate-x-6 opacity-0",
-    zoom: "scale-95 opacity-0",
+  const animations: Record<NonNullable<RevealProps['animation']>, string> = {
+    'fade-up': 'translate-y-6 opacity-0',
+    'fade-down': '-translate-y-6 opacity-0',
+    'fade-left': 'translate-x-6 opacity-0',
+    'fade-right': '-translate-x-6 opacity-0',
+    zoom: 'scale-95 opacity-0',
   };
 
-  const visibleClass = "translate-y-0 translate-x-0 scale-100 opacity-100";
+  const visibleClass = 'translate-y-0 translate-x-0 scale-100 opacity-100';
 
   return (
     <div ref={ref} className={className}>
@@ -79,4 +76,3 @@ export const Reveal: FC<RevealProps> = ({
     </div>
   );
 };
-

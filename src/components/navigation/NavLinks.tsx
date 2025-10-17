@@ -1,10 +1,10 @@
 import { MdDownload } from 'react-icons/md';
 
-import Button from './Button';
+import Button from '../ui/Button';
 
-import { useActiveSection } from '../hooks/useActiveSection';
-import handleScroll from '../utils/handleScroll';
-import handleDownload from '../utils/handleDownload';
+import { useActiveSection } from '../../hooks/useActiveSection';
+import handleScroll from '../../utils/handleScroll';
+import handleDownload from '../../utils/handleDownload';
 
 const sections = ['home', 'skills', 'projects', 'about', 'contact'];
 
@@ -48,11 +48,11 @@ export default function NavLinks({
       ))}
 
       <Button
-        text="Download CV"
+        text="Resume"
         onClickEvent={() =>
           handleDownload(
-            '/CV_Andy_Álvarez_Criado.pdf',
-            'CV_Andy_Álvarez_Criado.pdf'
+            '/resume_Andy_Álvarez.pdf',
+            'resume_Andy_Álvarez.pdf'
           )
         }
         className="py-2 px-4 gap-1 text-lg"

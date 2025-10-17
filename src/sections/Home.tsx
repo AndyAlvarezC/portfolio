@@ -2,9 +2,9 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCode } from '@fortawesome/free-solid-svg-icons';
 
-import Section from '../components/Section';
-import TextAnimation from '../components/TextAnimation';
-import Button from '../components/Button';
+import Section from '../components/ui/Section';
+import TextAnimation from '../components/ui/TextAnimation';
+import Button from '../components/ui/Button';
 
 import { Reveal } from '../hooks/useScrollReveal';
 import handleScroll from '../utils/handleScroll';

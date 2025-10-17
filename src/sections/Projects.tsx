@@ -1,7 +1,7 @@
-import ProjectCard from '../components/ProjectCard';
-import { projectsData } from '../data/projectsData';
+import { ProjectCard } from '../components/cards/ProjectCard';
+import { projectsData } from '../data/projects';
 import { Reveal } from '../hooks/useScrollReveal';
-import Button from '../components/Button';
+import Button from '../components/ui/Button';
 
 export default function Projects() {
   return (
