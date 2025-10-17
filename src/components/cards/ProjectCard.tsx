@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next';
+
 interface ProjectCardProps {
   title: string;
   description: string;
@@ -15,6 +17,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   code,
   skills,
 }) => {
+  const { t } = useTranslation();
   return (
     <div className="project-card  rounded-lg overflow-hidden shadow-lg bg-gray-100 transition-all ease-in-out duration-300 hover:scale-102 cursor-pointer">
       <img
@@ -39,7 +42,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             rel="noopener noreferrer"
             className="text-blue-500 block mt-4 font-bold hover:underline"
           >
-            View Project
+            {t('projects.links.web')}
           </a>
           <a
             href={code}
@@ -47,7 +50,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             rel="noopener noreferrer"
             className="text-blue-500 block mt-4 font-bold hover:underline"
           >
-            View Code
+            {t('projects.links.code')}
           </a>
         </div>
       </div>

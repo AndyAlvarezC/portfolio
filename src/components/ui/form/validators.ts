@@ -1,33 +1,35 @@
-export const validators = (name: string, value: string) => {
+import { TFunction } from 'i18next';
+
+export const validators = (name: string, value: string, t: TFunction) => {
   let errorMessage = '';
   if (name === 'name' && value.trim() === '') {
-    errorMessage = 'Name is required';
+    errorMessage = t('contact.validators.name');
   }
   if (name === 'email') {
     if (value.trim() === '') {
-      errorMessage = 'Email is required';
+      errorMessage = t('contact.validators.email');
     } else if (!/\S+@\S+\.\S+/.test(value)) {
-      errorMessage = 'Please enter a valid email';
+      errorMessage = t('contact.validators.email');
     }
   }
   if (name === 'message' && value.trim() === '') {
-    errorMessage = 'Message is required';
+    errorMessage = t('contact.validators.message');
   }
   return errorMessage;
 };
 
 export const validateInputs = (
   formData: { name: string; email: string; message: string },
-  setErrors: Function
+  setErrors: Function,
+  t: TFunction
 ) => {
   const newErrors = {
-    name: validators('name', formData.name),
-    email: validators('email', formData.email),
-    message: validators('message', formData.message),
+    name: validators('name', formData.name, t),
+    email: validators('email', formData.email, t),
+    message: validators('message', formData.message, t),
   };
 
   setErrors(newErrors);
 
-  const hasErrors = Object.values(newErrors).some((error) => error !== '');
-  return !hasErrors;
+  return !Object.values(newErrors).some((error) => error !== '');
 };

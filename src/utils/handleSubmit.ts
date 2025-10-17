@@ -1,29 +1,39 @@
-import { Dispatch, SetStateAction, FormEvent } from 'react';
-
+import { FormEvent, Dispatch, SetStateAction } from 'react';
+import { TFunction } from 'i18next';
 import { validateInputs } from '../components/ui/form/validators';
 
 const BACKEND_URL =
   import.meta.env.VITE_BACKEND_URL ||
   'https://portfolio-andy-alvarez-backend.vercel.app';
 
+interface FormData {
+  name: string;
+  email: string;
+  message: string;
+}
+
 export const handleSubmit = async (
   e: FormEvent,
-  formData: { name: string; email: string; message: string },
-  setFormData: Dispatch<
-    SetStateAction<{ name: string; email: string; message: string }>
-  >,
+  formData: FormData,
+  setFormData: Dispatch<SetStateAction<FormData>>,
   setButtonText: Dispatch<SetStateAction<string>>,
   setIsFormValid: Dispatch<SetStateAction<boolean>>,
   setFormSubmitted: Dispatch<SetStateAction<boolean>>,
-  setErrors: Function
+  setErrors: Dispatch<
+    SetStateAction<{ name: string; email: string; message: string }>
+  >,
+  t: TFunction
 ) => {
   e.preventDefault();
   setFormSubmitted(true);
 
-  const isValid = validateInputs(formData, setErrors);
-  if (!isValid) return;
+  const isValid = validateInputs(formData, setErrors, t);
+  if (!isValid) {
+    setFormSubmitted(false);
+    return;
+  }
 
-  setButtonText('Sending...');
+  setButtonText(t('contact.buttonText2'));
 
   try {
     const response = await fetch(`${BACKEND_URL}/api/contact`, {
@@ -35,18 +45,20 @@ export const handleSubmit = async (
     const result = await response.json();
 
     if (response.ok) {
-      setButtonText('Message Sent!');
+      setButtonText(t('contact.buttonText1'));
       setFormData({ name: '', email: '', message: '' });
       setIsFormValid(false);
       setFormSubmitted(false);
-      setTimeout(() => setButtonText('Send'), 2000);
+      setTimeout(() => setButtonText(t('contact.button')), 2000);
     } else {
-      setButtonText('Send');
-      alert(result.message || 'Error al enviar el formulario');
+      setButtonText(t('contact.button'));
+      alert(
+        result.message || t('contact.error') || 'Error al enviar el formulario'
+      );
     }
   } catch (error) {
     console.error(error);
-    setButtonText('Send');
-    alert('Error al enviar el formulario');
+    setButtonText(t('contact.button'));
+    alert(t('contact.error') || 'Error al enviar el formulario');
   }
 };

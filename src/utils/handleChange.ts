@@ -1,5 +1,5 @@
 import { ChangeEvent, Dispatch, SetStateAction } from 'react';
-
+import { TFunction } from 'i18next';
 import { validators } from '../components/ui/form/validators';
 
 export const handleChange = (
@@ -11,14 +11,15 @@ export const handleChange = (
   errors: { name: string; email: string; message: string },
   setErrors: Function,
   formSubmitted: boolean,
-  setIsFormValid: Function
+  setIsFormValid: Function,
+  t: TFunction
 ) => {
   const { name, value } = e.target;
   const updatedFormData = { ...formData, [name]: value };
   setFormData(updatedFormData);
 
   if (formSubmitted) {
-    const errorMessage = validators(name, value);
+    const errorMessage = validators(name, value, t);
     setErrors({ ...errors, [name]: errorMessage });
   }
 

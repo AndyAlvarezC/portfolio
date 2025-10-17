@@ -7,7 +7,7 @@ interface FormFieldProps {
   onChange: (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => void;
-};
+}
 
 const FormField: React.FC<FormFieldProps> = ({
   name,

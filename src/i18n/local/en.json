@@ -7,11 +7,66 @@
     "contact": "Contact",
     "resume": "Resume"
   },
+
   "home": {
     "title": "Hello, I am Andy Álvarez",
-    "button": "¡Contrátame!"
+    "button": "Hire Me!"
   },
+
   "skills": {
     "title": "Skills"
+  },
+
+  "projects": {
+    "title": "Projects",
+    "list": {
+      "payflow": {
+        "title": "PayFlow - Fintech",
+        "description": "Landing page for a fintech app"
+      },
+      "agency": {
+        "title": "Agency Flex Innovations",
+        "description": "Landing page for a modern digital agency"
+      },
+      "patient": {
+        "title": "Patient Tracker",
+        "description": "An app to register patients and track veterinary medical records"
+      },
+      "calculator": {
+        "title": "Tip and Bill Calculator",
+        "description": "An easy calculator to compute tips and total bills for a table"
+      }
+    },
+    "links": {
+      "web": "View Project",
+      "code": "View Code"
+    },
+    "button": "View More Projects"
+  },
+
+  "about": {
+    "title": "About Me",
+    "p1": "👋 Hi! I'm <strong>Andy Álvarez</strong>, a <strong>Front-End Developer</strong> specialized in <strong>React, TypeScript, Tailwind CSS, and Next.js</strong>. I focus on building modern, responsive, and optimized interfaces that improve the digital user experience.",
+    "p2": "💻 I have strong foundations in <strong>HTML, CSS, JavaScript, Git, and frontend architecture</strong>. I enjoy turning ideas into functional, maintainable, and visually appealing web applications using clean code and best practices in UI/UX and performance.",
+    "p3": "✅ I also have experience with <strong>testing and unit testing (Vitest / Jest / React Testing Library)</strong>, ensuring code quality, reliability, and maintainability across components and features.",
+    "p4": "☁️ I’m currently preparing for the <strong>AWS Cloud Practitioner Certification</strong> to expand my knowledge into cloud deployment and scalable architectures—combining frontend development with cloud technologies.",
+    "p5": "🚀 I'm a <strong>fast learner</strong> with a self-taught background, driven by <strong>continuous improvement</strong> and a passion for clean, scalable code. My goal is to keep growing as a developer and contribute to impactful products.",
+    "p6": "🤝 I love collaborating with other tech professionals. If you'd like to share ideas, work together, or talk about web development, testing, or cloud technologies, feel free to reach out!"
+  },
+
+  "contact": {
+    "title": "Contact",
+    "name": "Name",
+    "email": "Email",
+    "message": "Write your message here...",
+    "button": "Send",
+    "buttonText1": "Message Sent!",
+    "buttonText2": "Sending...",
+    "error": "There was an error sending your message. Please try again.",
+    "validators": {
+      "name": "Name is required",
+      "email": "Please enter a valid email",
+      "message": "Message is required"
+    }
   }
 }

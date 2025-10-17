@@ -7,11 +7,66 @@
     "contact": "Contacto",
     "resume": "Currículum"
   },
+
   "home": {
     "title": "Hola, soy Andy Álvarez",
     "button": "¡Contrátame!"
   },
+
   "skills": {
     "title": "Habilidades"
+  },
+
+  "projects": {
+    "title": "Proyectos",
+    "list": {
+      "payflow": {
+        "title": "PayFlow - Fintech",
+        "description": "Landing page para una app fintech"
+      },
+      "agency": {
+        "title": "Agency Flex Innovations",
+        "description": "Landing page para una agencia digital moderna"
+      },
+      "patient": {
+        "title": "Gestor de Pacientes",
+        "description": "Una app para registrar pacientes y seguir historiales médicos veterinarios"
+      },
+      "calculator": {
+        "title": "Calculadora de Propinas y Cuenta",
+        "description": "Una calculadora sencilla para calcular propinas y el total de una mesa"
+      }
+    },
+    "links": {
+      "web": "Ver Proyecto",
+      "code": "Ver Código"
+    },
+    "button": "Ver Más Proyectos"
+  },
+
+  "about": {
+    "title": "Sobre Mí",
+    "p1": "👋 ¡Hola! Soy <strong>Andy Álvarez</strong>, un <strong>Desarrollador Front-End</strong> especializado en <strong>React, TypeScript, Tailwind CSS y Next.js</strong>. Me enfoco en construir interfaces modernas, responsivas y optimizadas que mejoren la experiencia digital del usuario.",
+    "p2": "💻 Tengo bases sólidas en <strong>HTML, CSS, JavaScript, Git y arquitectura frontend</strong>. Disfruto transformar ideas en aplicaciones web funcionales, mantenibles y visualmente atractivas usando clean code y buenas prácticas en UI/UX y rendimiento.",
+    "p3": "✅ También tengo experiencia con <strong>testing y pruebas unitarias (Vitest / Jest / React Testing Library)</strong>, asegurando la calidad, fiabilidad y mantenibilidad del código en componentes y funcionalidades.",
+    "p4": "☁️ Actualmente me estoy preparando para la certificación <strong>AWS Cloud Practitioner</strong> para ampliar mi conocimiento en despliegue en la nube y arquitecturas escalables, combinando desarrollo frontend con tecnologías cloud.",
+    "p5": "🚀 Soy un <strong>aprendiz rápido</strong> con formación autodidacta, impulsado por la <strong>mejora continua</strong> y la pasión por escribir código limpio y escalable. Mi objetivo es seguir creciendo como desarrollador y contribuir a productos de impacto.",
+    "p6": "🤝 Me encanta colaborar con otros profesionales del sector tech. Si quieres compartir ideas, trabajar juntos o hablar sobre desarrollo web, testing o tecnologías cloud, ¡no dudes en contactarme!"
+  },
+
+  "contact": {
+    "title": "Contacto",
+    "name": "Nombre",
+    "email": "Correo electrónico",
+    "message": "Escribe tu mensaje aquí...",
+    "button": "Enviar",
+    "buttonText1": "¡Mensaje enviado!",
+    "buttonText2": "Enviando...",
+    "error": "Hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo.",
+    "validators": {
+      "name": "El nombre es obligatorio",
+      "email": "Por favor, introduce un correo electrónico válido",
+      "message": "El mensaje es obligatorio"
+    }
   }
 }

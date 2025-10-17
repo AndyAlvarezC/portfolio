@@ -8,8 +8,7 @@ import payFlowPrev from '../assets/imagePreview/payFlowPrev.png';
 import agencyFlexInnovationsPrev from '../assets/imagePreview/agencyFlexInnovationsPrev.png';
 
 type ProjectCard = {
-  title: string;
-  description: string;
+  key: string;
   image: string;
   link: string;
   code: string;
@@ -33,8 +32,7 @@ const generateSkillIcons = (
 
 export const projectsData: ProjectCard[] = [
   {
-    title: 'PayFlow - Fintech',
-    description: 'Landing page for a fintech app',
+    key: 'payflow',
     image: payFlowPrev,
     link: 'https://payflow-fintech.vercel.app/',
     code: 'https://github.com/AndyAlvarezC/payflow',
@@ -44,8 +42,7 @@ export const projectsData: ProjectCard[] = [
     ),
   },
   {
-    title: 'Agency Flex Innovations',
-    description: 'Landing page for a modern digital agency',
+    key: 'agency',
     image: agencyFlexInnovationsPrev,
     link: 'https://agencyflexinnovations.com/',
     code: 'https://github.com/efeluxy/digital-agencyflexinnovations-personal',
@@ -55,9 +52,7 @@ export const projectsData: ProjectCard[] = [
     ),
   },
   {
-    title: 'Patient Tracker',
-    description:
-      'An app to register patients and track veterinary medical records',
+    key: 'patient',
     image: patientTrackerPrev,
     link: 'https://patient-tracker-medical.vercel.app/',
     code: 'https://github.com/AndyAlvarezC/patient-tracker',
@@ -67,9 +62,7 @@ export const projectsData: ProjectCard[] = [
     ),
   },
   {
-    title: 'Tip and Bill Calculator',
-    description:
-      'An easy calculator to compute tips and total bills for a table',
+    key: 'calculator',
     image: calculatorPrev,
     link: 'https://tip-and-bill-calculator-1.vercel.app/',
     code: 'https://github.com/AndyAlvarezC/tip-and-bill-calculator',

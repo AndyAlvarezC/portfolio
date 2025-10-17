@@ -1,32 +1,31 @@
-import { useState } from 'react';
+import { useState, FormEvent, ChangeEvent } from 'react';
 import { FaPaperPlane } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
 
 import FormField from './FormField';
-
 import { handleChange } from '../../../utils/handleChange';
 import { handleSubmit } from '../../../utils/handleSubmit';
 
 export default function Form() {
+  const { t } = useTranslation();
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: '',
   });
 
-  const [buttonText, setButtonText] = useState('Send');
-  const [isFormValid, setIsFormValid] = useState(false);
   const [errors, setErrors] = useState({
     name: '',
     email: '',
     message: '',
   });
+
+  const [buttonText, setButtonText] = useState(t('contact.button'));
+  const [isFormValid, setIsFormValid] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
 
-  const onSubmit = (e: React.FormEvent) => {
-    console.log('🔍 Form submit triggered');
-    console.log('🔍 Form data:', formData);
-    console.log('🔍 Is form valid:', isFormValid);
-
+  const onSubmit = (e: FormEvent) => {
     handleSubmit(
       e,
       formData,
@@ -34,7 +33,23 @@ export default function Form() {
       setButtonText,
       setIsFormValid,
       setFormSubmitted,
-      setErrors
+      setErrors,
+      t
+    );
+  };
+
+  const onChangeField = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    handleChange(
+      e,
+      formData,
+      setFormData,
+      errors,
+      setErrors,
+      formSubmitted,
+      setIsFormValid,
+      t
     );
   };
 
@@ -47,70 +62,41 @@ export default function Form() {
         <FormField
           name="name"
           type="text"
-          placeholder="Name"
+          placeholder={t('contact.name')}
           value={formData.name}
           error={errors.name}
-          onChange={(e) =>
-            handleChange(
-              e,
-              formData,
-              setFormData,
-              errors,
-              setErrors,
-              formSubmitted,
-              setIsFormValid
-            )
-          }
+          onChange={onChangeField}
         />
         <FormField
           name="email"
           type="email"
-          placeholder="Email"
+          placeholder={t('contact.email')}
           value={formData.email}
           error={errors.email}
-          onChange={(e) =>
-            handleChange(
-              e,
-              formData,
-              setFormData,
-              errors,
-              setErrors,
-              formSubmitted,
-              setIsFormValid
-            )
-          }
+          onChange={onChangeField}
         />
         <FormField
           name="message"
           type="textarea"
-          placeholder="Write your message here..."
+          placeholder={t('contact.message')}
           value={formData.message}
           error={errors.message}
-          onChange={(e) =>
-            handleChange(
-              e,
-              formData,
-              setFormData,
-              errors,
-              setErrors,
-              formSubmitted,
-              setIsFormValid
-            )
-          }
+          onChange={onChangeField}
         />
+
         <button
           type="submit"
           disabled={!isFormValid}
           className={`flex items-center justify-center w-full mx-auto font-bold text-white p-4 rounded-lg shadow-[0px_0px_20px_rgba(37,99,235,0.5)] max-w-sm 
-                            hover:shadow-[0px_0px_20px_rgba(37,99,235,1)] transition-all ease-in-out duration-300 hover:scale-105 ${
-                              buttonText === 'Message Sent!'
-                                ? 'bg-green-600 shadow-green-600 scale-105'
-                                : buttonText === 'Sending...'
-                                ? 'bg-blue-600 shadow-[0px_0px_20px_rgba(37,99,235,1)] scale-105'
-                                : isFormValid
-                                ? 'bg-blue-600 cursor-pointer'
-                                : 'bg-[var(--main-bg-color)] cursor-not-allowed'
-                            }`}
+            hover:shadow-[0px_0px_20px_rgba(37,99,235,1)] transition-all ease-in-out duration-300 hover:scale-105 ${
+              buttonText === t('contact.buttonText1')
+                ? 'bg-green-600 shadow-green-600 scale-105'
+                : buttonText === t('contact.buttonText2')
+                ? 'bg-blue-600 shadow-[0px_0px_20px_rgba(37,99,235,1)] scale-105'
+                : isFormValid
+                ? 'bg-blue-600 cursor-pointer'
+                : 'bg-[var(--main-bg-color)] cursor-not-allowed'
+            }`}
         >
           {buttonText} <FaPaperPlane className="ml-2 rotate-45" />
         </button>

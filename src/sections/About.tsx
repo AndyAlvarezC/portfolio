@@ -1,6 +1,9 @@
+import { useTranslation } from 'react-i18next';
 import { Reveal } from '../hooks/useScrollReveal';
 
 export default function About() {
+  const { t } = useTranslation();
+
   return (
     <section
       id="about"
@@ -9,63 +12,21 @@ export default function About() {
       {/* Scroll reveal animation */}
       <Reveal animation="fade-up">
         <div className="max-w-5xl w-full p-10 rounded-2xl text-center">
-          <h1 className="text-5xl font-bold mb-8">About Me</h1>
+          <h1 className="text-5xl font-bold mb-8">{t('about.title')}</h1>
 
           {/* Main content */}
           <div className="text-xl text-left gap-12 flex flex-col items-center justify-center mt-16 mb-8">
-            <p>
-              👋 Hi! I'm <span className="font-bold">Andy Álvarez</span>, a{' '}
-              <span className="font-bold">Front-End Developer</span> specialized
-              in{' '}
-              <span className="font-bold">
-                React, TypeScript, Tailwind CSS, and Next.js
-              </span>
-              . I focus on building modern, responsive, and optimized interfaces
-              that improve the digital user experience.
-            </p>
+            <p dangerouslySetInnerHTML={{ __html: t('about.p1') }} />
 
-            <p>
-              💻 I have strong foundations in{' '}
-              <span className="font-bold">
-                HTML, CSS, JavaScript, Git, and frontend architecture
-              </span>
-              . I enjoy turning ideas into functional, maintainable, and
-              visually appealing web applications using clean code and best
-              practices in UI/UX and performance.
-            </p>
+            <p dangerouslySetInnerHTML={{ __html: t('about.p2') }} />
 
-            <p>
-              ✅ I also have experience with{' '}
-              <span className="font-bold">
-                testing and unit testing (Vitest / Jest / React Testing Library)
-              </span>
-              , ensuring code quality, reliability, and maintainability across
-              components and features.
-            </p>
+            <p dangerouslySetInnerHTML={{ __html: t('about.p3') }} />
 
-            <p>
-              ☁️ I’m currently preparing for the{' '}
-              <span className="font-bold">
-                AWS Cloud Practitioner Certification
-              </span>
-              to expand my knowledge into cloud deployment and scalable
-              architectures—combining frontend development with cloud
-              technologies.
-            </p>
+            <p dangerouslySetInnerHTML={{ __html: t('about.p4') }} />
 
-            <p>
-              🚀 I'm a <span className="font-bold">fast learner</span> with a
-              self-taught background, driven by{' '}
-              <span className="font-bold">continuous improvement</span> and a
-              passion for clean, scalable code. My goal is to keep growing as a
-              developer and contribute to impactful products.
-            </p>
+            <p dangerouslySetInnerHTML={{ __html: t('about.p5') }} />
 
-            <p>
-              🤝 I love collaborating with other tech professionals. If you'd
-              like to share ideas, work together, or talk about web development,
-              testing, or cloud technologies, feel free to reach out!
-            </p>
+            <p dangerouslySetInnerHTML={{ __html: t('about.p6') }} />
           </div>
         </div>
       </Reveal>
