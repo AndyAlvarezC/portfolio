@@ -6,5 +6,12 @@
     "about": "About",
     "contact": "Contact",
     "resume": "Resume"
+  },
+  "home": {
+    "title": "Hello, I am Andy Álvarez",
+    "button": "¡Contrátame!"
+  },
+  "skills": {
+    "title": "Skills"
   }
 }

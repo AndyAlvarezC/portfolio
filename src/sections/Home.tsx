@@ -1,6 +1,7 @@
 // Imports
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCode } from '@fortawesome/free-solid-svg-icons';
+import { useTranslation } from 'react-i18next';
 
 import Section from '../components/ui/Section';
 import TextAnimation from '../components/ui/TextAnimation';
@@ -11,6 +12,8 @@ import handleScroll from '../utils/handleScroll';
 
 // Home section component
 export default function Home() {
+  const { t } = useTranslation();
+
   return (
     <Section id="home" className="px-4">
       {/* Fade-in animation wrapper */}
@@ -23,7 +26,7 @@ export default function Home() {
               icon={faCode}
               className="text-[var(--main-color)] mr-3 sm:mr-4 lg:mr-6"
             />
-            Hello, I am Andy Álvarez
+            {t('home.title')}
             {/* Right icon */}
             <FontAwesomeIcon
               icon={faCode}
@@ -40,7 +43,7 @@ export default function Home() {
         {/* Call-to-action button */}
         <div className="mt-32 xl:mt-48">
           <Button
-            text="Hire Me!"
+            text={t('home.button')}
             onClickEvent={() => handleScroll('contact')}
             className="m-auto py-3 px-8 font-bold text-lg md:py-4 md:px-16 md:text-xl transition duration-300 hover:shadow-[0_0_40px_rgba(59,130,246,0.5)] hover:scale-105"
           />
