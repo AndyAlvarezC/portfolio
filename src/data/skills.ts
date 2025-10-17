@@ -24,10 +24,10 @@ export interface SkillCardProps {
 export const skillsCard: SkillCardProps[] = [
   { icon: SiHtml5, size: 32, color: 'text-orange-500', title: 'Html' },
   { icon: SiCss3, size: 32, color: 'text-blue-500', title: 'Css' },
-  { icon: SiJavascript, size: 32, color: 'text-yellow-500', title: 'Javascript', },
+  { icon: SiJavascript, size: 32, color: 'text-yellow-500', title: 'JavaScript', },
   { icon: SiReact, size: 32, color: 'text-blue-400', title: 'React' },
   { icon: SiTailwindcss, size: 32, color: 'text-cyan-400', title: 'Tailwind CSS', },
-  { icon: SiTypescript, size: 32, color: 'text-blue-600', title: 'Typescript' },
+  { icon: SiTypescript, size: 32, color: 'text-blue-600', title: 'TypeScript' },
   { icon: SiNextdotjs, size: 32, color: 'text-white', title: 'NextJS' },
   { icon: SiGit, size: 32, color: 'text-red-500', title: 'Git' },
   { icon: FaAws, size: 32, color: 'text-[#FF9900]', title: 'AWS' },

@@ -9,7 +9,7 @@ const SkillCard: React.FC<SkillCardProps> = ({
   return (
     <div
       className="w-full bg-[var(--second-bg-color)] text-white p-6 rounded-2xl shadow-[0px_0px_10px_rgba(0,0,0,0.5)]
-            flex flex-col items-center md:w-56 md:h-40 justify-center border-2 border-[var(--main-bg-color)] cursor-pointer transition duration-300 hover:shadow-[0_0_40px_rgba(59,130,246,0.5)] hover:scale-105"
+            flex flex-col items-center md:w-56 md:h-40 justify-center border-2 border-[var(--main-bg-color)] transition duration-300 hover:shadow-[0_0_40px_rgba(59,130,246,0.5)] hover:scale-105"
     >
       <Icon size={size} className={`${color}`} />
       <h3 className="md:text-xl font-bold pt-4">{title}</h3>

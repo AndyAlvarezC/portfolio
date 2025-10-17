@@ -27,7 +27,7 @@ export default function Header() {
           </a>
 
           {/* Desktop navigation links */}
-          <nav className="hidden md:block">
+          <nav className="hidden lg:block">
             <ul className="flex gap-4 font-bold items-center">
               <NavLinks />
             </ul>
@@ -36,7 +36,7 @@ export default function Header() {
           {/* Mobile menu toggle */}
           <Button
             onClickEvent={() => setIsOpen(!isOpen)}
-            className="bg-transparent text-3xl hover:bg-transparent md:hidden"
+            className="bg-transparent text-3xl md:text-4xl hover:bg-transparent lg:hidden"
           >
             {isOpen ? (
               <HiX className="transform rotate-90 transition-transform duration-300" />
@@ -49,7 +49,7 @@ export default function Header() {
 
       {/* Mobile navigation overlay */}
       <div
-        className={`fixed top-0 left-0 w-full h-screen bg-black/95 text-white flex flex-col items-center justify-center gap-8 text-xl font-bold transform transition-transform duration-300 ease z-20 ${
+        className={`fixed top-0 left-0 w-full h-screen bg-black/95 text-white flex flex-col items-center justify-center gap-8 text-xl md:text-3xl md:gap-y-12 font-bold transform transition-transform duration-300 ease z-20 ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
