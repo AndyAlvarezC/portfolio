@@ -62,7 +62,7 @@ export default function NavLinks({
       <Button
         text={t('header.resume')}
         onClickEvent={() =>
-          handleDownload('/resume_Andy_Álvarez.pdf', 'resume_Andy_Álvarez.pdf')
+          handleDownload('/Resume_Andy_Álvarez.pdf', 'Resume_Andy_Álvarez.pdf')
         }
         className="py-2 px-4 gap-1 text-lg md:text-2xl lg:text-lg"
       >
