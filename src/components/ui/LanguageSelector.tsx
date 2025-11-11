@@ -40,7 +40,7 @@ export const LanguageSelector = () => {
       </button>
 
       {open && (
-        <div className="absolute left-1/2 top-full -translate-x-1/2 mt-2 bg-[var(--second-bg-color)] rounded-lg p-2 flex flex-col shadow-lg">
+        <div className="absolute left-1/2 top-full -translate-x-1/2 mt-2 bg-[var(--second-bg-color)] rounded-lg p-2 flex flex-col shadow-lg gap-2">
           {languages.map((lang) => (
             <button
               key={lang.code}
