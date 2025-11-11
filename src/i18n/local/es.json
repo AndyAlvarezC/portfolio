@@ -24,21 +24,21 @@
         "title": "PayFlow - Fintech",
         "description": "Landing page para una app fintech"
       },
-      "agency": {
-        "title": "Agency Flex Innovations",
-        "description": "Landing page para una agencia digital moderna"
+      "expense": {
+        "title": "Planificador de Gastos",
+        "description": "Una calculadora sencilla para calcular propinas y el total de una mesa"
       },
       "patient": {
         "title": "Gestor de Pacientes",
         "description": "Una app para registrar pacientes y seguir historiales médicos veterinarios"
       },
-      "calculator": {
-        "title": "Calculadora de Propinas y Cuenta",
-        "description": "Una calculadora sencilla para calcular propinas y el total de una mesa"
+      "agency": {
+        "title": "Agency Flex Innovations",
+        "description": "Landing page para una agencia digital moderna"
       }
     },
     "links": {
-      "web": "Ver Proyecto",
+      "web": "Ver Demo",
       "code": "Ver Código"
     },
     "button": "Ver Más Proyectos"

@@ -24,21 +24,21 @@
         "title": "PayFlow - Fintech",
         "description": "Landing page for a fintech app"
       },
-      "agency": {
-        "title": "Agency Flex Innovations",
-        "description": "Landing page for a modern digital agency"
+      "expense": {
+        "title": "Expense Tracker",
+        "description": "An easy calculator to compute tips and total bills for a table"
       },
       "patient": {
         "title": "Patient Tracker",
         "description": "An app to register patients and track veterinary medical records"
       },
-      "calculator": {
-        "title": "Tip and Bill Calculator",
-        "description": "An easy calculator to compute tips and total bills for a table"
+      "agency": {
+        "title": "Agency Flex Innovations",
+        "description": "Landing page for a modern digital agency"
       }
     },
     "links": {
-      "web": "View Project",
+      "web": "View Demo",
       "code": "View Code"
     },
     "button": "View More Projects"

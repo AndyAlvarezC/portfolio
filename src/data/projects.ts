@@ -2,10 +2,10 @@ import { ReactElement, createElement } from 'react';
 
 import { skillsCard } from './skills';
 
-import calculatorPrev from '../assets/imagePreview/calculatorPrev.png';
-import patientTrackerPrev from '../assets/imagePreview/patientTrackerPrev.png';
 import payFlowPrev from '../assets/imagePreview/payFlowPrev.png';
 import agencyFlexInnovationsPrev from '../assets/imagePreview/agencyFlexInnovationsPrev.png';
+import expenseTrackerPrev from '../assets/imagePreview/expenseTrackerPrev.png'
+import patientTrackerPrev from '../assets/imagePreview/patientTrackerPrev.png';
 
 type ProjectCard = {
   key: string;
@@ -37,17 +37,17 @@ export const projectsData: ProjectCard[] = [
     link: 'https://payflow-fintech.vercel.app/',
     code: 'https://github.com/AndyAlvarezC/payflow',
     skills: generateSkillIcons(
-      ['React', 'Typescript', 'Tailwind CSS', 'Git', 'Github', 'Vercel'],
+      ['Vite', 'React', 'TypeScript', 'Tailwind CSS', 'Git', 'Github', 'Vercel'],
       { Github: 'text-black', Vercel: 'text-black' }
     ),
   },
   {
-    key: 'agency',
-    image: agencyFlexInnovationsPrev,
-    link: 'https://agencyflexinnovations.com/',
-    code: 'https://github.com/efeluxy/digital-agencyflexinnovations-personal',
+    key: 'expense',
+    image: expenseTrackerPrev,
+    link: 'https://expense-tracker-manager-app.vercel.app/',
+    code: 'https://github.com/AndyAlvarezC/expense-tracker',
     skills: generateSkillIcons(
-      ['React', 'TypeScript', 'TailwindCSS', 'Git', 'Github', 'Vercel'],
+      ['Vite', 'React', 'TypeScript', 'Tailwind CSS', 'Git', 'Github', 'Vercel'],
       { Github: 'text-black', Vercel: 'text-black' }
     ),
   },
@@ -57,17 +57,17 @@ export const projectsData: ProjectCard[] = [
     link: 'https://patient-tracker-medical.vercel.app/',
     code: 'https://github.com/AndyAlvarezC/patient-tracker',
     skills: generateSkillIcons(
-      ['React', 'Typescript', 'Tailwind CSS', 'Git', 'Github', 'Vercel'],
+      ['Vite', 'React', 'TypeScript', 'Tailwind CSS', 'Git', 'Github', 'Vercel'],
       { Github: 'text-black', Vercel: 'text-black' }
     ),
   },
   {
-    key: 'calculator',
-    image: calculatorPrev,
-    link: 'https://tip-and-bill-calculator-1.vercel.app/',
-    code: 'https://github.com/AndyAlvarezC/tip-and-bill-calculator',
+    key: 'agency',
+    image: agencyFlexInnovationsPrev,
+    link: 'https://agencyflexinnovations.com/',
+    code: 'https://github.com/efeluxy/digital-agencyflexinnovations-personal',
     skills: generateSkillIcons(
-      ['React', 'Typescript', 'Tailwind CSS', 'Git', 'Github', 'Vercel'],
+      ['Vite','React', 'TypeScript', 'Tailwind CSS', 'Git', 'Github', 'Vercel'],
       { Github: 'text-black', Vercel: 'text-black' }
     ),
   },
