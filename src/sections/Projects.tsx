@@ -29,10 +29,14 @@ export default function Projects() {
           </div>
 
           {/* Projects grid layout */}
-          <ProjectsGrid />
+          <div>
+            <ProjectsGrid />
+          </div>
 
           {/* Button that links to more projects on GitHub */}
-          <ProjectsViewMoreButton />
+          <div>
+            <ProjectsViewMoreButton />
+          </div>
         </div>
       </Reveal>
     </section>

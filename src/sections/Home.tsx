@@ -1,4 +1,3 @@
-// Imports
 import Section from '../components/ui/Section';
 import HomeBackground from '../components/home/ui/HomeBackground';
 
@@ -17,7 +16,9 @@ export default function Home() {
       className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden text-center px-4"
     >
       {/* Premium blurred backgrounds */}
-      <HomeBackground />
+      <div>
+        <HomeBackground />
+      </div>
 
       {/* Fade-in animation */}
       <Reveal animation="fade-up">

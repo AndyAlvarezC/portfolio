@@ -1,13 +1,12 @@
-import { useState, FormEvent, ChangeEvent } from 'react';
+import { useState, FormEvent, ChangeEvent, useEffect } from 'react';
 import { FaPaperPlane } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
-
 import ContactFormField from './ContactFormField';
 import { handleChange } from '../../../utils/handleChange';
 import { handleSubmit } from '../../../utils/handleSubmit';
 
 export default function ContactForm() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const [formData, setFormData] = useState({
     name: '',
@@ -21,9 +20,13 @@ export default function ContactForm() {
     message: '',
   });
 
-  const [buttonText, setButtonText] = useState(t('contact.button'));
+  const [buttonText, setButtonText] = useState(t('contact.buttonText'));
   const [isFormValid, setIsFormValid] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
+
+  useEffect(() => {
+    setButtonText(t('contact.buttonText'));
+  }, [i18n.language, t]);
 
   const onSubmit = (e: FormEvent) => {
     handleSubmit(
@@ -98,7 +101,7 @@ export default function ContactForm() {
           }`}
         >
           {/* Shine effect for enabled button */}
-          {isFormValid && buttonText === t('contact.button') && (
+          {isFormValid && buttonText === t('contact.buttonText2') && (
             <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-linear-to-r from-transparent via-white/20 to-transparent" />
           )}
 
@@ -106,7 +109,7 @@ export default function ContactForm() {
             {buttonText}
             <FaPaperPlane
               className={`transition-transform duration-300 ${
-                isFormValid && buttonText === t('contact.button')
+                isFormValid && buttonText === t('contact.buttonText')
                   ? 'group-hover:translate-x-1 group-hover:-translate-y-1'
                   : ''
               }`}

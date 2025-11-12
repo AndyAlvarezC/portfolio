@@ -100,7 +100,7 @@
     "name": "Nombre",
     "email": "Correo electrónico",
     "message": "Escribe tu mensaje aquí...",
-    "button": "Enviar",
+    "buttonText": "Enviar",
     "buttonText1": "¡Mensaje enviado!",
     "buttonText2": "Enviando...",
     "error": "Hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo.",
@@ -109,5 +109,9 @@
       "email": "Por favor, introduce un correo electrónico válido",
       "message": "El mensaje es obligatorio"
     }
+  },
+  
+  "footer": {
+    "text": "Diseñado & desarrollado por mí"
   }
 }

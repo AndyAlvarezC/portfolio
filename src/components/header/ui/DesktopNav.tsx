@@ -1,4 +1,4 @@
-import NavLinks from "../../navigation/NavLinks";
+import NavLinks from "./NavLinks";
 
 export default function DesktopNav() {
   return (

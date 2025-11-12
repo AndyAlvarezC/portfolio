@@ -1,7 +1,8 @@
 import { useTranslation } from 'react-i18next';
+
+import { Reveal } from '../hooks/useScrollReveal';
 import ContactSocialCard from '../components/contact/ui/ContactSocialCard';
 import ContactForm from '../components/contact/ui/ContactForm';
-import { Reveal } from '../hooks/useScrollReveal';
 import ContactBackground from '../components/contact/ui/ContactBackground';
 
 export default function Contact() {
@@ -12,7 +13,9 @@ export default function Contact() {
       className="flex flex-col min-h-screen items-center justify-center w-full relative overflow-hidden py-20"
     >
       {/* Gradient background decorations */}
-      <ContactBackground />
+      <div>
+        <ContactBackground />
+      </div>
       
       <div className="w-[90%] lg:w-full max-w-6xl relative z-10">
         <Reveal animation="fade-up">
@@ -23,8 +26,10 @@ export default function Contact() {
             </h1>
           </div>
           
-          <ContactSocialCard />
-          <ContactForm />
+          <div>
+            <ContactSocialCard />
+            <ContactForm />
+          </div>
         </Reveal>
       </div>
     </section>

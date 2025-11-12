@@ -100,7 +100,7 @@
     "name": "Name",
     "email": "Email",
     "message": "Write your message here...",
-    "button": "Send",
+    "buttonText": "Send",
     "buttonText1": "Message sent!",
     "buttonText2": "Sending...",
     "error": "There was an error sending your message. Please try again.",
@@ -109,5 +109,9 @@
       "email": "Please enter a valid email",
       "message": "Message is required"
     }
+  },
+
+  "footer": {
+    "text": "Designed & Developed by me"
   }
 }

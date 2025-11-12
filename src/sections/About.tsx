@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+
 import { Reveal } from '../hooks/useScrollReveal';
 import AboutBackground from '../components/about/ui/AboutBackground';
 
@@ -11,7 +12,9 @@ export default function About() {
       className="flex flex-col min-h-screen justify-center items-center w-full scroll-mt-20 relative overflow-hidden"
     >
       {/* Soft gradient backgrounds */}
-      <AboutBackground />
+      <div>
+        <AboutBackground />
+      </div>
 
       <Reveal animation="fade-up">
         <div className="max-w-5xl w-full px-10 md:px-16 py-20 rounded-3xl text-center relative z-10 shadow-2xl">

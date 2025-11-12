@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+
 import SkillsGrid from '../components/skills/ui/SkillsGrid';
 import SkillsBackground from '../components/skills/ui/SkillsBackground';
 
@@ -19,7 +20,9 @@ export default function Skills() {
               {t('skills.title')}
             </h1>
           </div>
-          <SkillsGrid />
+          <div>
+            <SkillsGrid />
+          </div>
         </div>
       </Reveal>
     </section>

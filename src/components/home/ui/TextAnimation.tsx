@@ -34,7 +34,7 @@ export default function TextAnimation() {
         {textToAnimate}
       </span>
 
-      <span className="absolute left-0 top-0 text-[var(--main-color)] text-xl sm:text-4xl lg:text-5xl font-bold">
+      <span className="absolute left-0 top-0 text-xl sm:text-4xl lg:text-5xl font-bold bg-linear-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
         {text}
         <span className="animate-pulse text-white font-light">|</span>
       </span>

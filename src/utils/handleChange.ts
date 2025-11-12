@@ -1,6 +1,6 @@
 import { ChangeEvent, Dispatch, SetStateAction } from 'react';
 import { TFunction } from 'i18next';
-import { validators } from '../components/ui/form/validators';
+import { validators } from '../components/contact/validators';
 
 export const handleChange = (
   e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,

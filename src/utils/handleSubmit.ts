@@ -1,6 +1,6 @@
 import { FormEvent, Dispatch, SetStateAction } from 'react';
 import { TFunction } from 'i18next';
-import { validateInputs } from '../components/ui/form/validators';
+import { validateInputs } from '../components/contact/validators';
 
 const BACKEND_URL =
   import.meta.env.VITE_BACKEND_URL ||
@@ -49,16 +49,16 @@ export const handleSubmit = async (
       setFormData({ name: '', email: '', message: '' });
       setIsFormValid(false);
       setFormSubmitted(false);
-      setTimeout(() => setButtonText(t('contact.button')), 2000);
+      setTimeout(() => setButtonText(t('contact.buttonText')), 2000);
     } else {
-      setButtonText(t('contact.button'));
+      setButtonText(t('contact.buttonText'));
       alert(
-        result.message || t('contact.error') || 'Error al enviar el formulario'
+        result.message || t('contact.error')
       );
     }
   } catch (error) {
     console.error(error);
     setButtonText(t('contact.button'));
-    alert(t('contact.error') || 'Error al enviar el formulario');
+    alert(t('contact.error'));
   }
 };

@@ -9,7 +9,7 @@ import Footer from './layouts/Footer';
 import { useAnalytics } from './hooks/useAnalytics';
 import { useDynamicSeo } from './hooks/useDynamicSeo';
 import { useHashScroll } from './hooks/useHashScroll';
-import { sections } from './data/sections';
+import { sections } from './data/sectionsData';
 import { Seo } from './seo/Seo';
 
 function App() {

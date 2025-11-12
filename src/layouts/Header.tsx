@@ -30,9 +30,9 @@ export default function Header() {
             className="bg-transparent text-3xl md:text-4xl hover:bg-transparent text-gray-200 lg:hidden cursor-pointer"
           >
             {isOpen ? (
-              <HiX className="transform rotate-90 transition-transform duration-300" />
+              <HiX className="transform w-5 h-5 rotate-90 transition-transform duration-300" />
             ) : (
-              <HiMenu className="transform rotate-0 transition-transform duration-300" />
+              <HiMenu className="transform w-5 h-5 rotate-0 transition-transform duration-300" />
             )}
           </Button>
         </div>

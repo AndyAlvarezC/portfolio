@@ -5,11 +5,16 @@ export const useActiveSection = () => {
 
   useEffect(() => {
     const sections = document.querySelectorAll('section');
+    let timeout: number;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
+            clearTimeout(timeout);
+            timeout = window.setTimeout(() => {
+              setActiveSection(entry.target.id);
+            }, 100);
           }
         });
       },
@@ -20,7 +25,11 @@ export const useActiveSection = () => {
     );
 
     sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
+
+    return () => {
+      observer.disconnect();
+      clearTimeout(timeout);
+    };
   }, []);
 
   return activeSection;

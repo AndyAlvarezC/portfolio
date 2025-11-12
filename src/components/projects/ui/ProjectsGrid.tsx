@@ -1,4 +1,4 @@
-import { projectsData } from "../../../data/projects";
+import { projectsData } from "../data/projectsData";
 import { ProjectCard } from "./projectCard/ProjectCard";
 import { useTranslation } from "react-i18next";
 

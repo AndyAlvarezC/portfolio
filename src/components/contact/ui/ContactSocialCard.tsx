@@ -1,5 +1,5 @@
 import { ElementType } from 'react';
-import { socialLinks } from '../../../data/contact';
+import { socialLinks } from '../data/contactData';
 
 export default function ContactSocialCard() {
   return (

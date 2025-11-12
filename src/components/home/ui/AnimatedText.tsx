@@ -1,4 +1,4 @@
-import TextAnimation from "../../ui/TextAnimation"
+import TextAnimation from "./TextAnimation"
 
 export default function AnimatedText() {
   return (
