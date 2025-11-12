@@ -14,24 +14,24 @@ import {
 } from 'react-icons/si';
 import { FaAws } from 'react-icons/fa';
 
-export interface SkillCardProps {
+export interface SkillCardsProps {
   icon: ElementType;
   size: number;
   color: string;
   title: string;
 }
 
-export const skillsCard: SkillCardProps[] = [
-  { icon: SiHtml5, size: 32, color: 'text-orange-500', title: 'Html' },
-  { icon: SiCss3, size: 32, color: 'text-blue-500', title: 'Css' },
+export const skillsData: SkillCardsProps[] = [
+  { icon: SiHtml5, size: 32, color: 'text-orange-500', title: 'HTML' },
+  { icon: SiCss3, size: 32, color: 'text-blue-500', title: 'CSS' },
   { icon: SiJavascript, size: 32, color: 'text-yellow-500', title: 'JavaScript' },
+  { icon: SiTypescript, size: 32, color: 'text-blue-600', title: 'TypeScript' },
+  { icon: SiVite, size: 32, color: 'text-[#646CFF]', title: 'Vite' },
   { icon: SiReact, size: 32, color: 'text-blue-400', title: 'React' },
   { icon: SiTailwindcss, size: 32, color: 'text-cyan-400', title: 'Tailwind CSS' },
-  { icon: SiTypescript, size: 32, color: 'text-blue-600', title: 'TypeScript' },
-  { icon: SiGit, size: 32, color: 'text-red-500', title: 'Git' },
   { icon: FaAws, size: 32, color: 'text-[#FF9900]', title: 'AWS' },
-  { icon: SiGithub, size: 32, color: 'text-white', title: 'Github' },
+  { icon: SiGit, size: 32, color: 'text-red-500', title: 'Git' },
+  { icon: SiGithub, size: 32, color: 'text-black', title: 'Github' },
+  { icon: SiVercel, size: 32, color: 'text-black', title: 'Vercel' },
   { icon: SiFigma, size: 32, color: 'text-[#F24E1E]', title: 'Figma' },
-  { icon: SiVercel, size: 32, color: 'text-white', title: 'Vercel' },
-  { icon: SiVite, size: 32, color: 'text-[#646CFF]', title: 'Vite' },
 ];

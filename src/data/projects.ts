@@ -1,10 +1,9 @@
 import { ReactElement, createElement } from 'react';
-
-import { skillsCard } from './skills';
+import { skillsData } from '../components/skills/data/skillsData';
 
 import payFlowPrev from '../assets/imagePreview/payFlowPrev.png';
 import agencyFlexInnovationsPrev from '../assets/imagePreview/agencyFlexInnovationsPrev.png';
-import expenseTrackerPrev from '../assets/imagePreview/expenseTrackerPrev.png'
+import expenseTrackerPrev from '../assets/imagePreview/expenseTrackerPrev.png';
 import patientTrackerPrev from '../assets/imagePreview/patientTrackerPrev.png';
 
 type ProjectCard = {
@@ -15,13 +14,14 @@ type ProjectCard = {
   skills: ReactElement[];
 };
 
+// Generate skill icons from names
 const generateSkillIcons = (
   skillNames: string[],
   overrideColorMap?: Record<string, string>
 ): ReactElement[] => {
   return skillNames
     .map((name) => {
-      const skill = skillsCard.find((s) => s.title === name);
+      const skill = skillsData.find((s) => s.title === name);
       if (!skill) return undefined;
 
       const color = overrideColorMap?.[name] ?? skill.color;
@@ -67,7 +67,7 @@ export const projectsData: ProjectCard[] = [
     link: 'https://agencyflexinnovations.com/',
     code: 'https://github.com/efeluxy/digital-agencyflexinnovations-personal',
     skills: generateSkillIcons(
-      ['Vite','React', 'TypeScript', 'Tailwind CSS', 'Git', 'Github', 'Vercel'],
+      ['Vite', 'React', 'TypeScript', 'Tailwind CSS', 'Git', 'Github', 'Vercel'],
       { Github: 'text-black', Vercel: 'text-black' }
     ),
   },

@@ -19,7 +19,7 @@ export const socialLinks: SocialLinks[] = [
   {
     name: 'LinkedIn',
     icon: SiLinkedin,
-    link: 'https://www.linkedin.com/in/andy-alvarez-6961b4300/',
+    link: 'https://www.linkedin.com/in/andyalvarezc',
     color: 'text-[#0A66C2]',
   },
   {

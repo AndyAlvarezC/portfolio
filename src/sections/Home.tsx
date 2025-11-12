@@ -1,52 +1,35 @@
 // Imports
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCode } from '@fortawesome/free-solid-svg-icons';
-import { useTranslation } from 'react-i18next';
-
 import Section from '../components/ui/Section';
-import TextAnimation from '../components/ui/TextAnimation';
-import Button from '../components/ui/Button';
+import HomeBackground from '../components/home/ui/HomeBackground';
 
 import { Reveal } from '../hooks/useScrollReveal';
-import handleScroll from '../utils/handleScroll';
+import MainTitle from '../components/home/ui/MainTitle';
+import AnimatedText from '../components/home/ui/AnimatedText';
+import HireButton from '../components/home/ui/HireButton';
+
 
 // Home section component
 export default function Home() {
-  const { t } = useTranslation();
 
   return (
-    <Section id="home" className="px-4">
-      {/* Fade-in animation wrapper */}
+    <Section
+      id="home"
+      className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden text-center px-4"
+    >
+      {/* Premium blurred backgrounds */}
+      <HomeBackground />
+
+      {/* Fade-in animation */}
       <Reveal animation="fade-up">
-        {/* Title and animated subtitle */}
-        <div className="flex flex-col items-center justify-center md:gap-y-4">
-          <h1 className="flex items-center justify-center text-2xl md:text-5xl lg:text-6xl font-bold">
-            {/* Left icon */}
-            <FontAwesomeIcon
-              icon={faCode}
-              className="text-[var(--main-color)] mr-3 sm:mr-4 lg:mr-6"
-            />
-            {t('home.title')}
-            {/* Right icon */}
-            <FontAwesomeIcon
-              icon={faCode}
-              className="text-[var(--main-color)] ml-3 sm:ml-4 lg:ml-6"
-            />
-          </h1>
+        <div className="relative z-10 flex flex-col items-center justify-center gap-y-6">
+          {/* Main title with gradient */}
+          <MainTitle />
 
           {/* Animated text under the title */}
-          <h3 className="pt-4">
-            <TextAnimation />
-          </h3>
-        </div>
+          <AnimatedText />
 
-        {/* Call-to-action button */}
-        <div className="mt-32 xl:mt-48">
-          <Button
-            text={t('home.button')}
-            onClickEvent={() => handleScroll('contact')}
-            className="m-auto py-3 px-8 font-bold text-lg md:py-4 md:px-16 md:text-xl transition duration-300 hover:shadow-[0_0_40px_rgba(59,130,246,0.5)] hover:scale-105"
-          />
+          {/* Primary button with glow effect */}
+          <HireButton />
         </div>
       </Reveal>
     </Section>

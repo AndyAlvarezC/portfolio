@@ -2,11 +2,11 @@ import { useState, FormEvent, ChangeEvent } from 'react';
 import { FaPaperPlane } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 
-import FormField from './FormField';
+import ContactFormField from './ContactFormField';
 import { handleChange } from '../../../utils/handleChange';
 import { handleSubmit } from '../../../utils/handleSubmit';
 
-export default function Form() {
+export default function ContactForm() {
   const { t } = useTranslation();
 
   const [formData, setFormData] = useState({
@@ -59,7 +59,7 @@ export default function Form() {
         onSubmit={onSubmit}
         className="flex flex-col gap-14 w-full max-w-4xl"
       >
-        <FormField
+        <ContactFormField
           name="name"
           type="text"
           placeholder={t('contact.name')}
@@ -67,7 +67,7 @@ export default function Form() {
           error={errors.name}
           onChange={onChangeField}
         />
-        <FormField
+        <ContactFormField
           name="email"
           type="email"
           placeholder={t('contact.email')}
@@ -75,7 +75,7 @@ export default function Form() {
           error={errors.email}
           onChange={onChangeField}
         />
-        <FormField
+        <ContactFormField
           name="message"
           type="textarea"
           placeholder={t('contact.message')}
@@ -87,18 +87,31 @@ export default function Form() {
         <button
           type="submit"
           disabled={!isFormValid}
-          className={`flex items-center justify-center w-full mx-auto font-bold text-white p-4 rounded-lg shadow-[0px_0px_20px_rgba(37,99,235,0.5)] max-w-sm 
-            hover:shadow-[0px_0px_20px_rgba(37,99,235,1)] transition-all ease-in-out duration-300 hover:scale-105 ${
-              buttonText === t('contact.buttonText1')
-                ? 'bg-green-600 shadow-green-600 scale-105'
-                : buttonText === t('contact.buttonText2')
-                ? 'bg-blue-600 shadow-[0px_0px_20px_rgba(37,99,235,1)] scale-105'
-                : isFormValid
-                ? 'bg-blue-600 cursor-pointer'
-                : 'bg-[var(--main-bg-color)] cursor-not-allowed'
-            }`}
+          className={`group relative flex items-center justify-center w-full mx-auto font-bold text-white py-5 px-8 rounded-2xl max-w-md overflow-hidden transition-all duration-500 ${
+            buttonText === t('contact.buttonText1')
+              ? 'bg-linear-to-r from-green-600 to-emerald-600 shadow-xl shadow-green-500/50 scale-105'
+              : buttonText === t('contact.buttonText2')
+              ? 'bg-linear-to-r from-blue-600 to-indigo-600 shadow-xl shadow-blue-500/50 scale-105'
+              : isFormValid
+              ? 'bg-linear-to-r from-blue-600 via-indigo-600 to-purple-600 cursor-pointer hover:scale-105 hover:shadow-2xl hover:shadow-indigo-500/50'
+              : 'bg-gray-300 cursor-not-allowed opacity-60'
+          }`}
         >
-          {buttonText} <FaPaperPlane className="ml-2 rotate-45" />
+          {/* Shine effect for enabled button */}
+          {isFormValid && buttonText === t('contact.button') && (
+            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-linear-to-r from-transparent via-white/20 to-transparent" />
+          )}
+
+          <span className="relative z-10 flex items-center gap-3">
+            {buttonText}
+            <FaPaperPlane
+              className={`transition-transform duration-300 ${
+                isFormValid && buttonText === t('contact.button')
+                  ? 'group-hover:translate-x-1 group-hover:-translate-y-1'
+                  : ''
+              }`}
+            />
+          </span>
         </button>
       </form>
     </div>

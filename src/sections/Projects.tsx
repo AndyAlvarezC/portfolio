@@ -1,7 +1,8 @@
-import { ProjectCard } from '../components/cards/ProjectCard';
-import { projectsData } from '../data/projects';
+import ProjectsBackground from '../components/projects/ui/ProjectsBackground';
+import ProjectsGrid from '../components/projects/ui/ProjectsGrid';
+import ProjectsViewMoreButton from '../components/projects/ui/ProjectsViewMoreButton';
+
 import { Reveal } from '../hooks/useScrollReveal';
-import Button from '../components/ui/Button';
 import { useTranslation } from 'react-i18next';
 
 export default function Projects() {
@@ -10,36 +11,28 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="flex flex-col min-h-screen items-center justify-center py-16 w-full scroll-mt-20 mb-16"
+      className="flex flex-col min-h-screen items-center justify-center py-20 w-full scroll-mt-20 relative overflow-hidden"
       style={{ scrollMarginTop: '80px' }}
     >
+      {/* Gradient background decorations */}
+      <ProjectsBackground />
+
+      {/* Fade-up animation wrapper for smooth appearance */}
       <Reveal animation="fade-up">
-        <h1 className="text-5xl font-bold text-center mb-12">
-          {t('projects.title')}
-        </h1>
+        <div className="max-w-7xl w-full md:p-10 rounded-2xl text-center relative z-10">
+          
+          {/* Section title with gradient text styling */}
+          <div className="mb-16">
+            <h1 className="text-5xl md:text-6xl font-bold bg-linear-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent mb-4">
+              {t('projects.title')}
+            </h1>
+          </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-20 w-full max-w-7xl px-4">
-          {projectsData.map((project) => (
-            <ProjectCard
-              key={project.key}
-              title={t(`projects.list.${project.key}.title`)}
-              description={t(`projects.list.${project.key}.description`)}
-              image={project.image}
-              link={project.link}
-              code={project.code}
-              skills={project.skills}
-            />
-          ))}
-        </div>
+          {/* Projects grid layout */}
+          <ProjectsGrid />
 
-        <div className="m-auto pt-16 items-center justify-center text-center">
-          <Button
-            onClickEvent={() =>
-              window.open('https://github.com/AndyAlvarezC?tab=repositories')
-            }
-            text={t('projects.button')}
-            className="m-auto py-4 px-8 md:py-6 md:px-16 text-xl transition duration-300 hover:shadow-[0_0_40px_rgba(59,130,246,0.5)] hover:scale-105"
-          />
+          {/* Button that links to more projects on GitHub */}
+          <ProjectsViewMoreButton />
         </div>
       </Reveal>
     </section>
