@@ -8,8 +8,8 @@ const SkillsGrid: React.FC = () => {
         {skillsData.map((skill, i) => (
           <div
             key={skill.title}
-            className="flex justify-center"
-            style={{ animation: `fadeInUp 0.6s ease-out ${i * 0.1}s both` }}
+            className="flex justify-center animate-fadeInUp"
+            style={{ animationDelay: `${i * 0.1}s` }}
           >
             <SkillCard {...skill} />
           </div>
@@ -18,9 +18,10 @@ const SkillsGrid: React.FC = () => {
 
       <style>{`
         @keyframes fadeInUp {
-          from { opacity: 0; transform: translateY(30px); }
+          from { opacity: 0; transform: translateY(20px); }
           to { opacity: 1; transform: translateY(0); }
         }
+        .animate-fadeInUp { animation: fadeInUp 0.5s ease-out both; }
       `}</style>
     </div>
   );
