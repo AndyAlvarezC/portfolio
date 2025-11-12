@@ -15,11 +15,6 @@ export default function ProjectsGrid() {
             title={t(`projects.list.${project.key}.title`)}
             description={t(`projects.list.${project.key}.description`)}
             extended={t(`projects.list.${project.key}.extended`)}
-            features={
-              t(`projects.list.${project.key}.features`, {
-                returnObjects: true,
-              }) as string[]
-            }
             image={project.image}
             link={project.link}
             code={project.code}
