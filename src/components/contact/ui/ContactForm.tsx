@@ -1,4 +1,4 @@
-import { useState, useEffect, FormEvent, ChangeEvent, useCallback } from 'react';
+import { useState, useEffect, FormEvent, ChangeEvent, useCallback, useRef, useMemo } from 'react';
 import { FaPaperPlane } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 import ContactFormField from './ContactFormField';
@@ -15,38 +15,32 @@ export default function ContactForm() {
   const [isFormValid, setIsFormValid] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
 
-  const debouncedChange = useCallback(
+  // Debounced input handler
+  const debouncedChange = useRef(
     debounce((e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       handleChange(e, formData, setFormData, errors, setErrors, formSubmitted, setIsFormValid, t);
-    }, 150),
-    [formData, errors, formSubmitted, t]
-  );
+    }, 150)
+  ).current;
 
-  const onChangeField = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const onChangeField = useCallback((e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     e.persist();
     debouncedChange(e);
-  };
+  }, [debouncedChange]);
 
   const onSubmit = (e: FormEvent) => {
-    handleSubmit(
-      e,
-      formData,
-      setFormData,
-      setButtonText,
-      setIsFormValid,
-      setFormSubmitted,
-      setErrors,
-      t
-    );
+    handleSubmit(e, formData, setFormData, setButtonText, setIsFormValid, setFormSubmitted, setErrors, t);
   };
 
   useEffect(() => {
     setButtonText(t('contact.buttonText'));
   }, [t]);
 
-  const buttonClass = isFormValid
-    ? 'bg-linear-to-r from-blue-600 via-indigo-600 to-purple-600 cursor-pointer hover:scale-105 hover:shadow-2xl hover:shadow-indigo-500/50'
-    : 'bg-gray-300 cursor-not-allowed opacity-60';
+  const buttonClass = useMemo(() =>
+    isFormValid
+      ? 'bg-linear-to-r from-blue-600 via-indigo-600 to-purple-600 cursor-pointer hover:scale-105 hover:shadow-2xl hover:shadow-indigo-500/50'
+      : 'bg-gray-300 cursor-not-allowed opacity-60',
+    [isFormValid]
+  );
 
   return (
     <div className="flex flex-col items-center justify-center w-full pt-16">
@@ -81,19 +75,9 @@ export default function ContactForm() {
           disabled={!isFormValid}
           className={`group relative flex items-center justify-center w-full mx-auto font-bold text-white py-5 px-8 rounded-2xl max-w-md overflow-hidden transition-all duration-500 ${buttonClass}`}
         >
-          {isFormValid && buttonText === t('contact.buttonText2') && (
-            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-linear-to-r from-transparent via-white/20 to-transparent" />
-          )}
-
           <span className="relative z-10 flex items-center gap-3">
             {buttonText}
-            <FaPaperPlane
-              className={`transition-transform duration-300 ${
-                isFormValid && buttonText === t('contact.buttonText')
-                  ? 'group-hover:translate-x-1 group-hover:-translate-y-1'
-                  : ''
-              }`}
-            />
+            <FaPaperPlane className={`transition-transform duration-300 ${isFormValid ? 'group-hover:translate-x-1 group-hover:-translate-y-1' : ''}`} />
           </span>
         </button>
       </form>

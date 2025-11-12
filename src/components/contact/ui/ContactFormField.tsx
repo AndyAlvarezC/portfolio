@@ -1,4 +1,4 @@
-import { ChangeEvent } from 'react';
+import { ChangeEvent, memo, useMemo } from 'react';
 
 interface FormFieldProps {
   name: string;
@@ -9,7 +9,7 @@ interface FormFieldProps {
   onChange: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
 }
 
-export default function ContactFormField({
+function ContactFormField({
   name,
   type,
   placeholder,
@@ -17,11 +17,7 @@ export default function ContactFormField({
   error,
   onChange,
 }: FormFieldProps) {
-  const baseClasses = `w-full px-6 py-4 rounded-xl bg-white/20 backdrop-blur-md border-2 transition-all duration-300 outline-none font-medium ${
-    error
-      ? 'border-red-400 focus:border-red-500 focus:ring-4 focus:ring-red-500/20'
-      : 'border-gray-200 focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/20'
-  } placeholder:text-gray-400`;
+  const baseClasses = useMemo(() => `w-full px-6 py-4 rounded-xl bg-white/20 backdrop-blur-md border-2 transition-all duration-300 outline-none font-medium ${error ? 'border-red-400 focus:border-red-500 focus:ring-4 focus:ring-red-500/20' : 'border-gray-200 focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/20'} placeholder:text-gray-400`, [error]);
 
   return (
     <div className="relative group">
@@ -45,7 +41,6 @@ export default function ContactFormField({
         />
       )}
 
-      {/* Error message */}
       {error && (
         <div className="absolute -bottom-6 left-0 flex items-center gap-2 text-red-500 text-sm font-semibold animate-in slide-in-from-top-2 duration-300">
           <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
@@ -57,3 +52,5 @@ export default function ContactFormField({
     </div>
   );
 }
+
+export default memo(ContactFormField);
