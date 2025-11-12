@@ -66,7 +66,7 @@ export const Reveal: React.FC<RevealProps> = ({
   return (
     <div ref={ref} className={className}>
       <div
-        className={`transition-all duration-700 ease-out ${
+        className={`transition-opacity duration-700 ease-out ${
           isVisible ? visibleClass : animations[animation]
         }`}
         style={{ transitionDelay: `${delay}ms` }}
