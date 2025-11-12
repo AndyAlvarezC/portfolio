@@ -14,14 +14,14 @@ import {
 } from 'react-icons/si';
 import { FaAws } from 'react-icons/fa';
 
-export interface SkillCardProps {
+export interface SkillCardsProps {
   icon: ElementType;
   size: number;
   color: string;
   title: string;
 }
 
-export const skillsCard: SkillCardProps[] = [
+export const skillsData: SkillCardsProps[] = [
   { icon: SiHtml5, size: 32, color: 'text-orange-500', title: 'Html' },
   { icon: SiCss3, size: 32, color: 'text-blue-500', title: 'Css' },
   { icon: SiJavascript, size: 32, color: 'text-yellow-500', title: 'JavaScript' },

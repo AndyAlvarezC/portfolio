@@ -19,10 +19,10 @@ export default function Contact() {
         <Reveal animation="fade-up">
           {/* Title with gradient */}
           <div className="mb-20 text-center">
-            <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent mb-4">
+            <h1 className="text-5xl md:text-6xl font-bold bg-linear-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent mb-4">
               {t("contact.title")}
             </h1>
-            <div className="w-24 h-1.5 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-full mx-auto mb-6" />
+            <div className="w-24 h-1.5 bg-linear-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-full mx-auto mb-6" />
           </div>
           
           <SocialCard />

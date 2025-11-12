@@ -16,7 +16,7 @@ export default function Header() {
   return (
     <>
       {/* Desktop header */}
-      <header className="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-blue-950/40 via-indigo-950/30 to-purple-950/40 backdrop-blur-xl border-b border-white/10 transition-all duration-500">
+      <header className="fixed top-0 left-0 w-full z-50 bg-linear-to-r from-blue-950/40 via-indigo-950/30 to-purple-950/40 backdrop-blur-xl border-b border-white/10 transition-all duration-500">
         <div className="flex items-center justify-between py-4 px-6 md:px-16 lg:px-24">
           {/* Logo */}
           <Logo />

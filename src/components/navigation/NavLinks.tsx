@@ -33,6 +33,7 @@ export default function NavLinks({
 
   return (
     <>
+      {/* Render navigation links */}
       {sections.map((section) => (
         <a
           key={section.id}
@@ -45,8 +46,8 @@ export default function NavLinks({
             transition-all duration-300 ease-out
             ${isMobile ? 'text-white text-2xl' : 'text-gray-200 text-lg'}
             hover:text-white
-            ${activeSection === section.id ? 'text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400' : ''}
-            ${!isMobile ? 'after:absolute after:-bottom-1 after:left-1/2 after:translate-x-[-50%] after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-blue-500 after:to-purple-500 after:rounded-full after:transition-all after:duration-300 hover:after:w-3/4' : ''}
+            ${activeSection === section.id ? 'text-transparent bg-clip-text bg-linear-to-r from-blue-400 via-indigo-400 to-purple-400' : ''}
+            ${!isMobile ? 'after:absolute after:-bottom-1 after:left-1/2 after:translate-x-[-50%] after:w-0 after:h-0.5 after:bg-linear-to-r after:from-blue-500 after:to-purple-500 after:rounded-full after:transition-all after:duration-300 hover:after:w-3/4' : ''}
             ${!isMobile && activeSection === section.id ? 'after:w-3/4' : ''}
           `}
         >
@@ -67,7 +68,7 @@ export default function NavLinks({
         }
         className={`
           ${isMobile ? 'mt-6 px-8 py-4 text-xl' : 'ml-6 px-5 py-2.5 text-sm md:text-base'}
-          bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600
+          bg-linear-to-r from-blue-600 via-indigo-600 to-purple-600
           hover:from-blue-700 hover:via-indigo-700 hover:to-purple-700
           shadow-md shadow-indigo-900/30
           hover:shadow-[0_0_25px_rgba(99,102,241,0.5)]

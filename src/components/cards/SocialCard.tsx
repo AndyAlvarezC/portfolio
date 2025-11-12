@@ -28,7 +28,7 @@ export default function SocialCard() {
             }}
           >
             {/* Gradient overlay on hover */}
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 via-indigo-500/0 to-purple-500/0 group-hover:from-blue-500/5 group-hover:via-indigo-500/5 group-hover:to-purple-500/5 transition-all duration-500" />
+            <div className="absolute inset-0 bg-linear-to-br from-blue-500/0 via-indigo-500/0 to-purple-500/0 group-hover:from-blue-500/5 group-hover:via-indigo-500/5 group-hover:to-purple-500/5 transition-all duration-500" />
             
             {/* Animated border gradient */}
             <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
@@ -42,17 +42,17 @@ export default function SocialCard() {
             />
 
             {/* Icon with gradient background */}
-            <div className="relative z-10 w-14 h-14 rounded-xl bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-sm group-hover:shadow-lg border border-blue-100/50">
+            <div className="relative z-10 w-14 h-14 rounded-xl bg-linear-to-br from-blue-50 via-indigo-50 to-purple-50 flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-sm group-hover:shadow-lg border border-blue-100/50">
               <Icon className={`text-3xl ${color} transition-transform duration-500 group-hover:scale-110`} />
             </div>
             
             {/* Name */}
-            <span className="relative z-10 font-bold text-gray-900 text-lg group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:via-indigo-600 group-hover:to-purple-600 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-500">
+            <span className="relative z-10 font-bold text-gray-900 text-lg group-hover:bg-linear-to-r group-hover:from-blue-600 group-hover:via-indigo-600 group-hover:to-purple-600 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-500">
               {name}
             </span>
 
             {/* Shine effect */}
-            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-linear-to-r from-transparent via-white/20 to-transparent" />
           </a>
         )
       )}

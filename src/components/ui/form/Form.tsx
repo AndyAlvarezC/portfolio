@@ -89,17 +89,17 @@ export default function Form() {
   disabled={!isFormValid}
   className={`group relative flex items-center justify-center w-full mx-auto font-bold text-white py-5 px-8 rounded-2xl max-w-md overflow-hidden transition-all duration-500 ${
     buttonText === t('contact.buttonText1')
-      ? 'bg-gradient-to-r from-green-600 to-emerald-600 shadow-xl shadow-green-500/50 scale-105'
+      ? 'bg-linear-to-r from-green-600 to-emerald-600 shadow-xl shadow-green-500/50 scale-105'
       : buttonText === t('contact.buttonText2')
-      ? 'bg-gradient-to-r from-blue-600 to-indigo-600 shadow-xl shadow-blue-500/50 scale-105'
+      ? 'bg-linear-to-r from-blue-600 to-indigo-600 shadow-xl shadow-blue-500/50 scale-105'
       : isFormValid
-      ? 'bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 cursor-pointer hover:scale-105 hover:shadow-2xl hover:shadow-indigo-500/50'
+      ? 'bg-linear-to-r from-blue-600 via-indigo-600 to-purple-600 cursor-pointer hover:scale-105 hover:shadow-2xl hover:shadow-indigo-500/50'
       : 'bg-gray-300 cursor-not-allowed opacity-60'
   }`}
 >
   {/* Shine effect for enabled button */}
   {isFormValid && buttonText === t('contact.button') && (
-    <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+    <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-linear-to-r from-transparent via-white/20 to-transparent" />
   )}
   
   <span className="relative z-10 flex items-center gap-3">

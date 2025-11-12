@@ -17,7 +17,7 @@ export default function FormField({
   error,
   onChange,
 }: FormFieldProps) {
-  const baseClasses = `w-full px-6 py-4 rounded-xl bg-gradient-to-br from-gray-50 to-blue-50/30 border-2 transition-all duration-300 outline-none font-medium ${
+  const baseClasses = `w-full px-6 py-4 rounded-xl bg-linear-to-br from-gray-50 to-blue-50/30 border-2 transition-all duration-300 outline-none font-medium ${
     error
       ? 'border-red-400 focus:border-red-500 focus:ring-4 focus:ring-red-500/20'
       : 'border-gray-200 focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/20'
@@ -56,7 +56,7 @@ export default function FormField({
       )}
 
       {/* Gradient underline on focus */}
-      <div className={`absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 scale-x-0 group-focus-within:scale-x-100 transition-transform duration-500 rounded-full ${
+      <div className={`absolute bottom-0 left-0 right-0 h-0.5 bg-linear-to-r from-blue-600 via-indigo-600 to-purple-600 scale-x-0 group-focus-within:scale-x-100 transition-transform duration-500 rounded-full ${
         error ? 'opacity-0' : 'opacity-100'
       }`} />
     </div>

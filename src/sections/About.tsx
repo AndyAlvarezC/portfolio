@@ -18,10 +18,10 @@ export default function About() {
         <div className="max-w-5xl w-full px-10 md:px-16 py-20 rounded-3xl text-center relative z-10 backdrop-blur-xl shadow-2xl">
           {/* Título */}
           <div className="mb-16">
-            <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent mb-6">
+            <h1 className="text-5xl md:text-6xl font-bold bg-linear-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent mb-6">
               {t('about.title')}
             </h1>
-            <div className="w-24 h-1.5 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-full mx-auto" />
+            <div className="w-24 h-1.5 bg-linear-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-full mx-auto" />
           </div>
 
           {/* Contenido principal */}
@@ -39,7 +39,7 @@ export default function About() {
           </div>
 
           {/* Línea de cierre */}
-          <div className="mt-16 w-32 h-1.5 mx-auto bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-full" />
+          <div className="mt-16 w-32 h-1.5 mx-auto bg-linear-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-full" />
         </div>
       </Reveal>
     </section>

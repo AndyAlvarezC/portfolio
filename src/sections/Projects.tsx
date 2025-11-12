@@ -22,10 +22,10 @@ export default function Projects() {
         <div className="max-w-7xl w-full md:p-10 rounded-2xl text-center relative z-10">
           {/* Título con degradado elegante */}
           <div className="mb-16">
-            <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent mb-4">
+            <h1 className="text-5xl md:text-6xl font-bold bg-linear-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent mb-4">
               {t('projects.title')}
             </h1>
-            <div className="w-24 h-1.5 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-full mx-auto" />
+            <div className="w-24 h-1.5 bg-linear-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-full mx-auto" />
           </div>
 
           {/* Grid de proyectos */}
@@ -52,7 +52,7 @@ export default function Projects() {
                 window.open('https://github.com/AndyAlvarezC?tab=repositories')
               }
               text={t('projects.button')}
-              className="py-4 px-10 md:py-6 md:px-16 text-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white font-semibold rounded-xl shadow-lg transition duration-300 hover:shadow-[0_0_40px_rgba(99,102,241,0.5)] hover:scale-105"
+              className="py-4 px-10 md:py-6 md:px-16 text-xl bg-linear-to-r from-blue-600 via-indigo-600 to-purple-600 text-white font-semibold rounded-xl shadow-lg transition duration-300 hover:shadow-[0_0_40px_rgba(99,102,241,0.5)] hover:scale-105"
             />
           </div>
         </div>

@@ -42,7 +42,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         }}
       >
         {/* Gradient overlay on hover */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-indigo-500/0 group-hover:from-blue-500/5 group-hover:to-indigo-500/5 transition-all duration-500 z-10 pointer-events-none" />
+        <div className="absolute inset-0 bg-linear-to-br from-blue-500/0 to-indigo-500/0 group-hover:from-blue-500/5 group-hover:to-indigo-500/5 transition-all duration-500 z-10 pointer-events-none" />
 
         {/* Imagen */}
         <div className="relative overflow-hidden">
@@ -51,7 +51,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             alt={title}
             className="w-full h-56 object-cover transition-transform duration-700 group-hover:scale-110"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <div className="absolute inset-0 bg-linear-to-t from-black/50 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         </div>
 
         {/* Contenido */}
@@ -68,7 +68,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             {skills.map((Skill, index) => (
               <div
                 key={index}
-                className="flex items-center justify-center w-10 h-10 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 rounded-xl text-xl shadow-sm hover:shadow-md hover:scale-110 transition-all duration-300 border border-blue-100/50"
+                className="flex items-center justify-center w-10 h-10 bg-linear-to-br from-blue-50 via-indigo-50 to-purple-50 rounded-xl text-xl shadow-sm hover:shadow-md hover:scale-110 transition-all duration-300 border border-blue-100/50"
               >
                 {Skill}
               </div>
@@ -116,7 +116,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             {/* Header with gradient and image */}
             <div className="relative h-80 overflow-hidden">
               {/* Gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-600/95 via-indigo-600/95 to-purple-600/95 z-10" />
+              <div className="absolute inset-0 bg-linear-to-br from-blue-600/95 via-indigo-600/95 to-purple-600/95 z-10" />
               
               {/* Background image with blur */}
               <img
@@ -153,12 +153,12 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             </div>
 
             {/* Scrollable content */}
-            <div className="flex-1 overflow-y-auto p-8 md:p-10 bg-gradient-to-b from-gray-50 to-white">
+            <div className="flex-1 overflow-y-auto p-8 md:p-10 bg-linear-to-b from-gray-50 to-white">
               
               {/* Technologies section */}
               <div className="mb-10">
                 <div className="flex items-center gap-3 mb-5">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg">
+                  <div className="w-12 h-12 bg-linear-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg">
                     <span className="text-2xl">🛠️</span>
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900">
@@ -169,7 +169,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                   {skills.map((Skill, index) => (
                     <div
                       key={index}
-                      className="flex items-center gap-3 bg-gradient-to-br from-white to-blue-50 border border-blue-100 px-5 py-3 rounded-2xl text-2xl hover:scale-105 transition-all duration-300 shadow-sm hover:shadow-md"
+                      className="flex items-center gap-3 bg-linear-to-br from-white to-blue-50 border border-blue-100 px-5 py-3 rounded-2xl text-2xl hover:scale-105 transition-all duration-300 shadow-sm hover:shadow-md"
                     >
                       {Skill}
                     </div>
@@ -180,7 +180,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               {/* Description section */}
               <div className="mb-10">
                 <div className="flex items-center gap-3 mb-5">
-                  <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
+                  <div className="w-12 h-12 bg-linear-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
                     <span className="text-2xl">📋</span>
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900">
@@ -197,7 +197,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               {/* Features section */}
               <div className="mb-10">
                 <div className="flex items-center gap-3 mb-5">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center shadow-lg">
+                  <div className="w-12 h-12 bg-linear-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center shadow-lg">
                     <span className="text-2xl">✨</span>
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900">
@@ -210,7 +210,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                       key={index}
                       className="flex items-start gap-4 bg-white rounded-2xl p-5 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 hover:border-blue-200"
                     >
-                      <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center shadow-sm">
+                      <div className="flex-shrink-0 w-8 h-8 bg-linear-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center shadow-sm">
                         <span className="text-white font-bold text-sm">{index + 1}</span>
                       </div>
                       <span className="flex-1 text-gray-700 pt-1">{feature}</span>
@@ -225,7 +225,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                   href={link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-3 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-700 hover:via-indigo-700 hover:to-purple-700 text-white font-bold py-5 px-8 rounded-2xl text-center transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-[1.02] group"
+                  className="flex-1 flex items-center justify-center gap-3 bg-linear-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-700 hover:via-indigo-700 hover:to-purple-700 text-white font-bold py-5 px-8 rounded-2xl text-center transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-[1.02] group"
                 >
                   <ExternalLink className="w-5 h-5 group-hover:scale-110 transition-transform" />
                   <span>{t('projects.links.web')}</span>
@@ -234,7 +234,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                   href={code}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-3 bg-gradient-to-r from-gray-800 via-gray-900 to-black hover:from-gray-900 hover:via-black hover:to-gray-900 text-white font-bold py-5 px-8 rounded-2xl text-center transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-[1.02] group"
+                  className="flex-1 flex items-center justify-center gap-3 bg-linear-to-r from-gray-800 via-gray-900 to-black hover:from-gray-900 hover:via-black hover:to-gray-900 text-white font-bold py-5 px-8 rounded-2xl text-center transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-[1.02] group"
                 >
                   <Code2 className="w-5 h-5 group-hover:scale-110 transition-transform" />
                   <span>{t('projects.links.code')}</span>
