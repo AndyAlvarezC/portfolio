@@ -31,23 +31,40 @@ export const LanguageSelector = () => {
   }, []);
 
   return (
-    <div className="relative" ref={ref}>
+    <div className="relative select-none" ref={ref}>
+      {/* Botón de idioma */}
       <button
         onClick={() => setOpen((prev) => !prev)}
-        className="flex items-center justify-center text-xl cursor-pointer"
+        className="flex items-center justify-center text-2xl cursor-pointer 
+                   text-gray-300 hover:text-white transition-all duration-300
+                   hover:scale-110 focus:outline-none"
       >
-        <MdOutlineLanguage className='text-2xl'/>
+        <MdOutlineLanguage
+          className="drop-shadow-[0_0_6px_rgba(99,102,241,0.6)] hover:drop-shadow-[0_0_10px_rgba(99,102,241,0.8)] 
+                     transition-all duration-300 ease-out"
+        />
       </button>
 
+      {/* Menú desplegable */}
       {open && (
-        <div className="absolute left-1/2 top-full -translate-x-1/2 mt-2 bg-[var(--second-bg-color)] rounded-lg p-2 flex flex-col shadow-lg gap-2">
+        <div
+          className="absolute left-1/2 top-full -translate-x-1/2 mt-3 w-[90px]
+                     bg-gradient-to-b from-[#0f172a] via-[#1e1b4b] to-[#312e81]
+                     rounded-xl shadow-lg shadow-indigo-900/40 p-2
+                     flex flex-col gap-2 z-50 backdrop-blur-md border border-indigo-600/30
+                     animate-fade-in"
+        >
           {languages.map((lang) => (
             <button
               key={lang.code}
               onClick={() => changeLanguage(lang.code)}
-              className={`flex items-center px-3 py-1 cursor-pointer gap-2 rounded-md transition-colors duration-200 hover:bg-gray-700 ${
-                i18n.language === lang.code ? 'bg-blue-600 font-semibold' : ''
-              }`}
+              className={`
+                flex items-center justify-center gap-2 py-1.5 text-lg rounded-md
+                transition-all duration-300 ease-out
+                ${i18n.language === lang.code
+                  ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold shadow-md shadow-indigo-800/30 scale-[1.05]'
+                  : 'hover:bg-indigo-700/60 hover:scale-[1.05] text-gray-300'}
+              `}
             >
               <span className="text-xl">{lang.flag}</span>
             </button>

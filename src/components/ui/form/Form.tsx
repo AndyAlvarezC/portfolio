@@ -84,22 +84,31 @@ export default function Form() {
           onChange={onChangeField}
         />
 
-        <button
-          type="submit"
-          disabled={!isFormValid}
-          className={`flex items-center justify-center w-full mx-auto font-bold text-white p-4 rounded-lg shadow-[0px_0px_20px_rgba(37,99,235,0.5)] max-w-sm 
-            hover:shadow-[0px_0px_20px_rgba(37,99,235,1)] transition-all ease-in-out duration-300 hover:scale-105 ${
-              buttonText === t('contact.buttonText1')
-                ? 'bg-green-600 shadow-green-600 scale-105'
-                : buttonText === t('contact.buttonText2')
-                ? 'bg-blue-600 shadow-[0px_0px_20px_rgba(37,99,235,1)] scale-105'
-                : isFormValid
-                ? 'bg-blue-600 cursor-pointer'
-                : 'bg-[var(--main-bg-color)] cursor-not-allowed'
-            }`}
-        >
-          {buttonText} <FaPaperPlane className="ml-2 rotate-45" />
-        </button>
+<button
+  type="submit"
+  disabled={!isFormValid}
+  className={`group relative flex items-center justify-center w-full mx-auto font-bold text-white py-5 px-8 rounded-2xl max-w-md overflow-hidden transition-all duration-500 ${
+    buttonText === t('contact.buttonText1')
+      ? 'bg-gradient-to-r from-green-600 to-emerald-600 shadow-xl shadow-green-500/50 scale-105'
+      : buttonText === t('contact.buttonText2')
+      ? 'bg-gradient-to-r from-blue-600 to-indigo-600 shadow-xl shadow-blue-500/50 scale-105'
+      : isFormValid
+      ? 'bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 cursor-pointer hover:scale-105 hover:shadow-2xl hover:shadow-indigo-500/50'
+      : 'bg-gray-300 cursor-not-allowed opacity-60'
+  }`}
+>
+  {/* Shine effect for enabled button */}
+  {isFormValid && buttonText === t('contact.button') && (
+    <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+  )}
+  
+  <span className="relative z-10 flex items-center gap-3">
+    {buttonText}
+    <FaPaperPlane className={`transition-transform duration-300 ${
+      isFormValid && buttonText === t('contact.button') ? 'group-hover:translate-x-1 group-hover:-translate-y-1' : ''
+    }`} />
+  </span>
+</button>
       </form>
     </div>
   );

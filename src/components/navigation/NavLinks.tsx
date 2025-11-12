@@ -1,8 +1,6 @@
 import { MdDownload } from 'react-icons/md';
 import { useTranslation } from 'react-i18next';
-
 import Button from '../ui/Button';
-
 import { useActiveSection } from '../../hooks/useActiveSection';
 import handleScroll from '../../utils/handleScroll';
 import handleDownload from '../../utils/handleDownload';
@@ -43,31 +41,42 @@ export default function NavLinks({
             onClickLink?.();
           }}
           className={`
-            relative
-            cursor-pointer 
-            px-2
-            ${activeSection === section.id ? 'text-[var(--main-color)]' : ''}
-            ${
-              !isMobile
-                ? 'text-white after:absolute after:-bottom-1 after:left-1/2 after:translate-x-[-50%] after:w-0 after:h-0.5 after:bg-[var(--main-color)] after:transition-all after:duration-300 after:ease-out hover:after:w-3/4'
-                : ''
-            }
+            relative font-semibold tracking-wide cursor-pointer select-none
+            transition-all duration-300 ease-out
+            ${isMobile ? 'text-white text-2xl' : 'text-gray-200 text-lg'}
+            hover:text-white
+            ${activeSection === section.id ? 'text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400' : ''}
+            ${!isMobile ? 'after:absolute after:-bottom-1 after:left-1/2 after:translate-x-[-50%] after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-blue-500 after:to-purple-500 after:rounded-full after:transition-all after:duration-300 hover:after:w-3/4' : ''}
             ${!isMobile && activeSection === section.id ? 'after:w-3/4' : ''}
           `}
         >
           {t(section.key)}
         </a>
       ))}
-      <LanguageSelector />
+
+      {/* Language selector */}
+      <div className={`${isMobile ? 'mt-8' : 'ml-4'}`}>
+        <LanguageSelector />
+      </div>
+
+      {/* Download CV button */}
       <Button
         text={t('header.resume')}
         onClickEvent={() =>
           handleDownload('/Resume_Andy_Álvarez.pdf', 'Resume_Andy_Álvarez.pdf')
         }
-        className="py-2 px-4 gap-1 text-lg md:text-2xl lg:text-lg"
+        className={`
+          ${isMobile ? 'mt-6 px-8 py-4 text-xl' : 'ml-6 px-5 py-2.5 text-sm md:text-base'}
+          bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600
+          hover:from-blue-700 hover:via-indigo-700 hover:to-purple-700
+          shadow-md shadow-indigo-900/30
+          hover:shadow-[0_0_25px_rgba(99,102,241,0.5)]
+          hover:scale-[1.05]
+          rounded-xl transition-all duration-300 ease-out
+        `}
       >
         <MdDownload
-          className={`${isMobile ? 'text-2xl' : 'text-xl'} align-middle -mb-1`}
+          className={`${isMobile ? 'text-2xl' : 'text-lg'} align-middle -mb-0.5 text-white`}
         />
       </Button>
     </>

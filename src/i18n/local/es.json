@@ -19,22 +19,63 @@
 
   "projects": {
     "title": "Proyectos",
+    "modal": {
+      "technologies": "Tecnologías Utilizadas",
+      "description": "Descripción del Proyecto",
+      "features": "Características Clave",
+      "featuresList": []
+    },
     "list": {
       "payflow": {
         "title": "PayFlow - Fintech",
-        "description": "Landing page para una app fintech"
+        "description": "Landing page para una app fintech",
+        "extended": "Landing page moderna y profesional para una aplicación fintech.\n\n💳 Diseño atractivo enfocado en conversión de usuarios y confianza en servicios financieros digitales.\n\n🎨 Desarrollada con React y TailwindCSS, implementando animaciones suaves y diseño responsive para todos los dispositivos.\n\n🚀 Optimizada para performance con carga rápida y experiencia de usuario fluida.\n\n✨ Incluye secciones de características, testimonios, pricing y llamadas a la acción estratégicas.\n\n📱 Totalmente adaptable a móviles, tablets y desktop con diseño mobile-first.",
+        "features": [
+          "Diseño moderno con animaciones y transiciones suaves",
+          "Secciones estratégicas de conversión y testimonios",
+          "Optimización de rendimiento y carga ultrarrápida",
+          "Responsive design mobile-first para todos los dispositivos",
+          "Integración de llamadas a la acción efectivas"
+        ]
       },
       "expense": {
         "title": "Planificador de Gastos",
-        "description": "Una calculadora sencilla para calcular propinas y el total de una mesa"
+        "description": "Aplicación web de planificación de gastos personales, diseñada para gestionar tus finanzas de manera rápida y sencilla.",
+        "extended": "Aplicación web completa para gestionar finanzas personales de forma eficiente.\n\n✨ Desarrollada con React, TypeScript y TailwindCSS para una interfaz moderna, intuitiva y totalmente responsiva.\n\n🔧 Implementa Context API para gestión de estado global, hooks personalizados para lógica reutilizable y validación robusta de formularios.\n\n💾 Utiliza localStorage para persistencia de datos, manteniendo todo el historial de gastos incluso al cerrar el navegador.\n\n📊 Incluye filtros por categoría, visualización de presupuesto disponible, gastos realizados y resumen financiero en tiempo real.\n\n✅ Código limpio y bien estructurado siguiendo las mejores prácticas de arquitectura frontend y principios SOLID.",
+        "features": [
+          "Interfaz moderna y totalmente responsiva con React y TypeScript",
+          "Gestión de estado global eficiente con Context API",
+          "Filtros por categoría y resumen financiero en tiempo real",
+          "Persistencia de datos con localStorage",
+          "Validación robusta de formularios y hooks personalizados",
+          "Código limpio siguiendo principios SOLID"
+        ]
       },
       "patient": {
         "title": "Gestor de Pacientes",
-        "description": "Una app para registrar pacientes y seguir historiales médicos veterinarios"
+        "description": "Una app para registrar pacientes y seguir historiales médicos veterinarios",
+        "extended": "Sistema de gestión de pacientes veterinarios con historial médico completo.\n\n🐾 Aplicación diseñada específicamente para clínicas veterinarias, facilitando el registro y seguimiento de pacientes animales.\n\n💉 Permite registrar información detallada: datos del paciente, propietario, síntomas, diagnósticos, tratamientos y citas de seguimiento.\n\n📝 Desarrollada con React y TypeScript, garantizando tipado fuerte y código mantenible para gestión de datos sensibles.\n\n🎨 Interfaz limpia y funcional con TailwindCSS, optimizada para uso rápido en consultas veterinarias.\n\n💾 Almacenamiento local de datos con localStorage, asegurando acceso inmediato al historial de cada paciente.\n\n✅ Incluye funcionalidades de búsqueda, edición y eliminación de registros con validación de formularios.",
+        "features": [
+          "Sistema completo de registro de pacientes veterinarios",
+          "Historial médico detallado con síntomas y tratamientos",
+          "Gestión de datos de propietarios y citas de seguimiento",
+          "Interfaz optimizada para uso en clínicas",
+          "Búsqueda, edición y eliminación de registros",
+          "Persistencia local de datos con localStorage"
+        ]
       },
       "agency": {
         "title": "Agency Flex Innovations",
-        "description": "Landing page para una agencia digital moderna"
+        "description": "Landing page para una agencia digital moderna",
+        "extended": "Landing page impactante para una agencia digital de servicios creativos y tecnológicos.\n\n🎯 Diseño moderno y profesional que refleja innovación y creatividad en servicios digitales.\n\n⚡ Construida con React y animaciones fluidas que capturan la atención del usuario desde el primer momento.\n\n💼 Presenta servicios de la agencia, portfolio de proyectos, equipo de trabajo y formulario de contacto.\n\n🎨 Implementación de TailwindCSS para un diseño responsive perfecto en cualquier dispositivo.\n\n🚀 Optimizada para SEO y rendimiento, con carga ultrarrápida y experiencia de navegación excepcional.\n\n✨ Incluye secciones estratégicas: hero impactante, servicios destacados, casos de éxito y call-to-action efectivos.",
+        "features": [
+          "Diseño impactante con animaciones y efectos visuales",
+          "Secciones de servicios, portfolio y equipo",
+          "Optimización SEO y rendimiento excepcional",
+          "Formulario de contacto integrado",
+          "Responsive design para todos los dispositivos",
+          "Hero section y call-to-action estratégicos"
+        ]
       }
     },
     "links": {
