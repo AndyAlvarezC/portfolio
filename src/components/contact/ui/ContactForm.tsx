@@ -1,4 +1,4 @@
-import { useState, useEffect, FormEvent, ChangeEvent, useCallback, useRef, useMemo } from 'react';
+import { useState, useEffect, FormEvent, ChangeEvent, useCallback, useMemo } from 'react';
 import { FaPaperPlane } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 import ContactFormField from './ContactFormField';
@@ -15,17 +15,22 @@ export default function ContactForm() {
   const [isFormValid, setIsFormValid] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
 
-  // Debounced input handler
-  const debouncedChange = useRef(
-    debounce((e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-      handleChange(e, formData, setFormData, errors, setErrors, formSubmitted, setIsFormValid, t);
+  // Debounced handler solo para validación, no para actualizar el estado
+  const debouncedValidate = useMemo(() => 
+    debounce(() => {
+      handleChange(null, formData, setFormData, errors, setErrors, formSubmitted, setIsFormValid, t);
     }, 150)
-  ).current;
+  , [formData, errors, formSubmitted, t]);
 
   const onChangeField = useCallback((e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    e.persist();
-    debouncedChange(e);
-  }, [debouncedChange]);
+    const { name, value } = e.target;
+
+    // Actualiza el estado inmediatamente
+    setFormData(prev => ({ ...prev, [name]: value }));
+
+    // Validación debounced
+    debouncedValidate();
+  }, [debouncedValidate]);
 
   const onSubmit = (e: FormEvent) => {
     handleSubmit(e, formData, setFormData, setButtonText, setIsFormValid, setFormSubmitted, setErrors, t);

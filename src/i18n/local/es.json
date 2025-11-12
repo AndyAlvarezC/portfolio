@@ -28,14 +28,14 @@
     "list": {
       "payflow": {
         "title": "PayFlow - Fintech",
-        "description": "Landing page para una app fintech",
-        "extended": "Landing page moderna y profesional para una aplicación fintech.\n\n💳 Diseño atractivo enfocado en conversión de usuarios y confianza en servicios financieros digitales.\n\n🎨 Desarrollada con React y TailwindCSS, implementando animaciones suaves y diseño responsive para todos los dispositivos.\n\n🚀 Optimizada para performance con carga rápida y experiencia de usuario fluida.\n\n✨ Incluye secciones de características, testimonios, pricing y llamadas a la acción estratégicas.\n\n📱 Totalmente adaptable a móviles, tablets y desktop con diseño mobile-first.",
+        "description": "Landing page moderna de una fintech, diseñada para generar confianza y conversión.",
+        "extended": "Landing page profesional para una aplicación financiera digital.\n\n💳 Diseño atractivo enfocado en la conversión de usuarios y la confianza en servicios financieros digitales.\n\n🎨 Construida con React y TailwindCSS, con animaciones suaves y diseño responsive para todos los dispositivos.\n\n🚀 Optimizada para un rendimiento rápido y experiencia de usuario fluida.\n\n✨ Incluye secciones de funcionalidades, testimonios, precios y llamadas a la acción estratégicas.\n\n📱 Totalmente adaptable a móvil, tablet y escritorio con enfoque mobile-first.",
         "features": [
           "Diseño moderno con animaciones y transiciones suaves",
-          "Secciones estratégicas de conversión y testimonios",
-          "Optimización de rendimiento y carga ultrarrápida",
-          "Responsive design mobile-first para todos los dispositivos",
-          "Integración de llamadas a la acción efectivas"
+          "Secciones estratégicas para conversión y testimonios",
+          "Optimización de rendimiento y carga ultra rápida",
+          "Diseño responsive mobile-first",
+          "Integración efectiva de llamadas a la acción"
         ]
       },
       "expense": {
@@ -52,31 +52,32 @@
         ]
       },
       "patient": {
-        "title": "Gestor de Pacientes",
-        "description": "Una app para registrar pacientes y seguir historiales médicos veterinarios",
-        "extended": "Sistema de gestión de pacientes veterinarios con historial médico completo.\n\n🐾 Aplicación diseñada específicamente para clínicas veterinarias, facilitando el registro y seguimiento de pacientes animales.\n\n💉 Permite registrar información detallada: datos del paciente, propietario, síntomas, diagnósticos, tratamientos y citas de seguimiento.\n\n📝 Desarrollada con React y TypeScript, garantizando tipado fuerte y código mantenible para gestión de datos sensibles.\n\n🎨 Interfaz limpia y funcional con TailwindCSS, optimizada para uso rápido en consultas veterinarias.\n\n💾 Almacenamiento local de datos con localStorage, asegurando acceso inmediato al historial de cada paciente.\n\n✅ Incluye funcionalidades de búsqueda, edición y eliminación de registros con validación de formularios.",
+        "title": "Patient Manager",
+        "description": "Aplicación para registrar pacientes y gestionar historiales médicos veterinarios.",
+        "extended": "Sistema de gestión de pacientes veterinarios con historial médico completo.\n\n🐾 Aplicación diseñada específicamente para clínicas veterinarias, facilitando el registro y seguimiento de los pacientes animales.\n\n💉 Permite registrar información detallada: datos del paciente, propietario, síntomas, diagnósticos, tratamientos y citas de seguimiento.\n\n📝 Desarrollada con React y TypeScript, asegurando tipado fuerte y código mantenible para la gestión de datos sensibles.\n\n🎨 Interfaz limpia y funcional con TailwindCSS, optimizada para un uso rápido en consultas veterinarias.\n\n💾 Almacenamiento local con localStorage, garantizando acceso inmediato al historial de cada paciente.\n\n✅ Incluye funcionalidades de búsqueda, edición y eliminación con validación de formularios.",
         "features": [
           "Sistema completo de registro de pacientes veterinarios",
           "Historial médico detallado con síntomas y tratamientos",
           "Gestión de datos de propietarios y citas de seguimiento",
-          "Interfaz optimizada para uso en clínicas",
-          "Búsqueda, edición y eliminación de registros",
-          "Persistencia local de datos con localStorage"
+          "Interfaz optimizada para el uso en clínicas",
+          "Funcionalidades de búsqueda, edición y eliminación de registros",
+          "Persistencia de datos local con localStorage"
         ]
       },
       "agency": {
         "title": "Agency Flex Innovations",
-        "description": "Landing page para una agencia digital moderna",
-        "extended": "Landing page impactante para una agencia digital de servicios creativos y tecnológicos.\n\n🎯 Diseño moderno y profesional que refleja innovación y creatividad en servicios digitales.\n\n⚡ Construida con React y animaciones fluidas que capturan la atención del usuario desde el primer momento.\n\n💼 Presenta servicios de la agencia, portfolio de proyectos, equipo de trabajo y formulario de contacto.\n\n🎨 Implementación de TailwindCSS para un diseño responsive perfecto en cualquier dispositivo.\n\n🚀 Optimizada para SEO y rendimiento, con carga ultrarrápida y experiencia de navegación excepcional.\n\n✨ Incluye secciones estratégicas: hero impactante, servicios destacados, casos de éxito y call-to-action efectivos.",
+        "description": "Landing page para una agencia digital de automatizaciones para negocios.",
+        "extended": "Landing page impactante para una agencia digital que ofrece servicios creativos y tecnológicos.\n\n🎯 Diseño moderno y profesional que refleja innovación y creatividad en servicios digitales.\n\n⚡ Construida con React y animaciones suaves que captan la atención del usuario desde el primer momento.\n\n💼 Presenta los servicios de la agencia, portafolio de proyectos, miembros del equipo y formulario de contacto.\n\n🎨 Implementación con TailwindCSS para un diseño responsive perfecto en cualquier dispositivo.\n\n🚀 Optimizada para SEO y rendimiento, con carga ultra rápida y experiencia de navegación excepcional.\n\n✨ Incluye secciones estratégicas: hero impactante, servicios destacados, casos de éxito y llamadas a la acción efectivas.",
         "features": [
           "Diseño impactante con animaciones y efectos visuales",
-          "Secciones de servicios, portfolio y equipo",
+          "Secciones de servicios, portafolio y equipo",
           "Optimización SEO y rendimiento excepcional",
           "Formulario de contacto integrado",
-          "Responsive design para todos los dispositivos",
-          "Hero section y call-to-action estratégicos"
+          "Diseño responsive para todos los dispositivos",
+          "Sección hero y llamadas a la acción estratégicas"
         ]
       }
+
     },
     "links": {
       "web": "Ver Demo",

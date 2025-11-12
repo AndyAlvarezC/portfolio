@@ -28,8 +28,8 @@
     "list": {
       "payflow": {
         "title": "PayFlow - Fintech",
-        "description": "Landing page for a fintech app",
-        "extended": "Modern and professional landing page for a fintech application.\n\n💳 Attractive design focused on user conversion and trust in digital financial services.\n\n🎨 Built with React and TailwindCSS, implementing smooth animations and responsive design for all devices.\n\n🚀 Performance optimized with fast loading and smooth user experience.\n\n✨ Includes feature sections, testimonials, pricing, and strategic call-to-action elements.\n\n📱 Fully adaptable to mobile, tablet, and desktop with mobile-first design approach.",
+        "description": "Modern fintech landing page designed to build trust and boost conversions.",
+        "extended": "Professional landing page for a digital financial application.\n\n💳 Attractive design focused on user conversion and trust in digital financial services.\n\n🎨 Built with React and TailwindCSS, featuring smooth animations and responsive design for all devices.\n\n🚀 Performance-optimized for fast loading and seamless user experience.\n\n✨ Includes feature sections, testimonials, pricing, and strategic call-to-action elements.\n\n📱 Fully adaptable to mobile, tablet, and desktop with a mobile-first approach.",
         "features": [
           "Modern design with smooth animations and transitions",
           "Strategic conversion sections and testimonials",
@@ -53,7 +53,7 @@
       },
       "patient": {
         "title": "Patient Manager",
-        "description": "An app to register patients and track veterinary medical records",
+        "description": "An app to register patients and manage veterinary medical records.",
         "extended": "Veterinary patient management system with complete medical history.\n\n🐾 Application specifically designed for veterinary clinics, facilitating the registration and tracking of animal patients.\n\n💉 Allows detailed information recording: patient data, owner, symptoms, diagnoses, treatments, and follow-up appointments.\n\n📝 Developed with React and TypeScript, ensuring strong typing and maintainable code for sensitive data management.\n\n🎨 Clean and functional interface with TailwindCSS, optimized for quick use in veterinary consultations.\n\n💾 Local data storage with localStorage, ensuring immediate access to each patient's history.\n\n✅ Includes search, edit, and delete functionalities with form validation.",
         "features": [
           "Complete veterinary patient registration system",
@@ -66,7 +66,7 @@
       },
       "agency": {
         "title": "Agency Flex Innovations",
-        "description": "Landing page for a modern digital agency",
+        "description": "Landing page for a digital agency specialized in business automation services.",
         "extended": "Impactful landing page for a digital agency offering creative and technological services.\n\n🎯 Modern and professional design reflecting innovation and creativity in digital services.\n\n⚡ Built with React and smooth animations that capture user attention from the first moment.\n\n💼 Showcases agency services, project portfolio, team members, and contact form.\n\n🎨 TailwindCSS implementation for perfect responsive design on any device.\n\n🚀 Optimized for SEO and performance, with ultra-fast loading and exceptional browsing experience.\n\n✨ Includes strategic sections: impactful hero, featured services, success cases, and effective call-to-action.",
         "features": [
           "Impactful design with animations and visual effects",

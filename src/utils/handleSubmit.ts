@@ -58,7 +58,7 @@ export const handleSubmit = async (
     }
   } catch (error) {
     console.error(error);
-    setButtonText(t('contact.button'));
+    setButtonText(t('contact.buttonText'));
     alert(t('contact.error'));
   }
 };
