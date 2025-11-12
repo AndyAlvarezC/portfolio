@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 export const useActiveSection = () => {
-  const [activeSection, setActiveSection] = useState<string>('home');
+  const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
     const sections = document.querySelectorAll('section');
@@ -14,14 +14,11 @@ export const useActiveSection = () => {
             clearTimeout(timeout);
             timeout = window.setTimeout(() => {
               setActiveSection(entry.target.id);
-            }, 100);
+            }, 100); // 100ms debounce para suavizar
           }
         });
       },
-      {
-        threshold: window.innerWidth < 768 ? 0.3 : 0.6,
-        rootMargin: '-80px 0px 0px 0px',
-      }
+      { threshold: window.innerWidth < 768 ? 0.3 : 0.6, rootMargin: '-80px 0px 0px 0px' }
     );
 
     sections.forEach((section) => observer.observe(section));
