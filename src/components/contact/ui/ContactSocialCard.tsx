@@ -1,7 +1,7 @@
 import { ElementType } from 'react';
-import { socialLinks } from '../../data/contact';
+import { socialLinks } from '../../../data/contact';
 
-export default function SocialCard() {
+export default function ContactSocialCard() {
   return (
     <div className="flex flex-col md:flex-row gap-6 md:gap-8 justify-center items-center w-full mb-16">
       {socialLinks.map(
