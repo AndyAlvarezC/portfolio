@@ -11,7 +11,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="flex flex-col min-h-screen items-center justify-center py-20 w-full scroll-mt-20 relative overflow-hidden"
+      className="flex flex-col min-h-screen items-center justify-center w-full scroll-mt-20 relative overflow-hidden"
       style={{ scrollMarginTop: '80px' }}
     >
       {/* Gradient background decorations */}

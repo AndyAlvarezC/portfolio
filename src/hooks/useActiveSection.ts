@@ -14,7 +14,7 @@ export const useActiveSection = () => {
             clearTimeout(timeout);
             timeout = window.setTimeout(() => {
               setActiveSection(entry.target.id);
-            }, 100); // 100ms debounce para suavizar
+            }, 100);
           }
         });
       },
