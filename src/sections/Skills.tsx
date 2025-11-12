@@ -13,7 +13,7 @@ export default function Skills() {
       <SkillsBackground />
 
       <Reveal animation="fade-up">
-        <div className="max-w-7xl w-full p-10 rounded-2xl text-center relative z-10">
+        <div className="max-w-7xl w-full p-4 md:p-10 rounded-2xl text-center relative z-10">
           <div className="mb-16">
             <h1 className="text-5xl md:text-6xl font-bold bg-linear-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent mb-4">
               {t('skills.title')}
