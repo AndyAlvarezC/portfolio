@@ -27,7 +27,7 @@ export default function Header() {
           {/* Mobile menu toggle */}
           <Button
             onClickEvent={() => setIsOpen(!isOpen)}
-            className="bg-transparent text-3xl md:text-4xl hover:bg-transparent text-gray-200 lg:hidden"
+            className="bg-transparent text-3xl md:text-4xl hover:bg-transparent text-gray-200 lg:hidden cursor-pointer"
           >
             {isOpen ? (
               <HiX className="transform rotate-90 transition-transform duration-300" />

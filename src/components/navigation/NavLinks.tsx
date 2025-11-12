@@ -56,7 +56,7 @@ export default function NavLinks({
       ))}
 
       {/* Language selector */}
-      <div className={`${isMobile ? 'mt-8' : 'ml-4'}`}>
+      <div className={`cursor-pointer ${isMobile ? 'mt-8' : 'ml-4'}`}>
         <LanguageSelector />
       </div>
 
@@ -73,7 +73,7 @@ export default function NavLinks({
           shadow-md shadow-indigo-900/30
           hover:shadow-[0_0_25px_rgba(99,102,241,0.5)]
           hover:scale-[1.05]
-          rounded-xl transition-all duration-300 ease-out
+          rounded-xl transition-all duration-300 ease-out cursor-pointer
         `}
       >
         <MdDownload

@@ -64,7 +64,7 @@ export const LanguageSelector = () => {
               onClick={() => changeLanguage(lang.code)}
               className={`
                 flex items-center justify-center gap-2 py-1.5 text-lg rounded-md
-                transition-all duration-300 ease-out
+                transition-all duration-300 ease-out cursor-pointer
                 ${i18n.language === lang.code
                   ? 'bg-linear-to-r from-blue-600 to-purple-600 text-white font-semibold shadow-md shadow-indigo-800/30 scale-[1.05]'
                   : 'hover:bg-indigo-700/60 hover:scale-[1.05] text-gray-300'}
