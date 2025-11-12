@@ -34,7 +34,8 @@ function ContactSocialCard() {
             <Icon className={`text-3xl ${color} transition-transform duration-500 group-hover:scale-110`} />
           </div>
 
-          <span className="relative z-10 font-bold text-gray-900 text-lg group-hover:bg-linear-to-r group-hover:from-blue-600 group-hover:via-indigo-600 group-hover:to-purple-600 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-500">
+          {/* Texto siempre con bg-clip-text y text-transparent para evitar parpadeo */}
+          <span className="relative z-10 font-bold text-lg bg-clip-text text-transparent bg-linear-to-r from-gray-900 via-gray-900 to-gray-900 group-hover:from-blue-600 group-hover:via-indigo-600 group-hover:to-purple-600 transition-all duration-500">
             {name}
           </span>
 
