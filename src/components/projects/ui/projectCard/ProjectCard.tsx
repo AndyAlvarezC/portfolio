@@ -7,7 +7,6 @@ interface ProjectCardProps {
   title: string;
   description: string;
   extended: string;
-  features: string[];
   image: string;
   link: string;
   code: string;
@@ -19,7 +18,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
   description,
   extended,
-  features,
   image,
   link,
   code,
@@ -51,7 +49,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         <ProjectModal
           title={title}
           extended={extended}
-          features={features}
           image={image}
           link={link}
           code={code}
