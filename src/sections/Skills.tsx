@@ -12,10 +12,12 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="flex flex-col min-h-screen items-center justify-center w-full scroll-mt-20 relative overflow-hidden"
+      className="flex flex-col min-h-screen items-center justify-center py-20 w-full scroll-mt-20 relative overflow-hidden"
     >
       {/* Lazy load background */}
-      <Suspense fallback={<div className="absolute inset-0 bg-linear-to-b from-blue-950 to-purple-950" />}>
+      <Suspense
+        fallback={<div className="absolute inset-0 bg-linear-to-b from-blue-950 to-purple-950" />}
+      >
         <SkillsBackground />
       </Suspense>
 
@@ -28,7 +30,9 @@ export default function Skills() {
           </div>
 
           {/* Lazy load SkillsGrid */}
-          <Suspense fallback={<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 p-12" />}>
+          <Suspense
+            fallback={<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 p-12" />}
+          >
             <SkillsGrid />
           </Suspense>
         </div>

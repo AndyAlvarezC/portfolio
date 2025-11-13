@@ -1,7 +1,7 @@
 import { ReactElement, createElement } from 'react';
 import { skillsData } from '../../skills/data/skillsData';
 
-import payFlowPrev from '../../../assets/imagePreview/payFlowPrev.png'
+import payFlowPrev from '../../../assets/imagePreview/payFlowPrev.png';
 import agencyFlexInnovationsPrev from '../../../assets/imagePreview/agencyFlexInnovationsPrev.png';
 import expenseTrackerPrev from '../../../assets/imagePreview/expenseTrackerPrev.png';
 import patientTrackerPrev from '../../../assets/imagePreview/patientTrackerPrev.png';

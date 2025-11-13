@@ -7,7 +7,7 @@ const AboutBackground = lazy(() => import('../components/about/ui/AboutBackgroun
 export default function About() {
   const { t } = useTranslation();
 
-  const paragraphs = ['p1','p2','p3','p4','p5','p6'];
+  const paragraphs = ['p1', 'p2', 'p3', 'p4', 'p5', 'p6'];
 
   return (
     <section
@@ -15,7 +15,9 @@ export default function About() {
       className="flex flex-col min-h-screen items-center justify-center w-full scroll-mt-20 py-20 relative overflow-hidden"
     >
       {/* Soft gradient background */}
-      <Suspense fallback={<div className="w-full h-96 bg-linear-to-b from-blue-950 to-purple-950" />}>
+      <Suspense
+        fallback={<div className="w-full h-96 bg-linear-to-b from-blue-950 to-purple-950" />}
+      >
         <AboutBackground />
       </Suspense>
 
@@ -33,7 +35,11 @@ export default function About() {
             {paragraphs.map((key, index) => (
               <p
                 key={key}
-                className={index === 0 ? 'first-letter:text-5xl first-letter:font-extrabold first-letter:text-indigo-600 first-letter:mr-2' : ''}
+                className={
+                  index === 0
+                    ? 'first-letter:text-5xl first-letter:font-extrabold first-letter:text-indigo-600 first-letter:mr-2'
+                    : ''
+                }
                 dangerouslySetInnerHTML={{ __html: t(`about.${key}`) }}
               />
             ))}

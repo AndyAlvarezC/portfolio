@@ -1,4 +1,4 @@
-import handleScroll from "../../../utils/handleScroll";
+import handleScroll from '../../../utils/handleScroll';
 
 export default function Logo() {
   return (

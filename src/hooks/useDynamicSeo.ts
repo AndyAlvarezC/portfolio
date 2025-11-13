@@ -15,20 +15,14 @@ export const useDynamicSeo = (sections: Section[]) => {
 
       for (const sec of sections) {
         const el = document.getElementById(sec.id);
-        if (
-          el &&
-          scrollPos >= el.offsetTop &&
-          scrollPos < el.offsetTop + el.offsetHeight
-        ) {
+        if (el && scrollPos >= el.offsetTop && scrollPos < el.offsetTop + el.offsetHeight) {
           document.title = sec.title;
 
           const metaDesc = document.querySelector('meta[name="description"]');
           if (metaDesc) metaDesc.setAttribute('content', sec.description);
 
           const ogTitle = document.querySelector('meta[property="og:title"]');
-          const ogDesc = document.querySelector(
-            'meta[property="og:description"]'
-          );
+          const ogDesc = document.querySelector('meta[property="og:description"]');
           const ogUrl = document.querySelector('meta[property="og:url"]');
           const ogImage = document.querySelector('meta[property="og:image"]');
 
@@ -38,9 +32,7 @@ export const useDynamicSeo = (sections: Section[]) => {
           if (ogImage && sec.image) ogImage.setAttribute('content', sec.image);
 
           const twTitle = document.querySelector('meta[name="twitter:title"]');
-          const twDesc = document.querySelector(
-            'meta[name="twitter:description"]'
-          );
+          const twDesc = document.querySelector('meta[name="twitter:description"]');
           const twImage = document.querySelector('meta[name="twitter:image"]');
 
           if (twTitle) twTitle.setAttribute('content', sec.title);

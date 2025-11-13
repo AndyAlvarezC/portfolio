@@ -20,9 +20,7 @@ export const ModalContent: React.FC<ModalContentProps> = memo(
             <div className="w-12 h-12 bg-linear-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg">
               <span className="text-2xl">🛠️</span>
             </div>
-            <h3 className="text-2xl font-bold text-gray-900">
-              {t('projects.modal.technologies')}
-            </h3>
+            <h3 className="text-2xl font-bold text-gray-900">{t('projects.modal.technologies')}</h3>
           </div>
 
           <div className="flex flex-wrap gap-3">
@@ -43,9 +41,7 @@ export const ModalContent: React.FC<ModalContentProps> = memo(
             <div className="w-12 h-12 bg-linear-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
               <span className="text-2xl">📋</span>
             </div>
-            <h3 className="text-2xl font-bold text-gray-900">
-              {t('projects.modal.description')}
-            </h3>
+            <h3 className="text-2xl font-bold text-gray-900">{t('projects.modal.description')}</h3>
           </div>
 
           <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm">

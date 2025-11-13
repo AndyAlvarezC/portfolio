@@ -20,5 +20,5 @@ export default function MainTitle() {
         />
       </h1>
     </>
-  )
+  );
 }

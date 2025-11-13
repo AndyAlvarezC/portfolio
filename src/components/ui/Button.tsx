@@ -1,19 +1,19 @@
-import React from "react";
+import React from 'react';
 
 interface ButtonProps {
   text?: string;
   onClickEvent?: () => void;
   className?: string;
   children?: React.ReactNode;
-  size?: "sm" | "md" | "lg";
+  size?: 'sm' | 'md' | 'lg';
 }
 
 export default function Button({
   text,
   onClickEvent,
-  className = "",
+  className = '',
   children,
-  size = "md",
+  size = 'md',
 }: ButtonProps) {
   const baseStyles = `
     inline-flex items-center justify-center gap-2 rounded-xl font-semibold text-white
@@ -27,16 +27,13 @@ export default function Button({
   `;
 
   const sizeStyles = {
-    sm: "px-4 py-1.5 text-sm",
-    md: "px-6 py-2.5 text-base",
-    lg: "px-8 py-3 text-lg",
+    sm: 'px-4 py-1.5 text-sm',
+    md: 'px-6 py-2.5 text-base',
+    lg: 'px-8 py-3 text-lg',
   }[size];
 
   return (
-    <button
-      onClick={onClickEvent}
-      className={`${baseStyles} ${sizeStyles} ${className}`}
-    >
+    <button onClick={onClickEvent} className={`${baseStyles} ${sizeStyles} ${className}`}>
       {text && (
         <span className="bg-linear-to-r from-blue-200 via-indigo-200 to-purple-200 bg-clip-text text-transparent font-bold">
           {text}

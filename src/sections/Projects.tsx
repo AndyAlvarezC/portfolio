@@ -5,7 +5,9 @@ import { lazy, Suspense } from 'react';
 // Lazy-load heavy components to improve initial load performance
 const ProjectsBackground = lazy(() => import('../components/projects/ui/ProjectsBackground'));
 const ProjectsGrid = lazy(() => import('../components/projects/ui/ProjectsGrid'));
-const ProjectsViewMoreButton = lazy(() => import('../components/projects/ui/ProjectsViewMoreButton'));
+const ProjectsViewMoreButton = lazy(
+  () => import('../components/projects/ui/ProjectsViewMoreButton')
+);
 
 export default function Projects() {
   const { t } = useTranslation();
@@ -17,14 +19,15 @@ export default function Projects() {
       style={{ scrollMarginTop: '80px' }}
     >
       {/* Lazy-loaded background */}
-      <Suspense fallback={<div className="absolute inset-0 bg-linear-to-b from-blue-950 to-purple-950" />}>
+      <Suspense
+        fallback={<div className="absolute inset-0 bg-linear-to-b from-blue-950 to-purple-950" />}
+      >
         <ProjectsBackground />
       </Suspense>
 
       {/* Main content */}
       <Reveal animation="fade-up">
         <div className="max-w-7xl w-full md:p-10 rounded-2xl text-center relative z-10 shadow-md will-change-transform ">
-          
           {/* Section title  */}
           <div className="mb-16">
             <h1 className="text-5xl md:text-6xl font-bold bg-linear-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent mb-4">
@@ -33,7 +36,9 @@ export default function Projects() {
           </div>
 
           {/* Projects grid */}
-          <Suspense fallback={<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-8" />}>
+          <Suspense
+            fallback={<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-8" />}
+          >
             <ProjectsGrid />
           </Suspense>
 

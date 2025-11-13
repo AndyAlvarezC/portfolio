@@ -30,9 +30,7 @@ export default function TextAnimation() {
 
   return (
     <div className="relative whitespace-nowrap">
-      <span className="invisible text-xl sm:text-4xl lg:text-5xl font-bold">
-        {textToAnimate}
-      </span>
+      <span className="invisible text-xl sm:text-4xl lg:text-5xl font-bold">{textToAnimate}</span>
 
       <span className="absolute left-0 top-0 text-xl sm:text-4xl lg:text-5xl font-bold bg-linear-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
         {text}

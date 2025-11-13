@@ -3,8 +3,7 @@ import { TFunction } from 'i18next';
 import { validateInputs } from '../components/contact/validators';
 
 const BACKEND_URL =
-  import.meta.env.VITE_BACKEND_URL ||
-  'https://portfolio-andy-alvarez-backend.vercel.app';
+  import.meta.env.VITE_BACKEND_URL || 'https://portfolio-andy-alvarez-backend.vercel.app';
 
 interface FormData {
   name: string;
@@ -19,9 +18,7 @@ export const handleSubmit = async (
   setButtonText: Dispatch<SetStateAction<string>>,
   setIsFormValid: Dispatch<SetStateAction<boolean>>,
   setFormSubmitted: Dispatch<SetStateAction<boolean>>,
-  setErrors: Dispatch<
-    SetStateAction<{ name: string; email: string; message: string }>
-  >,
+  setErrors: Dispatch<SetStateAction<{ name: string; email: string; message: string }>>,
   t: TFunction
 ) => {
   e.preventDefault();
@@ -52,9 +49,7 @@ export const handleSubmit = async (
       setTimeout(() => setButtonText(t('contact.buttonText')), 2000);
     } else {
       setButtonText(t('contact.buttonText'));
-      alert(
-        result.message || t('contact.error')
-      );
+      alert(result.message || t('contact.error'));
     }
   } catch (error) {
     console.error(error);

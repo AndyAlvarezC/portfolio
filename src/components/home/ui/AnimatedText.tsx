@@ -1,4 +1,4 @@
-import TextAnimation from "./TextAnimation"
+import TextAnimation from './TextAnimation';
 
 export default function AnimatedText() {
   return (
@@ -7,5 +7,5 @@ export default function AnimatedText() {
         <TextAnimation />
       </div>
     </>
-  )
+  );
 }

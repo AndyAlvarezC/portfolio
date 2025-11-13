@@ -6,14 +6,12 @@ import MainTitle from '../components/home/ui/MainTitle';
 import AnimatedText from '../components/home/ui/AnimatedText';
 import HireButton from '../components/home/ui/HireButton';
 
-
 // Home section component
 export default function Home() {
-
   return (
     <Section
       id="home"
-      className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden text-center px-4"
+      className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden text-center px-4 md:mt-12"
     >
       {/* Premium blurred backgrounds */}
       <div>

@@ -3,7 +3,7 @@ import { faCode } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from 'react-i18next';
 
 export default function Footer() {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
   return (
     <footer className="relative w-full flex items-center justify-center py-8 mt-24 bg-linear-to-r from-blue-950/60 via-indigo-950/50 to-purple-950/60 backdrop-blur-xl border-t border-white/10 shadow-[0_-4px_30px_rgba(0,0,0,0.2)] text-center">
       {/* Glow gradient background for visual effect */}
@@ -11,7 +11,6 @@ export default function Footer() {
 
       {/* Footer content container */}
       <p className="relative z-10 flex items-center justify-center gap-2 text-sm md:text-lg font-semibold text-gray-200 px-2">
-        
         {/* Left code icon */}
         <FontAwesomeIcon
           icon={faCode}

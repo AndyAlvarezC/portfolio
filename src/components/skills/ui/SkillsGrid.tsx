@@ -1,5 +1,5 @@
-import SkillCard from "./SkillCards";
-import { skillsData } from "../data/skillsData";
+import SkillCard from './SkillCards';
+import { skillsData } from '../data/skillsData';
 
 const SkillsGrid: React.FC = () => {
   return (

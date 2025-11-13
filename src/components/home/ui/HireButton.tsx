@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next';
 
-import Button from "../../ui/Button"
+import Button from '../../ui/Button';
 
-import handleScroll from "../../../utils/handleScroll"
+import handleScroll from '../../../utils/handleScroll';
 
 export default function HireButton() {
   const { t } = useTranslation();
@@ -16,6 +16,5 @@ export default function HireButton() {
         />
       </div>
     </>
-  )
+  );
 }
-

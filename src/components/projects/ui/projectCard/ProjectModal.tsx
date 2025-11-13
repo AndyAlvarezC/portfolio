@@ -1,7 +1,7 @@
-import { Fragment, memo } from "react";
-import { Dialog, Transition } from "@headlessui/react";
-import { ModalHeader } from "./ModalHeader";
-import { ModalContent } from "./ModalContent";
+import { Fragment, memo } from 'react';
+import { Dialog, Transition } from '@headlessui/react';
+import { ModalHeader } from './ModalHeader';
+import { ModalContent } from './ModalContent';
 
 interface ProjectModalProps {
   title: string;
@@ -46,22 +46,11 @@ export const ProjectModal: React.FC<ProjectModalProps> = memo(
                 leaveTo="opacity-0 scale-95"
               >
                 <Dialog.Panel className="w-full max-w-5xl transform overflow-hidden rounded-3xl bg-white text-left align-middle shadow-xl transition-transform duration-300">
-                  
                   {/* Header */}
-                  <ModalHeader
-                    title={title}
-                    image={image}
-                    onClose={onClose}
-                  />
+                  <ModalHeader title={title} image={image} onClose={onClose} />
 
                   {/* Content */}
-                  <ModalContent
-                    extended={extended}
-                    link={link}
-                    code={code}
-                    skills={skills}
-                    t={t}
-                  />
+                  <ModalContent extended={extended} link={link} code={code} skills={skills} t={t} />
                 </Dialog.Panel>
               </Transition.Child>
             </div>

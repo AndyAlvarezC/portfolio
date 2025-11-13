@@ -1,7 +1,7 @@
-import { projectsData } from "../data/projectsData";
-import { ProjectCard } from "./projectCard/ProjectCard";
-import { useTranslation } from "react-i18next";
-import { memo } from "react";
+import { projectsData } from '../data/projectsData';
+import { ProjectCard } from './projectCard/ProjectCard';
+import { useTranslation } from 'react-i18next';
+import { memo } from 'react';
 
 // Memoized ProjectsGrid to avoid unnecessary re-renders
 const ProjectsGrid: React.FC = () => {

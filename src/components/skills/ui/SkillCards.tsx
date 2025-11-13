@@ -1,4 +1,4 @@
-import { SkillCardsProps } from "../data/skillsData";
+import { SkillCardsProps } from '../data/skillsData';
 
 const SkillCard: React.FC<SkillCardsProps> = ({ title, size, icon: Icon, color }) => {
   return (
@@ -14,7 +14,8 @@ const SkillCard: React.FC<SkillCardsProps> = ({ title, size, icon: Icon, color }
       <div
         className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
         style={{
-          background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(99, 102, 241, 0.3), rgba(168, 85, 247, 0.3))',
+          background:
+            'linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(99, 102, 241, 0.3), rgba(168, 85, 247, 0.3))',
           padding: '2px',
           WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
           WebkitMaskComposite: 'xor',
@@ -25,20 +26,22 @@ const SkillCard: React.FC<SkillCardsProps> = ({ title, size, icon: Icon, color }
       {/* Icon wrapper with hover scale and shadow effects */}
       <div className="relative z-10 mb-5 w-20 h-20 rounded-2xl bg-linear-to-br from-blue-50 via-indigo-50 to-purple-50 flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-sm group-hover:shadow-lg border border-blue-100/50">
         {/* Render skill icon */}
-        <Icon size={size} className={`${color} transition-transform duration-500 group-hover:scale-110`} />
+        <Icon
+          size={size}
+          className={`${color} transition-transform duration-500 group-hover:scale-110`}
+        />
       </div>
 
       {/* Skill title - siempre usa bg-clip-text y text-transparent */}
-      <h3 
+      <h3
         className="relative z-10 text-lg md:text-xl font-bold bg-clip-text text-transparent transition-all duration-500"
         style={{
-          backgroundImage: 'linear-gradient(to bottom right, rgb(17, 24, 39), rgb(17, 24, 39), rgb(17, 24, 39))',
+          backgroundImage:
+            'linear-gradient(to bottom right, rgb(17, 24, 39), rgb(17, 24, 39), rgb(17, 24, 39))',
         }}
       >
         <span className="group-hover:hidden">{title}</span>
-        <span 
-          className="hidden group-hover:inline bg-linear-to-br from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent"
-        >
+        <span className="hidden group-hover:inline bg-linear-to-br from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
           {title}
         </span>
       </h3>
