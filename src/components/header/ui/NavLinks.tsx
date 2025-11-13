@@ -40,7 +40,7 @@ const NavLinks = memo(({ isMobile = false, onClickLink }: NavLinksProps) => {
           className={`
             relative font-semibold tracking-wide cursor-pointer select-none
             transition-all duration-300
-            ${isMobile ? 'text-white text-base sm:text-lg md:text-xl' : 'text-gray-200 text-lg'}
+            ${isMobile ? 'text-white text-lg md:text-xl' : 'text-gray-200 text-lg'}
             hover:text-white
             ${
               activeSection === section.id

@@ -27,19 +27,16 @@ function DesktopNavComponent() {
                 onClick={() => handleScroll(section.id)}
                 className={`
                   relative font-semibold tracking-wide cursor-pointer select-none
-                  transition-all duration-300 text-lg text-transparent bg-clip-text
-                  bg-linear-to-r
-                  ${
-                    isActive
-                      ? 'from-blue-400 via-indigo-400 to-purple-400 hover:from-white hover:via-white hover:to-white'
-                      : 'from-white/90 via-white/90 to-white/90 hover:from-blue-400 hover:via-indigo-400 hover:to-purple-400'
+                  transition-colors duration-300 text-lg
+                  ${isActive 
+                    ? 'text-transparent bg-clip-text bg-linear-to-r from-blue-400 via-indigo-400 to-purple-400 hover:text-white'
+                    : 'text-white hover:text-transparent hover:bg-clip-text hover:bg-linear-to-r hover:from-blue-400 hover:via-indigo-400 hover:to-purple-400'
                   }
                   after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 
-                  after:h-0.5 after:rounded-full after:transition-all after:duration-300 
-                  ${
-                    isActive
-                      ? 'after:w-3/4 after:bg-linear-to-r after:from-blue-500 after:to-purple-500'
-                      : 'after:w-0 hover:after:w-3/4 after:bg-linear-to-r after:from-blue-500 after:to-purple-500'
+                  after:h-0.5 after:rounded-full after:transition-all after:duration-300
+                  ${isActive
+                    ? 'after:w-3/4 after:bg-linear-to-r after:from-blue-500 after:to-purple-500'
+                    : 'after:w-0 hover:after:w-3/4 after:bg-linear-to-r after:from-blue-500 after:to-purple-500'
                   }
                 `}
               >
