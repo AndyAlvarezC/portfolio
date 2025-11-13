@@ -1,4 +1,5 @@
 import NavLinks from './NavLinks';
+import { useMemo } from 'react';
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -6,80 +7,86 @@ interface MobileMenuProps {
 }
 
 export default function MobileMenu({ isOpen, closeMenu }: MobileMenuProps) {
+  const containerClasses = useMemo(
+    () =>
+      `fixed top-28 sm:top-28 md:top-32 left-0 right-0 flex justify-center items-start z-50 transform transition-transform duration-300 ease-out will-change-transform`,
+    []
+  );
+
   return (
     <>
-      {/* Backdrop with blur */}
       <div
-        className={`fixed inset-0 bg-black/40 backdrop-blur-sm z-40 transition-all duration-500 ${
-          isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        className={`fixed inset-0 bg-black/40 z-40 transition-opacity duration-300 ${
+          isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
         onClick={closeMenu}
+        aria-hidden
       />
 
-      {/* Mobile Menu Dropdown - Below Header */}
+      {/* Container */}
       <div
-        className={`fixed top-32 left-1/2 -translate-x-1/2 w-[90%] max-w-md z-50 transform transition-all duration-500 ease-out ${
-          isOpen ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0 pointer-events-none'
-        }`}
+        className={`${containerClasses} ${isOpen ? 'translate-y-0 opacity-100' : '-translate-y-3 opacity-0 pointer-events-none'}`}
+        role="dialog"
+        aria-modal="true"
       >
         {/* Glass container */}
         <div
-          className="relative rounded-3xl overflow-hidden"
+          className="relative w-[92%] sm:w-[85%] md:w-[75%] h-[76vh] rounded-2xl overflow-hidden flex flex-col items-center justify-center px-6 py-8"
           style={{
-            boxShadow: '0 20px 60px -10px rgba(0, 0, 0, 0.3)',
+            boxShadow: '0 18px 40px -8px rgba(0,0,0,0.32)',
           }}
         >
-          {/* Glass background with gradient */}
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-indigo-500/10 to-purple-500/10 backdrop-blur-2xl" />
+          <div className="absolute inset-0 bg-linear-to-br from-blue-500/8 via-indigo-500/8 to-purple-500/8 backdrop-blur-md" />
 
-          {/* Animated border gradient */}
           <div
-            className="absolute inset-0 rounded-3xl opacity-60"
+            className="absolute inset-0 rounded-2xl opacity-60 pointer-events-none"
             style={{
               background:
-                'linear-gradient(135deg, rgba(59, 130, 246, 0.4), rgba(99, 102, 241, 0.4), rgba(168, 85, 247, 0.4))',
-              padding: '1.5px',
+                'linear-gradient(135deg, rgba(59,130,246,0.28), rgba(99,102,241,0.28), rgba(168,85,247,0.28))',
+              padding: '1.2px',
               WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
               WebkitMaskComposite: 'xor',
               maskComposite: 'exclude',
             }}
           />
-
-          {/* Animated blurred circles for visual decoration */}
-          <div className="absolute top-10 left-5 w-40 h-40 bg-blue-500/20 rounded-full blur-3xl animate-pulse" />
+          
           <div
-            className="absolute bottom-10 right-5 w-48 h-48 bg-purple-500/20 rounded-full blur-3xl animate-pulse"
-            style={{ animationDelay: '1s' }}
+            className="absolute top-8 left-6 w-28 h-28 rounded-full pointer-events-none"
+            style={{
+              background: 'radial-gradient(circle, rgba(59,130,246,0.12), transparent 40%)',
+              filter: 'blur(24px)',
+              transform: 'translateZ(0)',
+              willChange: 'transform, opacity',
+              animation: 'float-slow 4s ease-in-out infinite',
+            }}
+            aria-hidden
+          />
+          <div
+            className="absolute bottom-8 right-6 w-32 h-32 rounded-full pointer-events-none"
+            style={{
+              background: 'radial-gradient(circle, rgba(168,85,247,0.12), transparent 40%)',
+              filter: 'blur(28px)',
+              transform: 'translateZ(0)',
+              willChange: 'transform, opacity',
+              animation: 'float-slow 5s ease-in-out infinite',
+            }}
+            aria-hidden
           />
 
-          {/* Content */}
-          <div className="relative flex flex-col items-center gap-6 px-8 py-10">
-            {/* Navigation links inside mobile menu */}
+          {/* Main content */}
+          <div className="relative flex flex-col items-center gap-5 sm:gap-6 md:gap-8 text-center z-10">
             <NavLinks isMobile onClickLink={closeMenu} />
 
-            {/* Decorative gradient line at the bottom */}
-            <div className="w-20 h-1 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-full shadow-lg mt-4" />
-          </div>
-
-          {/* Shine effect */}
-          <div className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-3xl">
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/10 to-transparent -translate-y-full animate-shine-slow" />
+            <div className="w-20 h-0.5 bg-linear-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-full shadow-sm mt-3" />
           </div>
         </div>
       </div>
 
       <style>{`
-        @keyframes shine-slow {
-          0%, 100% {
-            transform: translateY(-100%);
-          }
-          50% {
-            transform: translateY(100%);
-          }
-        }
-
-        .animate-shine-slow {
-          animation: shine-slow 4s ease-in-out infinite;
+        @keyframes float-slow {
+          0% { transform: translateY(0) translateZ(0); opacity: 0.95; }
+          50% { transform: translateY(-6px) translateZ(0); opacity: 1; }
+          100% { transform: translateY(0) translateZ(0); opacity: 0.95; }
         }
       `}</style>
     </>
