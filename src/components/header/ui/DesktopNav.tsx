@@ -30,7 +30,7 @@ function DesktopNavComponent() {
                   transition-colors duration-300 text-lg
                   ${isActive 
                     ? 'text-transparent bg-clip-text bg-linear-to-r from-blue-400 via-indigo-400 to-purple-400 hover:text-white'
-                    : 'text-white hover:text-transparent hover:bg-clip-text hover:bg-linear-to-r hover:from-blue-400 hover:via-indigo-400 hover:to-purple-400'
+                    : 'text-transparent bg-clip-text bg-white hover:text-transparent hover:bg-clip-text hover:bg-linear-to-r hover:from-blue-400 hover:via-indigo-400 hover:to-purple-400'
                   }
                   after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 
                   after:h-0.5 after:rounded-full after:transition-all after:duration-300
