@@ -1,10 +1,10 @@
 import { ReactElement, createElement } from 'react';
 import { skillsData } from '../../skills/data/skillsData';
 
-import payFlowPrev from '../../../assets/imagePreview/payFlowPrev.png';
-import agencyFlexInnovationsPrev from '../../../assets/imagePreview/agencyFlexInnovationsPrev.png';
+import finTrackDashboardPrev from '../../../assets/imagePreview/finTrackDashboardPrev.png'
 import expenseTrackerPrev from '../../../assets/imagePreview/expenseTrackerPrev.png';
 import patientTrackerPrev from '../../../assets/imagePreview/patientTrackerPrev.png';
+import payFlowPrev from '../../../assets/imagePreview/payFlowPrev.png';
 
 type ProjectCard = {
   key: string;
@@ -32,12 +32,20 @@ const generateSkillIcons = (
 
 export const projectsData: ProjectCard[] = [
   {
-    key: 'payflow',
-    image: payFlowPrev,
-    link: 'https://payflow-fintech.vercel.app/',
-    code: 'https://github.com/AndyAlvarezC/payflow',
+    key: 'fintrack',
+    image: finTrackDashboardPrev,
+    link: 'https://fintrack-dashboard.vercel.app/',
+    code: 'https://github.com/AndyAlvarezC/fintrack-dashboard',
     skills: generateSkillIcons(
-      ['Vite', 'React', 'TypeScript', 'Tailwind CSS', 'Git', 'Github', 'Vercel'],
+      [
+        'Vite',
+        'React',
+        'TypeScript',
+        'Tailwind CSS',
+        'Git',
+        'Github',
+        'Vercel',
+      ],
       { Github: 'text-black', Vercel: 'text-black' }
     ),
   },
@@ -47,7 +55,15 @@ export const projectsData: ProjectCard[] = [
     link: 'https://expense-tracker-manager-app.vercel.app/',
     code: 'https://github.com/AndyAlvarezC/expense-tracker',
     skills: generateSkillIcons(
-      ['Vite', 'React', 'TypeScript', 'Tailwind CSS', 'Git', 'Github', 'Vercel'],
+      [
+        'Vite',
+        'React',
+        'TypeScript',
+        'Tailwind CSS',
+        'Git',
+        'Github',
+        'Vercel',
+      ],
       { Github: 'text-black', Vercel: 'text-black' }
     ),
   },
@@ -57,17 +73,33 @@ export const projectsData: ProjectCard[] = [
     link: 'https://patient-tracker-medical.vercel.app/',
     code: 'https://github.com/AndyAlvarezC/patient-tracker',
     skills: generateSkillIcons(
-      ['Vite', 'React', 'TypeScript', 'Tailwind CSS', 'Git', 'Github', 'Vercel'],
+      [
+        'Vite',
+        'React',
+        'TypeScript',
+        'Tailwind CSS',
+        'Git',
+        'Github',
+        'Vercel',
+      ],
       { Github: 'text-black', Vercel: 'text-black' }
     ),
   },
   {
-    key: 'agency',
-    image: agencyFlexInnovationsPrev,
-    link: 'https://agencyflexinnovations.com/',
-    code: 'https://github.com/efeluxy/digital-agencyflexinnovations-personal',
+    key: 'payflow',
+    image: payFlowPrev,
+    link: 'https://payflow-fintech.vercel.app/',
+    code: 'https://github.com/AndyAlvarezC/payflow',
     skills: generateSkillIcons(
-      ['Vite', 'React', 'TypeScript', 'Tailwind CSS', 'Git', 'Github', 'Vercel'],
+      [
+        'Vite',
+        'React',
+        'TypeScript',
+        'Tailwind CSS',
+        'Git',
+        'Github',
+        'Vercel',
+      ],
       { Github: 'text-black', Vercel: 'text-black' }
     ),
   },

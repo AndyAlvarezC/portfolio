@@ -26,22 +26,23 @@
       "featuresList": []
     },
     "list": {
-      "payflow": {
-        "title": "PayFlow - Fintech",
-        "description": "Modern fintech landing page designed to build trust and boost conversions.",
-        "extended": "Professional landing page for a digital financial application.\n\n💳 Attractive design focused on user conversion and trust in digital financial services.\n\n🎨 Built with React and TailwindCSS, featuring smooth animations and responsive design for all devices.\n\n🚀 Performance-optimized for fast loading and seamless user experience.\n\n✨ Includes feature sections, testimonials, pricing, and strategic call-to-action elements.\n\n📱 Fully adaptable to mobile, tablet, and desktop with a mobile-first approach.",
+      "fintrack": {
+        "title": "Fintrack Dashboard",
+        "description": "Interactive dashboard to monitor exchange rates and financial data in real time.",
+        "extended": "Advanced web application for visualizing and tracking multiple currencies and financial metrics.\n\n✨ Modern, fully responsive interface built with React, TypeScript, and TailwindCSS, providing an intuitive and professional experience.\n\n🔧 Uses custom hooks for reusable logic and state management with React, ensuring clean and modular code.\n\n💾 Fetches real-time data from the Frankfurter API, displaying current exchange rates and day-over-day changes.\n\n📊 Displays rates in columns with increase/decrease indicators, country flags, and live percentage updates.\n\n✅ Well-structured and commented code following frontend architecture best practices and SOLID principles, ready for future extension or integration.",
         "features": [
-          "Modern design with smooth animations and transitions",
-          "Strategic conversion sections and testimonials",
-          "Performance optimization and ultra-fast loading",
-          "Mobile-first responsive design for all devices",
-          "Effective call-to-action integration"
+          "Intuitive and responsive interface for currency monitoring",
+          "Real-time updates of rates and percentage changes",
+          "Clear visualization with flags, symbols, and daily change",
+          "Custom hooks for reusable logic",
+          "Modular, commented code following SOLID principles",
+          "Optimized for scalability and future features"
         ]
       },
       "expense": {
         "title": "Expense Tracker",
         "description": "Personal expense planning web application, designed to manage your finances quickly and easily.",
-        "extended": "Complete web application for efficiently managing personal finances.\n\n✨ Built with React, TypeScript, and TailwindCSS for a modern, intuitive, and fully responsive interface.\n\n🔧 Implements Context API for global state management, custom hooks for reusable logic, and robust form validation.\n\n💾 Uses localStorage for data persistence, maintaining complete expense history even after closing the browser.\n\n📊 Includes category filters, available budget visualization, expenses made, and real-time financial summary.\n\n✅ Clean and well-structured code following frontend architecture best practices and SOLID principles.",
+        "extended": "Complete web application for efficiently managing personal finances.\n\n✨ Built with React, TypeScript, and TailwindCSS for a modern, intuitive, and fully responsive interface.\n\n🔧 Implements Context API for global state management, custom hooks for reusable logic, and robust form validation.\n\n💾 Uses localStorage for data persistence, maintaining complete expense history even after closing the browser.\n\n📊 Includes category filters, available budget visualization, Expenses made, and real-time financial summary.\n\n✅ Clean and well-structured code following frontend architecture best practices and SOLID principles.",
         "features": [
           "Modern and fully responsive interface with React and TypeScript",
           "Efficient global state management with Context API",
@@ -64,17 +65,16 @@
           "Local data persistence with localStorage"
         ]
       },
-      "agency": {
-        "title": "Agency Flex Innovations",
-        "description": "Landing page for a digital agency specialized in business automation services.",
-        "extended": "Impactful landing page for a digital agency offering creative and technological services.\n\n🎯 Modern and professional design reflecting innovation and creativity in digital services.\n\n⚡ Built with React and smooth animations that capture user attention from the first moment.\n\n💼 Showcases agency services, project portfolio, team members, and contact form.\n\n🎨 TailwindCSS implementation for perfect responsive design on any device.\n\n🚀 Optimized for SEO and performance, with ultra-fast loading and exceptional browsing experience.\n\n✨ Includes strategic sections: impactful hero, featured services, success cases, and effective call-to-action.",
+      "payflow": {
+        "title": "PayFlow - Fintech",
+        "description": "Modern fintech landing page designed to build trust and boost conversions.",
+        "extended": "Professional landing page for a digital financial application.\n\n💳 Attractive design focused on user conversion and trust in digital financial services.\n\n🎨 Built with React and TailwindCSS, featuring smooth animations and responsive design for all devices.\n\n🚀 Performance-optimized for fast loading and seamless user experience.\n\n✨ Includes feature sections, testimonials, pricing, and strategic call-to-action elements.\n\n📱 Fully adaptable to mobile, tablet, and desktop with a mobile-first approach.",
         "features": [
-          "Impactful design with animations and visual effects",
-          "Services, portfolio, and team sections",
-          "SEO optimization and exceptional performance",
-          "Integrated contact form",
-          "Responsive design for all devices",
-          "Hero section and strategic call-to-action"
+          "Modern design with smooth animations and transitions",
+          "Strategic conversion sections and testimonials",
+          "Performance optimization and ultra-fast loading",
+          "Mobile-first responsive design for all devices",
+          "Effective call-to-action integration"
         ]
       }
     },

@@ -38,7 +38,7 @@ export const ProjectCardPreview: React.FC<ProjectCardPreviewProps> = memo(
 
         {/* Content section */}
         <div className="p-7 relative z-20 flex flex-col flex-1">
-          <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
+          <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-200">
             {title}
           </h3>
 
@@ -51,7 +51,7 @@ export const ProjectCardPreview: React.FC<ProjectCardPreviewProps> = memo(
             {skills.map((Skill, index) => (
               <div
                 key={index}
-                className="flex items-center justify-center w-10 h-10 bg-linear-to-br from-blue-50 via-indigo-50 to-purple-50 rounded-xl text-xl shadow-sm hover:shadow-md hover:scale-110 transition-transform duration-300 border border-blue-100/50"
+                className="flex items-center justify-center w-10 h-10 bg-linear-to-br from-blue-50 via-indigo-50 to-purple-50 rounded-xl text-xl shadow-sm hover:shadow-md hover:scale-110 transition-transform duration-200 border border-blue-100/50"
               >
                 {Skill}
               </div>
@@ -65,7 +65,7 @@ export const ProjectCardPreview: React.FC<ProjectCardPreviewProps> = memo(
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
-              className="flex-1 flex items-center justify-center gap-3 bg-linear-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-700 hover:via-indigo-700 hover:to-purple-700 text-white font-bold py-3 px-4 rounded-2xl text-center transition-transform duration-300 shadow-lg hover:shadow-xl hover:scale-105 group"
+              className="flex-1 flex items-center justify-center gap-3 bg-linear-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-700 hover:via-indigo-700 hover:to-purple-700 text-white font-bold py-3 px-4 rounded-2xl text-center transition-transform duration-200 shadow-lg hover:shadow-xl hover:scale-105 group"
             >
               <ExternalLink className="w-5 h-5 group-hover:scale-110 transition-transform" />
               <span>{t('projects.links.web')}</span>
@@ -76,7 +76,7 @@ export const ProjectCardPreview: React.FC<ProjectCardPreviewProps> = memo(
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
-              className="flex-1 flex items-center justify-center gap-3 bg-linear-to-r from-gray-800 via-gray-900 to-black hover:from-gray-900 hover:via-black hover:to-gray-900 text-white font-bold py-3 px-4 rounded-2xl text-center transition-transform duration-300 shadow-lg hover:shadow-xl hover:scale-105 group"
+              className="flex-1 flex items-center justify-center gap-3 bg-linear-to-r from-gray-800 via-gray-900 to-black hover:from-gray-900 hover:via-black hover:to-gray-900 text-white font-bold py-3 px-4 rounded-2xl text-center transition-transform duration-200 shadow-lg hover:shadow-xl hover:scale-105 group"
             >
               <Code2 className="w-5 h-5 group-hover:scale-110 transition-transform" />
               <span>{t('projects.links.code')}</span>

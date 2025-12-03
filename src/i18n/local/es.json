@@ -16,7 +16,7 @@
   "skills": {
     "title": "Habilidades"
   },
-
+  
   "projects": {
     "title": "Proyectos",
     "modal": {
@@ -26,18 +26,6 @@
       "featuresList": []
     },
     "list": {
-      "payflow": {
-        "title": "PayFlow - Fintech",
-        "description": "Landing page moderna de una fintech, diseñada para generar confianza y conversión.",
-        "extended": "Landing page profesional para una aplicación financiera digital.\n\n💳 Diseño atractivo enfocado en la conversión de usuarios y la confianza en servicios financieros digitales.\n\n🎨 Construida con React y TailwindCSS, con animaciones suaves y diseño responsive para todos los dispositivos.\n\n🚀 Optimizada para un rendimiento rápido y experiencia de usuario fluida.\n\n✨ Incluye secciones de funcionalidades, testimonios, precios y llamadas a la acción estratégicas.\n\n📱 Totalmente adaptable a móvil, tablet y escritorio con enfoque mobile-first.",
-        "features": [
-          "Diseño moderno con animaciones y transiciones suaves",
-          "Secciones estratégicas para conversión y testimonios",
-          "Optimización de rendimiento y carga ultra rápida",
-          "Diseño responsive mobile-first",
-          "Integración efectiva de llamadas a la acción"
-        ]
-      },
       "expense": {
         "title": "Planificador de Gastos",
         "description": "Aplicación web de planificación de gastos personales, diseñada para gestionar tus finanzas de manera rápida y sencilla.",
@@ -49,6 +37,19 @@
           "Persistencia de datos con localStorage",
           "Validación robusta de formularios y hooks personalizados",
           "Código limpio siguiendo principios SOLID"
+        ]
+      },
+      "fintrack": {
+        "title": "Fintrack Dashboard",
+        "description": "Dashboard interactivo para monitorizar tipos de cambio y finanzas en tiempo real.",
+        "extended": "Aplicación web avanzada para visualizar y seguir la evolución de múltiples divisas y datos financieros.\n\n✨ Interfaz moderna y completamente responsive construida con React, TypeScript y TailwindCSS, ofreciendo experiencia intuitiva y profesional.\n\n🔧 Utiliza hooks personalizados para lógica reusable y gestión del estado con React, asegurando código limpio y modular.\n\n💾 Integra fetch de datos en tiempo real desde la API de Frankfurter, mostrando tasas de cambio actuales y variación del día anterior.\n\n📊 Visualiza tasas en columnas con indicadores de incremento o decremento, banderas de país y actualización en vivo de cambios porcentuales.\n\n✅ Código bien estructurado y comentado siguiendo buenas prácticas de arquitectura frontend y principios SOLID, listo para extensión futura o integración con otras funcionalidades.",
+        "features": [
+          "Interfaz intuitiva y responsive para monitoreo de divisas",
+          "Actualización en tiempo real de tasas y cambios porcentuales",
+          "Visualización clara con banderas, símbolos y cambio diario",
+          "Hooks personalizados para lógica reusable",
+          "Código modular, comentado y siguiendo principios SOLID",
+          "Optimizado para escalabilidad y futuras funcionalidades"
         ]
       },
       "patient": {
@@ -64,17 +65,16 @@
           "Persistencia de datos local con localStorage"
         ]
       },
-      "agency": {
-        "title": "Agency Flex Innovations",
-        "description": "Landing page para una agencia digital de automatizaciones para negocios.",
-        "extended": "Landing page impactante para una agencia digital que ofrece servicios creativos y tecnológicos.\n\n🎯 Diseño moderno y profesional que refleja innovación y creatividad en servicios digitales.\n\n⚡ Construida con React y animaciones suaves que captan la atención del usuario desde el primer momento.\n\n💼 Presenta los servicios de la agencia, portafolio de proyectos, miembros del equipo y formulario de contacto.\n\n🎨 Implementación con TailwindCSS para un diseño responsive perfecto en cualquier dispositivo.\n\n🚀 Optimizada para SEO y rendimiento, con carga ultra rápida y experiencia de navegación excepcional.\n\n✨ Incluye secciones estratégicas: hero impactante, servicios destacados, casos de éxito y llamadas a la acción efectivas.",
+      "payflow": {
+        "title": "PayFlow - Fintech",
+        "description": "Landing page moderna de una fintech, diseñada para generar confianza y conversión.",
+        "extended": "Landing page profesional para una aplicación financiera digital.\n\n💳 Diseño atractivo enfocado en la conversión de usuarios y la confianza en servicios financieros digitales.\n\n🎨 Construida con React y TailwindCSS, con animaciones suaves y diseño responsive para todos los dispositivos.\n\n🚀 Optimizada para un rendimiento rápido y experiencia de usuario fluida.\n\n✨ Incluye secciones de funcionalidades, testimonios, precios y llamadas a la acción estratégicas.\n\n📱 Totalmente adaptable a móvil, tablet y escritorio con enfoque mobile-first.",
         "features": [
-          "Diseño impactante con animaciones y efectos visuales",
-          "Secciones de servicios, portafolio y equipo",
-          "Optimización SEO y rendimiento excepcional",
-          "Formulario de contacto integrado",
-          "Diseño responsive para todos los dispositivos",
-          "Sección hero y llamadas a la acción estratégicas"
+          "Diseño moderno con animaciones y transiciones suaves",
+          "Secciones estratégicas para conversión y testimonios",
+          "Optimización de rendimiento y carga ultra rápida",
+          "Diseño responsive mobile-first",
+          "Integración efectiva de llamadas a la acción"
         ]
       }
     },

@@ -16,8 +16,11 @@ export default function Header() {
   const { t, i18n } = useTranslation();
 
   const cvFile =
-    i18n.language === 'es' ? '/resume/CV_Andy_Álvarez.pdf' : '/resume/Resume_Andy_Álvarez.pdf';
-  const cvName = i18n.language === 'es' ? 'CV_Andy_Álvarez.pdf' : 'Resume_Andy_Álvarez.pdf';
+    i18n.language === 'es'
+      ? '/resume/CV_Andy_Álvarez.pdf'
+      : '/resume/Resume_Andy_Álvarez.pdf';
+  const cvName =
+    i18n.language === 'es' ? 'CV_Andy_Álvarez.pdf' : 'Resume_Andy_Álvarez.pdf';
 
   useEffect(() => {
     if (isOpen) setMenuMounted(true);
@@ -32,7 +35,7 @@ export default function Header() {
     <>
       <header className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl">
         <div
-          className="relative rounded-2xl overflow-visible transition-shadow duration-300"
+          className="relative rounded-2xl overflow-visible transition-shadow duration-200"
           style={{
             boxShadow: '0 6px 20px rgba(2,6,23,0.12)',
           }}
@@ -46,7 +49,8 @@ export default function Header() {
               background:
                 'linear-gradient(135deg, rgba(59,130,246,0.22), rgba(99,102,241,0.22), rgba(168,85,247,0.22))',
               padding: '1.2px',
-              WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+              WebkitMask:
+                'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
               WebkitMaskComposite: 'xor',
               maskComposite: 'exclude',
             }}

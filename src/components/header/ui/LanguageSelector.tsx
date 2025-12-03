@@ -39,12 +39,12 @@ export const LanguageSelector = () => {
       <button
         onClick={() => setOpen((prev) => !prev)}
         className="flex items-center justify-center text-2xl cursor-pointer 
-                text-gray-300 hover:text-white transition-all duration-300
+                text-gray-300 hover:text-white transition-all duration-200
                   hover:scale-110 focus:outline-none"
       >
         <MdOutlineLanguage
           className="drop-shadow-[0_0_6px_rgba(99,102,241,0.6)] hover:drop-shadow-[0_0_10px_rgba(99,102,241,0.8)] 
-                    transition-all duration-300 ease-out"
+                    transition-all duration-200 ease-out"
         />
       </button>
 
@@ -64,7 +64,7 @@ export const LanguageSelector = () => {
               onClick={() => changeLanguage(lang.code)}
               className={`
                 flex items-center justify-center gap-2 py-1.5 text-lg rounded-md
-                transition-all duration-300 ease-out cursor-pointer
+                transition-all duration-200 ease-out cursor-pointer
                 ${
                   i18n.language === lang.code
                     ? 'bg-linear-to-r from-blue-600 to-purple-600 text-white font-semibold shadow-md shadow-indigo-800/30 scale-[1.05]'

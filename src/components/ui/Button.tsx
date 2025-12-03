@@ -17,9 +17,9 @@ export default function Button({
 }: ButtonProps) {
   const baseStyles = `
     inline-flex items-center justify-center gap-2 rounded-xl font-semibold text-white
-    bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600
+    bg-linear-to-r from-blue-600 via-indigo-600 to-purple-600
     shadow-md shadow-indigo-900/30
-    transition-all duration-300 ease-out
+    transition-all duration-200 ease-out
     hover:shadow-[0_0_25px_rgba(99,102,241,0.6)]
     hover:scale-[1.05]
     active:scale-[0.98]
@@ -33,7 +33,10 @@ export default function Button({
   }[size];
 
   return (
-    <button onClick={onClickEvent} className={`${baseStyles} ${sizeStyles} ${className}`}>
+    <button
+      onClick={onClickEvent}
+      className={`${baseStyles} ${sizeStyles} ${className}`}
+    >
       {text && (
         <span className="bg-linear-to-r from-blue-200 via-indigo-200 to-purple-200 bg-clip-text text-transparent font-bold">
           {text}

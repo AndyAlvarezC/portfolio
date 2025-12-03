@@ -23,14 +23,14 @@ export const ProjectModal: React.FC<ProjectModalProps> = memo(
           {/* Overlay */}
           <Transition.Child
             as={Fragment}
-            enter="ease-out duration-300"
+            enter="ease-out duration-200"
             enterFrom="opacity-0"
             enterTo="opacity-100"
             leave="ease-in duration-200"
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <div className="fixed inset-0 bg-black/60 transition-opacity duration-300" />
+            <div className="fixed inset-0 bg-black/60 transition-opacity duration-200" />
           </Transition.Child>
 
           {/* Modal panel */}
@@ -38,19 +38,25 @@ export const ProjectModal: React.FC<ProjectModalProps> = memo(
             <div className="flex min-h-full items-center justify-center p-4 text-center">
               <Transition.Child
                 as={Fragment}
-                enter="ease-out duration-300"
+                enter="ease-out duration-200"
                 enterFrom="opacity-0 scale-95"
                 enterTo="opacity-100 scale-100"
                 leave="ease-in duration-200"
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-5xl transform overflow-hidden rounded-3xl bg-white text-left align-middle shadow-xl transition-transform duration-300">
+                <Dialog.Panel className="w-full max-w-5xl transform overflow-hidden rounded-3xl bg-white text-left align-middle shadow-xl transition-transform duration-200">
                   {/* Header */}
                   <ModalHeader title={title} image={image} onClose={onClose} />
 
                   {/* Content */}
-                  <ModalContent extended={extended} link={link} code={code} skills={skills} t={t} />
+                  <ModalContent
+                    extended={extended}
+                    link={link}
+                    code={code}
+                    skills={skills}
+                    t={t}
+                  />
                 </Dialog.Panel>
               </Transition.Child>
             </div>

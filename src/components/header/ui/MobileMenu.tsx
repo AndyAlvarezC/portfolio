@@ -9,15 +9,17 @@ interface MobileMenuProps {
 export default function MobileMenu({ isOpen, closeMenu }: MobileMenuProps) {
   const containerClasses = useMemo(
     () =>
-      `fixed top-28 sm:top-28 md:top-32 left-0 right-0 flex justify-center items-start z-50 transform transition-transform duration-300 ease-out will-change-transform`,
+      `fixed top-28 sm:top-28 md:top-32 left-0 right-0 flex justify-center items-start z-50 transform transition-transform duration-200 ease-out will-change-transform`,
     []
   );
 
   return (
     <>
       <div
-        className={`fixed inset-0 bg-black/40 z-40 transition-opacity duration-300 ${
-          isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        className={`fixed inset-0 bg-black/40 z-40 transition-opacity duration-200 ${
+          isOpen
+            ? 'opacity-100 pointer-events-auto'
+            : 'opacity-0 pointer-events-none'
         }`}
         onClick={closeMenu}
         aria-hidden
@@ -25,7 +27,11 @@ export default function MobileMenu({ isOpen, closeMenu }: MobileMenuProps) {
 
       {/* Container */}
       <div
-        className={`${containerClasses} ${isOpen ? 'translate-y-0 opacity-100' : '-translate-y-3 opacity-0 pointer-events-none'}`}
+        className={`${containerClasses} ${
+          isOpen
+            ? 'translate-y-0 opacity-100'
+            : '-translate-y-3 opacity-0 pointer-events-none'
+        }`}
         role="dialog"
         aria-modal="true"
       >
@@ -44,16 +50,18 @@ export default function MobileMenu({ isOpen, closeMenu }: MobileMenuProps) {
               background:
                 'linear-gradient(135deg, rgba(59,130,246,0.28), rgba(99,102,241,0.28), rgba(168,85,247,0.28))',
               padding: '1.2px',
-              WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+              WebkitMask:
+                'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
               WebkitMaskComposite: 'xor',
               maskComposite: 'exclude',
             }}
           />
-          
+
           <div
             className="absolute top-8 left-6 w-28 h-28 rounded-full pointer-events-none"
             style={{
-              background: 'radial-gradient(circle, rgba(59,130,246,0.12), transparent 40%)',
+              background:
+                'radial-gradient(circle, rgba(59,130,246,0.12), transparent 40%)',
               filter: 'blur(24px)',
               transform: 'translateZ(0)',
               willChange: 'transform, opacity',
@@ -64,7 +72,8 @@ export default function MobileMenu({ isOpen, closeMenu }: MobileMenuProps) {
           <div
             className="absolute bottom-8 right-6 w-32 h-32 rounded-full pointer-events-none"
             style={{
-              background: 'radial-gradient(circle, rgba(168,85,247,0.12), transparent 40%)',
+              background:
+                'radial-gradient(circle, rgba(168,85,247,0.12), transparent 40%)',
               filter: 'blur(28px)',
               transform: 'translateZ(0)',
               willChange: 'transform, opacity',

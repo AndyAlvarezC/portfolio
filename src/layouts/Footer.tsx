@@ -14,7 +14,7 @@ export default function Footer() {
         {/* Left code icon */}
         <FontAwesomeIcon
           icon={faCode}
-          className="text-blue-400 text-base md:text-lg transition-transform duration-300 hover:rotate-12"
+          className="text-blue-400 text-base md:text-lg transition-transform duration-200 hover:rotate-12"
         />
 
         {/* Name with gradient text */}
@@ -34,7 +34,7 @@ export default function Footer() {
         {/* Right code icon */}
         <FontAwesomeIcon
           icon={faCode}
-          className="text-purple-400 text-base md:text-lg pl-1 transition-transform duration-300 hover:-rotate-12"
+          className="text-purple-400 text-base md:text-lg pl-1 transition-transform duration-200 hover:-rotate-12"
         />
       </p>
     </footer>

@@ -25,8 +25,11 @@ const NavLinks = memo(({ isMobile = false, onClickLink }: NavLinksProps) => {
   const { t, i18n } = useTranslation();
 
   const cvFile =
-    i18n.language === 'es' ? '/resume/CV_Andy_Álvarez.pdf' : '/resume/Resume_Andy_Álvarez.pdf';
-  const cvName = i18n.language === 'es' ? 'CV_Andy_Álvarez.pdf' : 'Resume_Andy_Álvarez.pdf';
+    i18n.language === 'es'
+      ? '/resume/CV_Andy_Álvarez.pdf'
+      : '/resume/Resume_Andy_Álvarez.pdf';
+  const cvName =
+    i18n.language === 'es' ? 'CV_Andy_Álvarez.pdf' : 'Resume_Andy_Álvarez.pdf';
 
   return (
     <>
@@ -39,8 +42,12 @@ const NavLinks = memo(({ isMobile = false, onClickLink }: NavLinksProps) => {
           }}
           className={`
             relative font-semibold tracking-wide cursor-pointer select-none
-            transition-all duration-300
-            ${isMobile ? 'text-white text-lg md:text-xl' : 'text-gray-200 text-lg'}
+            transition-all duration-200
+            ${
+              isMobile
+                ? 'text-white text-lg md:text-xl'
+                : 'text-gray-200 text-lg'
+            }
             hover:text-white
             ${
               activeSection === section.id
@@ -49,7 +56,7 @@ const NavLinks = memo(({ isMobile = false, onClickLink }: NavLinksProps) => {
             }
             ${
               !isMobile
-                ? 'after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-0.5 after:bg-linear-to-r after:from-blue-500 after:to-purple-500 after:rounded-full after:transition-all after:duration-300 hover:after:w-3/4'
+                ? 'after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-0.5 after:bg-linear-to-r after:from-blue-500 after:to-purple-500 after:rounded-full after:transition-all after:duration-200 hover:after:w-3/4'
                 : ''
             }
             ${!isMobile && activeSection === section.id ? 'after:w-3/4' : ''}
@@ -59,7 +66,11 @@ const NavLinks = memo(({ isMobile = false, onClickLink }: NavLinksProps) => {
         </a>
       ))}
 
-      <div className={`cursor-pointer ${isMobile ? 'mt-4 sm:mt-5 md:mt-6' : 'ml-4'}`}>
+      <div
+        className={`cursor-pointer ${
+          isMobile ? 'mt-4 sm:mt-5 md:mt-6' : 'ml-4'
+        }`}
+      >
         <LanguageSelector />
       </div>
 
@@ -70,7 +81,9 @@ const NavLinks = memo(({ isMobile = false, onClickLink }: NavLinksProps) => {
         className={`${isMobile ? 'mt-3 sm:mt-4 md:mt-5' : 'ml-6'}`}
       >
         <MdDownload
-          className={`${isMobile ? 'text-sm sm:text-base md:text-lg' : 'text-lg'} align-middle -mb-0.5 text-white`}
+          className={`${
+            isMobile ? 'text-sm sm:text-base md:text-lg' : 'text-lg'
+          } align-middle -mb-0.5 text-white`}
         />
       </Button>
     </>
