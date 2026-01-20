@@ -49,11 +49,13 @@ export const handleSubmit = async (
       setTimeout(() => setButtonText(t('contact.buttonText')), 2000);
     } else {
       setButtonText(t('contact.buttonText'));
+      setFormSubmitted(false);
       alert(result.message || t('contact.error'));
     }
   } catch (error) {
-    console.error(error);
+    console.error('Error al enviar formulario:', error);
     setButtonText(t('contact.buttonText'));
+    setFormSubmitted(false);
     alert(t('contact.error'));
   }
 };
