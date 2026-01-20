@@ -7,13 +7,27 @@ dotenv.config();
 
 const app = express();
 
-app.use(
-  cors({
-    origin: process.env.FRONTEND_URL || 'https://portfolio-andy-alvarez.vercel.app',
-    credentials: true,
-  })
-);
+const corsOptions = {
+  origin: function (
+    origin: string | undefined,
+    callback: (err: Error | null, allow?: boolean) => void
+  ) {
+    const allowedOrigins = ['https://portfolio-andy-alvarez.vercel.app'];
 
+    if (!origin || origin.startsWith('http://localhost:')) {
+      callback(null, true);
+    } else if (allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type'],
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.get('/', (req, res) => {
@@ -24,12 +38,18 @@ app.post('/api/contact', async (req, res) => {
   const { name, email, message } = req.body;
 
   if (!name?.trim() || !email?.trim() || !message?.trim()) {
-    return res.status(400).json({ success: false, message: 'Todos los campos son obligatorios' });
+    return res.status(400).json({
+      success: false,
+      message: 'Todos los campos son obligatorios',
+    });
   }
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {
-    return res.status(400).json({ success: false, message: 'Email no válido' });
+    return res.status(400).json({
+      success: false,
+      message: 'Email no válido',
+    });
   }
 
   try {
@@ -72,9 +92,12 @@ app.post('/api/contact', async (req, res) => {
     };
 
     await transporter.sendMail(mailOptions);
-
     console.log(`Mensaje enviado correctamente desde: ${email}`);
-    res.status(200).json({ success: true, message: 'Mensaje enviado correctamente!' });
+
+    res.status(200).json({
+      success: true,
+      message: 'Mensaje enviado correctamente!',
+    });
   } catch (error) {
     console.error('Error al enviar email:', error);
 
