@@ -1,7 +1,7 @@
-import express from "express";
-import cors from "cors";
-import nodemailer from "nodemailer";
-import dotenv from "dotenv";
+import express from 'express';
+import cors from 'cors';
+import nodemailer from 'nodemailer';
+import dotenv from 'dotenv';
 
 dotenv.config();
 
@@ -9,47 +9,40 @@ const app = express();
 
 app.use(
   cors({
-    origin:
-      process.env.FRONTEND_URL || "https://portfolio-andy-alvarez.vercel.app",
+    origin: process.env.FRONTEND_URL || 'https://portfolio-andy-alvarez.vercel.app',
     credentials: true,
   })
 );
 
 app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.json({ message: "API funcionando correctamente" });
+app.get('/', (req, res) => {
+  res.json({ message: 'API funcionando correctamente' });
 });
 
-app.post("/api/contact", async (req, res) => {
+app.post('/api/contact', async (req, res) => {
   const { name, email, message } = req.body;
 
   if (!name?.trim() || !email?.trim() || !message?.trim()) {
-    return res
-      .status(400)
-      .json({ success: false, message: "Todos los campos son obligatorios" });
+    return res.status(400).json({ success: false, message: 'Todos los campos son obligatorios' });
   }
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {
-    return res.status(400).json({ success: false, message: "Email no válido" });
+    return res.status(400).json({ success: false, message: 'Email no válido' });
   }
 
   try {
     if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
-      console.error(
-        "Variables de entorno EMAIL_USER o EMAIL_PASS no configuradas"
-      );
-      return res
-        .status(500)
-        .json({
-          success: false,
-          message: "Error de configuración del servidor",
-        });
+      console.error('Variables de entorno EMAIL_USER o EMAIL_PASS no configuradas');
+      return res.status(500).json({
+        success: false,
+        message: 'Error de configuración del servidor',
+      });
     }
 
     const transporter = nodemailer.createTransport({
-      service: "Gmail",
+      service: 'Gmail',
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
@@ -70,7 +63,7 @@ app.post("/api/contact", async (req, res) => {
             <p><strong>Email:</strong> ${email}</p>
             <p><strong>Mensaje:</strong></p>
             <div style="background-color: white; padding: 15px; border-radius: 4px; margin-top: 10px;">
-              ${message.replace(/\n/g, "<br>")}
+              ${message.replace(/\n/g, '<br>')}
             </div>
           </div>
         </div>
@@ -81,23 +74,19 @@ app.post("/api/contact", async (req, res) => {
     await transporter.sendMail(mailOptions);
 
     console.log(`Mensaje enviado correctamente desde: ${email}`);
-    res
-      .status(200)
-      .json({ success: true, message: "Mensaje enviado correctamente!" });
+    res.status(200).json({ success: true, message: 'Mensaje enviado correctamente!' });
   } catch (error) {
-    console.error("Error al enviar email:", error);
+    console.error('Error al enviar email:', error);
 
     if (error instanceof Error) {
-      if (error.message.includes("Invalid login")) {
-        console.error(
-          "Error de autenticación: Verifica EMAIL_USER y EMAIL_PASS"
-        );
+      if (error.message.includes('Invalid login')) {
+        console.error('Error de autenticación: Verifica EMAIL_USER y EMAIL_PASS');
       }
     }
 
     res.status(500).json({
       success: false,
-      message: "Error al enviar el mensaje. Intenta de nuevo más tarde.",
+      message: 'Error al enviar el mensaje. Intenta de nuevo más tarde.',
     });
   }
 });
@@ -106,5 +95,5 @@ const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en puerto ${PORT}`);
-  console.log(`Email configurado: ${process.env.EMAIL_USER ? "Sí" : "No"}`);
+  console.log(`Email configurado: ${process.env.EMAIL_USER ? 'Sí' : 'No'}`);
 });
