@@ -7,7 +7,7 @@ const AboutBackground = lazy(() => import('../components/about/ui/AboutBackgroun
 export default function About() {
   const { t } = useTranslation();
 
-  const paragraphs = ['p1', 'p2', 'p3', 'p4', 'p5', 'p6'];
+  const paragraphs = ['p1', 'p2', 'p3', 'p4'];
 
   return (
     <section

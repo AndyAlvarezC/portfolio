@@ -87,12 +87,10 @@
 
   "about": {
     "title": "Sobre Mí",
-    "p1": "👋 ¡Hola! Soy <strong>Andy Álvarez</strong>, un <strong>Desarrollador Front-End</strong> especializado en <strong>React, TypeScript, Tailwind CSS y Next.js</strong>. Me enfoco en construir interfaces modernas, responsivas y optimizadas que mejoren la experiencia digital del usuario.",
-    "p2": "💻 Tengo bases sólidas en <strong>HTML, CSS, JavaScript, Git y arquitectura frontend</strong>. Disfruto transformar ideas en aplicaciones web funcionales, mantenibles y visualmente atractivas usando clean code y buenas prácticas en UI/UX y rendimiento.",
-    "p3": "✅ También tengo experiencia con <strong>testing y pruebas unitarias (Vitest / Jest / React Testing Library)</strong>, asegurando la calidad, fiabilidad y mantenibilidad del código en componentes y funcionalidades.",
-    "p4": "☁️ Actualmente me estoy preparando para la certificación <strong>AWS Cloud Practitioner</strong> para ampliar mi conocimiento en despliegue en la nube y arquitecturas escalables, combinando desarrollo frontend con tecnologías cloud.",
-    "p5": "🚀 Soy un <strong>aprendiz rápido</strong> con formación autodidacta, impulsado por la <strong>mejora continua</strong> y la pasión por escribir código limpio y escalable. Mi objetivo es seguir creciendo como desarrollador y contribuir a productos de impacto.",
-    "p6": "🤝 Me encanta colaborar con otros profesionales del sector tech. Si quieres compartir ideas, trabajar juntos o hablar sobre desarrollo web, testing o tecnologías cloud, ¡no dudes en contactarme!"
+    "p1": "👋 Hola, soy Andy Álvarez, Frontend Developer de Barcelona. Me especializo en React, TypeScript y Tailwind CSS, creando aplicaciones web responsivas, escalables y centradas en el usuario.",
+    "p2": "💻 Cuento con alrededor de 2 años de experiencia en proyectos personales y freelance, desarrollando landing pages, e-commerce y demos interactivas.",
+    "p3": "🚀 Me apasiona aprender nuevas tecnologías, escribir código limpio y reutilizable, y transformar problemas complejos en soluciones simples y efectivas.",
+    "p4": "🤝 Disfruto trabajando en entornos colaborativos y dinámicos, contribuyendo a proyectos que generen impacto y me permitan crecer profesionalmente."
   },
 
   "contact": {

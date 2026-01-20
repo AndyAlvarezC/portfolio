@@ -87,12 +87,10 @@
 
   "about": {
     "title": "About Me",
-    "p1": "👋 Hello! I'm <strong>Andy Álvarez</strong>, a <strong>Front-End Developer</strong> specialized in <strong>React, TypeScript, Tailwind CSS, and Next.js</strong>. I focus on building modern, responsive, and optimized interfaces that enhance the digital user experience.",
-    "p2": "💻 I have solid foundations in <strong>HTML, CSS, JavaScript, Git, and frontend architecture</strong>. I enjoy transforming ideas into functional, maintainable, and visually appealing web applications using clean code and best practices in UI/UX and performance.",
-    "p3": "✅ I also have experience with <strong>testing and unit tests (Vitest / Jest / React Testing Library)</strong>, ensuring code quality, reliability, and maintainability in components and functionalities.",
-    "p4": "☁️ I'm currently preparing for the <strong>AWS Cloud Practitioner</strong> certification to expand my knowledge in cloud deployment and scalable architectures, combining frontend development with cloud technologies.",
-    "p5": "🚀 I'm a <strong>fast learner</strong> with self-taught training, driven by <strong>continuous improvement</strong> and passion for writing clean and scalable code. My goal is to keep growing as a developer and contribute to impactful products.",
-    "p6": "🤝 I love collaborating with other tech professionals. If you want to share ideas, work together, or talk about web development, testing, or cloud technologies, feel free to contact me!"
+    "p1": "👋 Hi, I’m Andy Álvarez, a Frontend Developer based in Barcelona. I specialize in React, TypeScript, and Tailwind CSS, building responsive, scalable, and user-focused web applications.",
+    "p2": "💻 I have around 2 years of experience in personal and freelance projects, creating landing pages, e-commerce platforms, and interactive demos.",
+    "p3": "🚀 I’m passionate about learning new technologies, writing clean and reusable code, and turning complex problems into simple, effective solutions.",
+    "p4": "🤝 I enjoy working in dynamic, collaborative environments, contributing to impactful projects while continuously growing as a developer."
   },
 
   "contact": {
